@@ -1,0 +1,56 @@
+{
+  "name": "famevote-server",
+  "version": "1.0.0",
+  "private": true,
+  "description": "FameVote API - Your Vote. Their Fame.",
+  "main": "src/server.js",
+  "type": "commonjs",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "seed": "node src/scripts/seed-all.js",
+    "seed:celebrities": "node src/scripts/seed.js --celebrities",
+    "test": "node --test --test-concurrency=1 src/tests/unit.test.js src/tests/features.test.js src/tests/integration.test.js",
+    "test:mem": "npm i --no-save mongodb-memory-server && node --test --test-concurrency=1 src/tests/unit.test.js src/tests/features.test.js src/tests/integration.test.js",
+    "images:manifest": "node src/scripts/images-manifest.js",
+    "images:fetch": "node src/scripts/images-fetch.js",
+    "images:upload": "node src/scripts/images-upload.js",
+    "images:pack": "node src/scripts/images-pack.js",
+    "images:fetch-open": "node src/scripts/images-fetch-open.js",
+    "images:check": "node src/scripts/images-check.js",
+    "seed:demo": "node src/scripts/seed-demo.js",
+    "seed:demo:rebuild": "node src/scripts/seed-demo.js --rebuild",
+    "seed:demo:purge": "node src/scripts/seed-demo.js --purge"
+  },
+  "dependencies": {
+    "@google/genai": "^1.0.0",
+    "bcryptjs": "^2.4.3",
+    "cloudinary": "^2.5.1",
+    "compression": "^1.7.5",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-rate-limit": "^7.5.0",
+    "google-auth-library": "^11.3.1",
+    "helmet": "^8.0.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.9.5",
+    "multer": "^2.4.0",
+    "node-cron": "^4.6.0",
+    "node-fetch": "^3.3.2",
+    "pdfkit": "^0.20.2",
+    "qrcode": "^1.5.4",
+    "razorpay": "^2.9.5",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "supertest": "^7.0.0"
+  },
+  "overrides": {
+    "node-domexception": "npm:@nolyfill/domexception@^1.0.28"
+  }
+}

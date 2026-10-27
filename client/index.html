@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#0C0B10" />
+    <meta name="color-scheme" content="dark light" />
+    <meta name="description" content="FameVote - Your Vote. Their Fame. Monthly celebrity voting and rankings for India." />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="preconnect" href="https://res.cloudinary.com" crossorigin />
+    <link rel="canonical" href="__SITE_URL__/" data-site-url />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="__SITE_URL__/" data-site-url />
+    <meta property="og:site_name" content="FameVote" />
+    <meta property="og:title" content="FameVote - Your Vote. Their Fame." />
+    <meta property="og:description" content="Vote once per category, watch the live leaderboard and keep a receipt for every vote." />
+    <meta property="og:image" content="__SITE_URL__/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="FameVote - Your Vote. Their Fame." />
+    <meta name="twitter:description" content="Monthly celebrity voting and live rankings for India." />
+    <meta name="twitter:image" content="__SITE_URL__/og-image.png" />
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem('fv-theme');
+          if (t !== 'light' && t !== 'dark') t = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+          var r = document.documentElement; r.dataset.theme = t; r.style.colorScheme = t;
+          var m = document.querySelector('meta[name="theme-color"]'); if (m) m.setAttribute('content', t === 'light' ? '#FAF7F2' : '#0C0B10');
+        } catch (e) { document.documentElement.dataset.theme = 'dark'; }
+      })();
+    </script>
+    <title>FameVote - Your Vote. Their Fame.</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

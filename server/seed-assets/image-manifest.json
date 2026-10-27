@@ -1,0 +1,1838 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-27T10:28:05.912Z",
+  "entries": {
+    "shah-rukh-khan": {
+      "name": "Shah Rukh Khan",
+      "category": "actors",
+      "wikiTitle": "Shah Rukh Khan",
+      "status": "uploaded",
+      "source": "wikipedia",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Shah_Rukh_Khan",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6e/Shah_Rukh_Khan_graces_the_launch_of_the_new_Santro.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "license": "Wikipedia article lead image; verify the individual image license",
+      "licenseUrl": "",
+      "attribution": "Shah Rukh Khan — Wikipedia",
+      "licenseVerified": false,
+      "tried": [
+        "wikipedia: found"
+      ],
+      "cloudinary": {
+        "url": "https://res.cloudinary.com/plhpyscn/image/upload/v1792505611/famevote/celebrities/shah-rukh-khan.jpg",
+        "publicId": "famevote/celebrities/shah-rukh-khan",
+        "cloudName": "plhpyscn"
+      },
+      "uploadedAt": "2026-10-20T14:13:32.358Z",
+      "checkedAt": "2026-10-20T14:13:32.358Z",
+      "gender": "male"
+    },
+    "amitabh-bachchan": {
+      "name": "Amitabh Bachchan",
+      "category": "actors",
+      "wikiTitle": "Amitabh Bachchan",
+      "status": "uploaded",
+      "source": "wikipedia",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Amitabh_Bachchan",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c6/Indian_actor_Amitabh_Bachchan.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "license": "Wikipedia article lead image; verify the individual image license",
+      "licenseUrl": "",
+      "attribution": "Amitabh Bachchan — Wikipedia",
+      "licenseVerified": false,
+      "tried": [
+        "wikipedia: found"
+      ],
+      "cloudinary": {
+        "url": "https://res.cloudinary.com/plhpyscn/image/upload/v1792505627/famevote/celebrities/amitabh-bachchan.jpg",
+        "publicId": "famevote/celebrities/amitabh-bachchan",
+        "cloudName": "plhpyscn"
+      },
+      "uploadedAt": "2026-10-20T14:13:48.562Z",
+      "checkedAt": "2026-10-20T14:13:48.562Z",
+      "gender": "male"
+    },
+    "deepika-padukone": {
+      "name": "Deepika Padukone",
+      "category": "actors",
+      "wikiTitle": "Deepika Padukone",
+      "status": "uploaded",
+      "source": "wikipedia",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Deepika_Padukone",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d3/Deepika_Padukone_2025_%281%29.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "license": "Wikipedia article lead image; verify the individual image license",
+      "licenseUrl": "",
+      "attribution": "Deepika Padukone — Wikipedia",
+      "licenseVerified": false,
+      "tried": [
+        "wikipedia: found"
+      ],
+      "cloudinary": {
+        "url": "https://res.cloudinary.com/plhpyscn/image/upload/v1792505660/famevote/celebrities/deepika-padukone.jpg",
+        "publicId": "famevote/celebrities/deepika-padukone",
+        "cloudName": "plhpyscn"
+      },
+      "uploadedAt": "2026-10-20T14:14:21.754Z",
+      "checkedAt": "2026-10-20T14:14:21.754Z",
+      "gender": "female"
+    },
+    "alia-bhatt": {
+      "name": "Alia Bhatt",
+      "category": "actors",
+      "wikiTitle": "Alia Bhatt",
+      "status": "uploaded",
+      "source": "wikipedia",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Alia_Bhatt",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e8/Alia_Bhatt_attends_at_the_2026_Cannes_Film_Festival_%28cropped%29_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "license": "Wikipedia article lead image; verify the individual image license",
+      "licenseUrl": "",
+      "attribution": "Alia Bhatt — Wikipedia",
+      "licenseVerified": false,
+      "tried": [
+        "wikipedia: found"
+      ],
+      "cloudinary": {
+        "url": "https://res.cloudinary.com/plhpyscn/image/upload/v1792505671/famevote/celebrities/alia-bhatt.jpg",
+        "publicId": "famevote/celebrities/alia-bhatt",
+        "cloudName": "plhpyscn"
+      },
+      "uploadedAt": "2026-10-20T14:14:32.632Z",
+      "checkedAt": "2026-10-20T14:14:32.632Z",
+      "gender": "female"
+    },
+    "allu-arjun": {
+      "name": "Allu Arjun",
+      "category": "actors",
+      "wikiTitle": "Allu Arjun",
+      "status": "uploaded",
+      "source": "wikipedia",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Allu_Arjun",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/0/09/Allu_Arjun_at_Pushpa_2_The_Rule_meet.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "license": "Wikipedia article lead image; verify the individual image license",
+      "licenseUrl": "",
+      "attribution": "Allu Arjun — Wikipedia",
+      "licenseVerified": false,
+      "tried": [
+        "wikipedia: found"
+      ],
+      "cloudinary": {
+        "url": "https://res.cloudinary.com/plhpyscn/image/upload/v1792505676/famevote/celebrities/allu-arjun.jpg",
+        "publicId": "famevote/celebrities/allu-arjun",
+        "cloudName": "plhpyscn"
+      },
+      "uploadedAt": "2026-10-20T14:14:37.897Z",
+      "checkedAt": "2026-10-20T14:14:37.897Z",
+      "gender": "male"
+    },
+    "mohanlal": {
+      "name": "Mohanlal",
+      "category": "actor",
+      "wikiTitle": "Mohanlal",
+      "status": "uploaded",
+      "source": "wikipedia",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Mohanlal",
+      "originalUrl": "",
+      "license": "Wikipedia article lead image; verify the individual image license",
+      "licenseUrl": "",
+      "attribution": "Mohanlal — Wikipedia",
+      "licenseVerified": false,
+      "tried": [
+        "wikipedia: found",
+        "cloudinary: uploaded"
+      ],
+      "cloudinary": {
+        "url": "https://res.cloudinary.com/plhpyscn/image/upload/famevote/celebrities/mohanlal.jpg",
+        "publicId": "famevote/celebrities/mohanlal",
+        "cloudName": "plhpyscn"
+      },
+      "uploadedAt": "2026-10-20T14:17:00.000Z",
+      "checkedAt": "2026-10-20T14:17:00.000Z",
+      "gender": "male"
+    },
+    "rajinikanth": {
+      "name": "Rajinikanth",
+      "category": "actors",
+      "wikiTitle": "Rajinikanth",
+      "status": "uploaded",
+      "source": "wikipedia",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Rajinikanth",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d2/Rajinikanth_in_2019.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "license": "Wikipedia article lead image; verify the individual image license",
+      "licenseUrl": "",
+      "attribution": "Rajinikanth — Wikipedia",
+      "licenseVerified": false,
+      "tried": [
+        "wikipedia: found"
+      ],
+      "cloudinary": {
+        "url": "https://res.cloudinary.com/plhpyscn/image/upload/v1792505826/famevote/celebrities/rajinikanth.jpg",
+        "publicId": "famevote/celebrities/rajinikanth",
+        "cloudName": "plhpyscn"
+      },
+      "uploadedAt": "2026-10-20T14:17:07.544Z",
+      "checkedAt": "2026-10-20T14:17:07.544Z",
+      "gender": "male"
+    },
+    "arijit-singh": {
+      "name": "Arijit Singh",
+      "category": "singers-musicians",
+      "wikiTitle": "Arijit Singh",
+      "status": "uploaded",
+      "source": "wikipedia",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Arijit_Singh",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b7/Arijit_Singh_performance_at_Chandigarh_2025.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "license": "Wikipedia article lead image; verify the individual image license",
+      "licenseUrl": "",
+      "attribution": "Arijit Singh — Wikipedia",
+      "licenseVerified": false,
+      "tried": [
+        "wikipedia: found"
+      ],
+      "cloudinary": {
+        "url": "https://res.cloudinary.com/plhpyscn/image/upload/v1792505831/famevote/celebrities/arijit-singh.jpg",
+        "publicId": "famevote/celebrities/arijit-singh",
+        "cloudName": "plhpyscn"
+      },
+      "uploadedAt": "2026-10-20T14:17:12.339Z",
+      "checkedAt": "2026-10-20T14:17:12.339Z",
+      "gender": "male"
+    },
+    "shreya-ghoshal": {
+      "name": "Shreya Ghoshal",
+      "category": "singers-musicians",
+      "wikiTitle": "Shreya Ghoshal",
+      "status": "uploaded",
+      "source": "wikipedia",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Shreya_Ghoshal",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a0/Shreya_Ghoshal_Behindwoods_Gold_Icons_Awards_2023_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "license": "Wikipedia article lead image; verify the individual image license",
+      "licenseUrl": "",
+      "attribution": "Shreya Ghoshal — Wikipedia",
+      "licenseVerified": false,
+      "tried": [
+        "wikipedia: found"
+      ],
+      "cloudinary": {
+        "url": "https://res.cloudinary.com/plhpyscn/image/upload/v1792505837/famevote/celebrities/shreya-ghoshal.jpg",
+        "publicId": "famevote/celebrities/shreya-ghoshal",
+        "cloudName": "plhpyscn"
+      },
+      "uploadedAt": "2026-10-20T14:17:18.481Z",
+      "checkedAt": "2026-10-20T14:17:18.481Z",
+      "gender": "female"
+    },
+    "a-r-rahman": {
+      "name": "A. R. Rahman",
+      "category": "singers-musicians",
+      "wikiTitle": "A. R. Rahman",
+      "status": "uploaded",
+      "source": "wikipedia",
+      "sourceUrl": "https://en.wikipedia.org/wiki/A._R._Rahman",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/1/10/AR_Rahman_at_Premier_Futsal_Press_Meet_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "license": "Wikipedia article lead image; verify the individual image license",
+      "licenseUrl": "",
+      "attribution": "A. R. Rahman — Wikipedia",
+      "licenseVerified": false,
+      "tried": [
+        "wikipedia: found"
+      ],
+      "cloudinary": {
+        "url": "https://res.cloudinary.com/plhpyscn/image/upload/v1792505851/famevote/celebrities/a-r-rahman.jpg",
+        "publicId": "famevote/celebrities/a-r-rahman",
+        "cloudName": "plhpyscn"
+      },
+      "uploadedAt": "2026-10-20T14:17:32.616Z",
+      "checkedAt": "2026-10-20T14:17:32.616Z",
+      "gender": "male"
+    },
+    "diljit-dosanjh": {
+      "name": "Diljit Dosanjh",
+      "category": "singers-musicians",
+      "wikiTitle": "Diljit Dosanjh",
+      "status": "uploaded",
+      "source": "wikipedia",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Diljit_Dosanjh",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e2/Diljit_Dosanjh.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "license": "Wikipedia article lead image; verify the individual image license",
+      "licenseUrl": "",
+      "attribution": "Diljit Dosanjh — Wikipedia",
+      "licenseVerified": false,
+      "tried": [
+        "wikipedia: found"
+      ],
+      "cloudinary": {
+        "url": "https://res.cloudinary.com/plhpyscn/image/upload/v1792505856/famevote/celebrities/diljit-dosanjh.jpg",
+        "publicId": "famevote/celebrities/diljit-dosanjh",
+        "cloudName": "plhpyscn"
+      },
+      "uploadedAt": "2026-10-20T14:17:37.702Z",
+      "checkedAt": "2026-10-20T14:17:37.702Z",
+      "gender": "male"
+    },
+    "neha-kakkar": {
+      "name": "Neha Kakkar",
+      "category": "singers-musicians",
+      "wikiTitle": "Neha Kakkar",
+      "status": "uploaded",
+      "source": "wikipedia",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Neha_Kakkar",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6f/Neha_Kakkar_in_January_2020.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "license": "Wikipedia article lead image; verify the individual image license",
+      "licenseUrl": "",
+      "attribution": "Neha Kakkar — Wikipedia",
+      "licenseVerified": false,
+      "tried": [
+        "wikipedia: found"
+      ],
+      "cloudinary": {
+        "url": "https://res.cloudinary.com/plhpyscn/image/upload/v1792505861/famevote/celebrities/neha-kakkar.jpg",
+        "publicId": "famevote/celebrities/neha-kakkar",
+        "cloudName": "plhpyscn"
+      },
+      "uploadedAt": "2026-10-20T14:17:42.447Z",
+      "checkedAt": "2026-10-20T14:17:42.447Z",
+      "gender": "female"
+    },
+    "sonu-nigam": {
+      "name": "Sonu Nigam",
+      "category": "singers-musicians",
+      "wikiTitle": "Sonu Nigam",
+      "status": "uploaded",
+      "source": "wikipedia",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Sonu_Nigam",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/7/76/Sonu_Nigam123.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "license": "Wikipedia article lead image; verify the individual image license",
+      "licenseUrl": "",
+      "attribution": "Sonu Nigam — Wikipedia",
+      "licenseVerified": false,
+      "tried": [
+        "wikipedia: found"
+      ],
+      "cloudinary": {
+        "url": "https://res.cloudinary.com/plhpyscn/image/upload/v1792505864/famevote/celebrities/sonu-nigam.jpg",
+        "publicId": "famevote/celebrities/sonu-nigam",
+        "cloudName": "plhpyscn"
+      },
+      "uploadedAt": "2026-10-20T14:17:45.570Z",
+      "checkedAt": "2026-10-20T14:17:45.570Z",
+      "gender": "male"
+    },
+    "jubin-nautiyal": {
+      "name": "Jubin Nautiyal",
+      "category": "singers-musicians",
+      "wikiTitle": "Jubin Nautiyal",
+      "status": "uploaded",
+      "source": "wikipedia",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Jubin_Nautiyal",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/9/90/Jubin_Nauityal_at_the_Good_Homes_Awards_2015.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "license": "Wikipedia article lead image; verify the individual image license",
+      "licenseUrl": "",
+      "attribution": "Jubin Nautiyal — Wikipedia",
+      "licenseVerified": false,
+      "tried": [
+        "wikipedia: found"
+      ],
+      "cloudinary": {
+        "url": "https://res.cloudinary.com/plhpyscn/image/upload/v1792505872/famevote/celebrities/jubin-nautiyal.jpg",
+        "publicId": "famevote/celebrities/jubin-nautiyal",
+        "cloudName": "plhpyscn"
+      },
+      "uploadedAt": "2026-10-20T14:17:53.775Z",
+      "checkedAt": "2026-10-20T14:17:53.775Z",
+      "gender": "male"
+    },
+    "bhuvan-bam": {
+      "name": "Bhuvan Bam",
+      "category": "influencers-content-creators",
+      "wikiTitle": "Bhuvan Bam",
+      "status": "uploaded",
+      "source": "wikipedia",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Bhuvan_Bam",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/6/64/Bhuvan_Bam_at_Myntra%27s_Creator_Fest_2023_event_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "license": "Wikipedia article lead image; verify the individual image license",
+      "licenseUrl": "",
+      "attribution": "Bhuvan Bam — Wikipedia",
+      "licenseVerified": false,
+      "tried": [
+        "wikipedia: found"
+      ],
+      "cloudinary": {
+        "url": "https://res.cloudinary.com/plhpyscn/image/upload/v1792505876/famevote/celebrities/bhuvan-bam.jpg",
+        "publicId": "famevote/celebrities/bhuvan-bam",
+        "cloudName": "plhpyscn"
+      },
+      "uploadedAt": "2026-10-20T14:17:58.679Z",
+      "checkedAt": "2026-10-20T14:17:58.679Z",
+      "gender": "male"
+    },
+    "carryminati": {
+      "name": "CarryMinati",
+      "category": "influencers-content-creators",
+      "wikiTitle": "CarryMinati",
+      "status": "uploaded",
+      "source": "wikipedia",
+      "sourceUrl": "https://en.wikipedia.org/wiki/CarryMinati",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Ajey_Nagar_2022.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "license": "Wikipedia article lead image; verify the individual image license",
+      "licenseUrl": "",
+      "attribution": "CarryMinati — Wikipedia",
+      "licenseVerified": false,
+      "tried": [
+        "wikipedia: found"
+      ],
+      "cloudinary": {
+        "url": "https://res.cloudinary.com/plhpyscn/image/upload/v1792505882/famevote/celebrities/carryminati.jpg",
+        "publicId": "famevote/celebrities/carryminati",
+        "cloudName": "plhpyscn"
+      },
+      "uploadedAt": "2026-10-20T14:18:03.420Z",
+      "checkedAt": "2026-10-20T14:18:03.420Z",
+      "gender": "male"
+    },
+    "prajakta-koli": {
+      "name": "Prajakta Koli",
+      "category": "influencers-content-creators",
+      "wikiTitle": "Prajakta Koli",
+      "status": "uploaded",
+      "source": "wikipedia",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Prajakta_Koli",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/7/77/Prajakta_koli_in_2023.jpj.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "license": "Wikipedia article lead image; verify the individual image license",
+      "licenseUrl": "",
+      "attribution": "Prajakta Koli — Wikipedia",
+      "licenseVerified": false,
+      "tried": [
+        "wikipedia: found"
+      ],
+      "cloudinary": {
+        "url": "https://res.cloudinary.com/plhpyscn/image/upload/v1792505896/famevote/celebrities/prajakta-koli.jpg",
+        "publicId": "famevote/celebrities/prajakta-koli",
+        "cloudName": "plhpyscn"
+      },
+      "uploadedAt": "2026-10-20T14:18:17.921Z",
+      "checkedAt": "2026-10-20T14:18:17.921Z",
+      "gender": "female"
+    },
+    "ashish-chanchlani": {
+      "name": "Ashish Chanchlani",
+      "category": "influencers-content-creators",
+      "wikiTitle": "Ashish Chanchlani",
+      "status": "uploaded",
+      "source": "wikimedia-commons",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ashish_Chanchlani_at_the_special_screening_of_Men_in_Black_International.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/1/18/Ashish_Chanchlani_at_the_special_screening_of_Men_in_Black_International.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "license": "CC BY 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+      "attribution": "Bollywood Hungama",
+      "licenseVerified": true,
+      "tried": [
+        "wikipedia: no suitable lead image",
+        "wikimedia-commons: found"
+      ],
+      "cloudinary": {
+        "url": "https://res.cloudinary.com/plhpyscn/image/upload/v1792505907/famevote/celebrities/ashish-chanchlani.jpg",
+        "publicId": "famevote/celebrities/ashish-chanchlani",
+        "cloudName": "plhpyscn"
+      },
+      "uploadedAt": "2026-10-20T14:18:28.292Z",
+      "checkedAt": "2026-10-20T14:18:28.292Z",
+      "gender": "male"
+    },
+    "dhruv-rathee": {
+      "name": "Dhruv Rathee",
+      "category": "influencers-content-creators",
+      "wikiTitle": "Dhruv Rathee",
+      "status": "uploaded",
+      "source": "wikipedia",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Dhruv_Rathee",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/1/12/Dhruv_Rathee_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "license": "Wikipedia article lead image; verify the individual image license",
+      "licenseUrl": "",
+      "attribution": "Dhruv Rathee — Wikipedia",
+      "licenseVerified": false,
+      "tried": [
+        "wikipedia: found"
+      ],
+      "cloudinary": {
+        "url": "https://res.cloudinary.com/plhpyscn/image/upload/v1792505912/famevote/celebrities/dhruv-rathee.jpg",
+        "publicId": "famevote/celebrities/dhruv-rathee",
+        "cloudName": "plhpyscn"
+      },
+      "uploadedAt": "2026-10-20T14:18:33.370Z",
+      "checkedAt": "2026-10-20T14:18:33.370Z",
+      "gender": "male"
+    },
+    "technical-guruji": {
+      "name": "Technical Guruji",
+      "category": "influencers-content-creators",
+      "wikiTitle": "Technical Guruji",
+      "status": "uploaded",
+      "source": "wikimedia-commons",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Technical_Guruji_logo.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/0/04/Technical_Guruji_logo.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "attribution": "Technical Guru",
+      "licenseVerified": true,
+      "tried": [
+        "wikipedia: no suitable lead image",
+        "wikimedia-commons: found"
+      ],
+      "cloudinary": {
+        "url": "https://res.cloudinary.com/plhpyscn/image/upload/v1792505917/famevote/celebrities/technical-guruji.jpg",
+        "publicId": "famevote/celebrities/technical-guruji",
+        "cloudName": "plhpyscn"
+      },
+      "uploadedAt": "2026-10-20T14:18:38.535Z",
+      "checkedAt": "2026-10-20T14:18:38.535Z",
+      "gender": "male"
+    },
+    "kusha-kapila": {
+      "name": "Kusha Kapila",
+      "category": "influencers-content-creators",
+      "wikiTitle": "Kusha Kapila",
+      "status": "uploaded",
+      "source": "wikipedia",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Kusha_Kapila",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/e/ef/Kusha_Kapila_snapped_at_the_red_carpet_of_ET_Inspiring_Women_Leaders_Conclave_And_Awards_2025_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "license": "Wikipedia article lead image; verify the individual image license",
+      "licenseUrl": "",
+      "attribution": "Kusha Kapila — Wikipedia",
+      "licenseVerified": false,
+      "tried": [
+        "wikipedia: found"
+      ],
+      "cloudinary": {
+        "url": "https://res.cloudinary.com/plhpyscn/image/upload/v1792505920/famevote/celebrities/kusha-kapila.jpg",
+        "publicId": "famevote/celebrities/kusha-kapila",
+        "cloudName": "plhpyscn"
+      },
+      "uploadedAt": "2026-10-20T14:18:41.733Z",
+      "checkedAt": "2026-10-20T14:18:41.733Z",
+      "gender": "female"
+    },
+    "virat-kohli": {
+      "name": "Virat Kohli",
+      "category": "athletes-sports-personalities",
+      "wikiTitle": "Virat Kohli",
+      "status": "uploaded",
+      "source": "wikipedia",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Virat_Kohli",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/e/ef/Virat_Kohli_during_the_India_vs_Aus_4th_Test_match_at_Narendra_Modi_Stadium_on_09_March_2023.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "license": "Wikipedia article lead image; verify the individual image license",
+      "licenseUrl": "",
+      "attribution": "Virat Kohli — Wikipedia",
+      "licenseVerified": false,
+      "tried": [
+        "wikipedia: found"
+      ],
+      "cloudinary": {
+        "url": "https://res.cloudinary.com/plhpyscn/image/upload/v1792505926/famevote/celebrities/virat-kohli.jpg",
+        "publicId": "famevote/celebrities/virat-kohli",
+        "cloudName": "plhpyscn"
+      },
+      "uploadedAt": "2026-10-20T14:18:48.672Z",
+      "checkedAt": "2026-10-20T14:18:48.672Z",
+      "gender": "male"
+    },
+    "ms-dhoni": {
+      "name": "MS Dhoni",
+      "category": "athletes-sports-personalities",
+      "wikiTitle": "MS Dhoni",
+      "status": "uploaded",
+      "source": "wikipedia",
+      "sourceUrl": "https://en.wikipedia.org/wiki/MS_Dhoni",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d5/MS_Dhoni_%28Prabhav_%2723_-_RiGI_2023%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "license": "Wikipedia article lead image; verify the individual image license",
+      "licenseUrl": "",
+      "attribution": "MS Dhoni — Wikipedia",
+      "licenseVerified": false,
+      "tried": [
+        "wikipedia: found"
+      ],
+      "cloudinary": {
+        "url": "https://res.cloudinary.com/plhpyscn/image/upload/v1792505947/famevote/celebrities/ms-dhoni.jpg",
+        "publicId": "famevote/celebrities/ms-dhoni",
+        "cloudName": "plhpyscn"
+      },
+      "uploadedAt": "2026-10-20T14:19:08.708Z",
+      "checkedAt": "2026-10-20T14:19:08.708Z",
+      "gender": "male"
+    },
+    "neeraj-chopra": {
+      "name": "Neeraj Chopra",
+      "category": "athletes-sports-personalities",
+      "wikiTitle": "Neeraj Chopra",
+      "status": "uploaded",
+      "source": "wikipedia",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Neeraj_Chopra",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/f/fb/Neeraj_Chopra_Olympic_gold_medalist.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "license": "Wikipedia article lead image; verify the individual image license",
+      "licenseUrl": "",
+      "attribution": "Neeraj Chopra — Wikipedia",
+      "licenseVerified": false,
+      "tried": [
+        "wikipedia: found"
+      ],
+      "cloudinary": {
+        "url": "https://res.cloudinary.com/plhpyscn/image/upload/v1792505952/famevote/celebrities/neeraj-chopra.jpg",
+        "publicId": "famevote/celebrities/neeraj-chopra",
+        "cloudName": "plhpyscn"
+      },
+      "uploadedAt": "2026-10-20T14:19:14.311Z",
+      "checkedAt": "2026-10-20T14:19:14.311Z",
+      "gender": "male"
+    },
+    "p-v-sindhu": {
+      "name": "P. V. Sindhu",
+      "category": "athletes-sports-personalities",
+      "wikiTitle": "P. V. Sindhu",
+      "status": "uploaded",
+      "source": "wikipedia",
+      "sourceUrl": "https://en.wikipedia.org/wiki/P._V._Sindhu",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/b/bc/NAC_Jewellers_Honors_Olympic_Silver_Medalist_PV_Sindhu.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "license": "Wikipedia article lead image; verify the individual image license",
+      "licenseUrl": "",
+      "attribution": "P. V. Sindhu — Wikipedia",
+      "licenseVerified": false,
+      "tried": [
+        "wikipedia: found"
+      ],
+      "cloudinary": {
+        "url": "https://res.cloudinary.com/plhpyscn/image/upload/v1792505996/famevote/celebrities/p-v-sindhu.jpg",
+        "publicId": "famevote/celebrities/p-v-sindhu",
+        "cloudName": "plhpyscn"
+      },
+      "uploadedAt": "2026-10-20T14:19:58.900Z",
+      "checkedAt": "2026-10-20T14:19:58.900Z",
+      "gender": "female"
+    },
+    "rohit-sharma": {
+      "name": "Rohit Sharma",
+      "category": "athletes-sports-personalities",
+      "wikiTitle": "Rohit Sharma",
+      "status": "uploaded",
+      "source": "wikipedia",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Rohit_Sharma",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1e/Prime_Minister_Of_Bharat_Shri_Narendra_Damodardas_Modi_with_Shri_Rohit_Gurunath_Sharma_%28Cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "license": "Wikipedia article lead image; verify the individual image license",
+      "licenseUrl": "",
+      "attribution": "Rohit Sharma — Wikipedia",
+      "licenseVerified": false,
+      "tried": [
+        "wikipedia: found"
+      ],
+      "cloudinary": {
+        "url": "https://res.cloudinary.com/plhpyscn/image/upload/v1792506005/famevote/celebrities/rohit-sharma.jpg",
+        "publicId": "famevote/celebrities/rohit-sharma",
+        "cloudName": "plhpyscn"
+      },
+      "uploadedAt": "2026-10-20T14:20:06.563Z",
+      "checkedAt": "2026-10-20T14:20:06.563Z",
+      "gender": "male"
+    },
+    "mary-kom": {
+      "name": "Mary Kom",
+      "category": "athletes-sports-personalities",
+      "wikiTitle": "Mary Kom",
+      "status": "uploaded",
+      "source": "wikipedia",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Mary_Kom",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a9/Mary_Kom_with_Pranab_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "license": "Wikipedia article lead image; verify the individual image license",
+      "licenseUrl": "",
+      "attribution": "Mary Kom — Wikipedia",
+      "licenseVerified": false,
+      "tried": [
+        "wikipedia: found"
+      ],
+      "cloudinary": {
+        "url": "https://res.cloudinary.com/plhpyscn/image/upload/v1792506011/famevote/celebrities/mary-kom.jpg",
+        "publicId": "famevote/celebrities/mary-kom",
+        "cloudName": "plhpyscn"
+      },
+      "uploadedAt": "2026-10-20T14:20:13.007Z",
+      "checkedAt": "2026-10-20T14:20:13.007Z",
+      "gender": "female"
+    },
+    "smriti-mandhana": {
+      "name": "Smriti Mandhana",
+      "category": "athletes-sports-personalities",
+      "wikiTitle": "Smriti Mandhana",
+      "status": "uploaded",
+      "source": "wikipedia",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Smriti_Mandhana",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/d/dd/Smriti_Mandhana.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "license": "Wikipedia article lead image; verify the individual image license",
+      "licenseUrl": "",
+      "attribution": "Smriti Mandhana — Wikipedia",
+      "licenseVerified": false,
+      "tried": [
+        "wikipedia: found"
+      ],
+      "cloudinary": {
+        "url": "https://res.cloudinary.com/plhpyscn/image/upload/v1792506018/famevote/celebrities/smriti-mandhana.jpg",
+        "publicId": "famevote/celebrities/smriti-mandhana",
+        "cloudName": "plhpyscn"
+      },
+      "uploadedAt": "2026-10-20T14:20:20.815Z",
+      "checkedAt": "2026-10-20T14:20:20.815Z",
+      "gender": "female"
+    },
+    "jasprit-bumrah": {
+      "name": "Jasprit Bumrah",
+      "category": "athletes-sports-personalities",
+      "wikiTitle": "Jasprit Bumrah",
+      "status": "uploaded",
+      "source": "wikipedia",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Jasprit_Bumrah",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/0/02/Jasprit_Bumrah_in_PMO_New_Delhi.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "license": "Wikipedia article lead image; verify the individual image license",
+      "licenseUrl": "",
+      "attribution": "Jasprit Bumrah — Wikipedia",
+      "licenseVerified": false,
+      "tried": [
+        "wikipedia: found"
+      ],
+      "cloudinary": {
+        "url": "https://res.cloudinary.com/plhpyscn/image/upload/v1792506028/famevote/celebrities/jasprit-bumrah.jpg",
+        "publicId": "famevote/celebrities/jasprit-bumrah",
+        "cloudName": "plhpyscn"
+      },
+      "uploadedAt": "2026-10-20T14:20:29.449Z",
+      "checkedAt": "2026-10-20T14:20:29.449Z",
+      "gender": "male"
+    },
+    "karan-johar": {
+      "name": "Karan Johar",
+      "category": "tv-personalities",
+      "wikiTitle": "Karan Johar",
+      "status": "uploaded",
+      "source": "wikipedia",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Karan_Johar",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Karan_Johar_at_2025_Cannes_Homebound_Photocall_2_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "license": "Wikipedia article lead image; verify the individual image license",
+      "licenseUrl": "",
+      "attribution": "Karan Johar — Wikipedia",
+      "licenseVerified": false,
+      "tried": [
+        "wikipedia: found"
+      ],
+      "cloudinary": {
+        "url": "https://res.cloudinary.com/plhpyscn/image/upload/v1792506123/famevote/celebrities/karan-johar.jpg",
+        "publicId": "famevote/celebrities/karan-johar",
+        "cloudName": "plhpyscn"
+      },
+      "uploadedAt": "2026-10-20T14:22:04.401Z",
+      "checkedAt": "2026-10-20T14:22:04.401Z",
+      "gender": "male"
+    },
+    "ekta-kapoor": {
+      "name": "Ekta Kapoor",
+      "category": "tv-personalities",
+      "wikiTitle": "Ekta Kapoor",
+      "status": "uploaded",
+      "source": "wikipedia",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Ekta_Kapoor",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f7/Ekta_Kapoor_in_2025.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "license": "Wikipedia article lead image; verify the individual image license",
+      "licenseUrl": "",
+      "attribution": "Ekta Kapoor — Wikipedia",
+      "licenseVerified": false,
+      "tried": [
+        "wikipedia: found"
+      ],
+      "cloudinary": {
+        "url": "https://res.cloudinary.com/plhpyscn/image/upload/v1792506172/famevote/celebrities/ekta-kapoor.jpg",
+        "publicId": "famevote/celebrities/ekta-kapoor",
+        "cloudName": "plhpyscn"
+      },
+      "uploadedAt": "2026-10-20T14:22:54.661Z",
+      "checkedAt": "2026-10-20T14:22:54.661Z",
+      "gender": "female"
+    },
+    "rubina-dilaik": {
+      "name": "Rubina Dilaik",
+      "category": "tv-personalities",
+      "wikiTitle": "Rubina Dilaik",
+      "status": "uploaded",
+      "source": "wikipedia",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Rubina_Dilaik",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6c/Rubina_Dilaik_snapped_at_Filmcity_%288%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "license": "Wikipedia article lead image; verify the individual image license",
+      "licenseUrl": "",
+      "attribution": "Rubina Dilaik — Wikipedia",
+      "licenseVerified": false,
+      "tried": [
+        "wikipedia: found"
+      ],
+      "cloudinary": {
+        "url": "https://res.cloudinary.com/plhpyscn/image/upload/v1792506180/famevote/celebrities/rubina-dilaik.jpg",
+        "publicId": "famevote/celebrities/rubina-dilaik",
+        "cloudName": "plhpyscn"
+      },
+      "uploadedAt": "2026-10-20T14:23:01.832Z",
+      "checkedAt": "2026-10-20T14:23:01.832Z",
+      "gender": "female"
+    },
+    "divyanka-tripathi": {
+      "name": "Divyanka Tripathi",
+      "category": "tv-personalities",
+      "wikiTitle": "Divyanka Tripathi",
+      "status": "uploaded",
+      "source": "wikipedia",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Divyanka_Tripathi",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/9/97/Divyanka_Tripathi_snapped_at_Ankit_Tiwari%E2%80%99s_birthday_celebration.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "license": "Wikipedia article lead image; verify the individual image license",
+      "licenseUrl": "",
+      "attribution": "Divyanka Tripathi — Wikipedia",
+      "licenseVerified": false,
+      "tried": [
+        "wikipedia: found"
+      ],
+      "cloudinary": {
+        "url": "https://res.cloudinary.com/plhpyscn/image/upload/v1792506186/famevote/celebrities/divyanka-tripathi.jpg",
+        "publicId": "famevote/celebrities/divyanka-tripathi",
+        "cloudName": "plhpyscn"
+      },
+      "uploadedAt": "2026-10-20T14:23:07.943Z",
+      "checkedAt": "2026-10-20T14:23:07.943Z",
+      "gender": "female"
+    },
+    "mouni-roy": {
+      "name": "Mouni Roy",
+      "category": "tv-personalities",
+      "wikiTitle": "Mouni Roy",
+      "status": "uploaded",
+      "source": "wikipedia",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Mouni_Roy",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/4/41/Mouni_Roy_snapped_at_the_opening_party_and_red_carpet_of_Tiffany_%26_Co_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "license": "Wikipedia article lead image; verify the individual image license",
+      "licenseUrl": "",
+      "attribution": "Mouni Roy — Wikipedia",
+      "licenseVerified": false,
+      "tried": [
+        "wikipedia: found"
+      ],
+      "cloudinary": {
+        "url": "https://res.cloudinary.com/plhpyscn/image/upload/v1792506190/famevote/celebrities/mouni-roy.jpg",
+        "publicId": "famevote/celebrities/mouni-roy",
+        "cloudName": "plhpyscn"
+      },
+      "uploadedAt": "2026-10-20T14:23:11.667Z",
+      "checkedAt": "2026-10-20T14:23:11.667Z",
+      "gender": "female"
+    },
+    "hina-khan": {
+      "name": "Hina Khan",
+      "category": "tv-personalities",
+      "wikiTitle": "Hina Khan",
+      "status": "uploaded",
+      "source": "wikipedia",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Hina_Khan",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/7/73/Hina_Khan_walk_the_ramp_at_Lakme_Fashion_Week_2023_%28cropped%29_2.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "license": "Wikipedia article lead image; verify the individual image license",
+      "licenseUrl": "",
+      "attribution": "Hina Khan — Wikipedia",
+      "licenseVerified": false,
+      "tried": [
+        "wikipedia: found"
+      ],
+      "cloudinary": {
+        "url": "https://res.cloudinary.com/plhpyscn/image/upload/v1792506193/famevote/celebrities/hina-khan.jpg",
+        "publicId": "famevote/celebrities/hina-khan",
+        "cloudName": "plhpyscn"
+      },
+      "uploadedAt": "2026-10-20T14:23:14.652Z",
+      "checkedAt": "2026-10-20T14:23:14.652Z",
+      "gender": "female"
+    },
+    "kapil-sharma": {
+      "name": "Kapil Sharma",
+      "category": "comedians",
+      "wikiTitle": "Kapil Sharma",
+      "status": "uploaded",
+      "source": "wikipedia",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Kapil_Sharma",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/3/33/The-great-Indian-Kapil-show-press-conference-10.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "license": "Wikipedia article lead image; verify the individual image license",
+      "licenseUrl": "",
+      "attribution": "Kapil Sharma — Wikipedia",
+      "licenseVerified": false,
+      "tried": [
+        "wikipedia: found"
+      ],
+      "cloudinary": {
+        "url": "https://res.cloudinary.com/plhpyscn/image/upload/v1792506198/famevote/celebrities/kapil-sharma.jpg",
+        "publicId": "famevote/celebrities/kapil-sharma",
+        "cloudName": "plhpyscn"
+      },
+      "uploadedAt": "2026-10-20T14:23:19.752Z",
+      "checkedAt": "2026-10-20T14:23:19.752Z",
+      "gender": "male"
+    },
+    "zakir-khan": {
+      "name": "Zakir Khan",
+      "category": "comedians",
+      "wikiTitle": "Zakir Khan (comedian)",
+      "status": "uploaded",
+      "source": "wikipedia",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Zakir_Khan_(comedian)",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e4/Zakir_khan_2.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "license": "Wikipedia article lead image; verify the individual image license",
+      "licenseUrl": "",
+      "attribution": "Zakir Khan (comedian) — Wikipedia",
+      "licenseVerified": false,
+      "tried": [
+        "wikipedia: found"
+      ],
+      "cloudinary": {
+        "url": "https://res.cloudinary.com/plhpyscn/image/upload/v1792506231/famevote/celebrities/zakir-khan.jpg",
+        "publicId": "famevote/celebrities/zakir-khan",
+        "cloudName": "plhpyscn"
+      },
+      "uploadedAt": "2026-10-20T14:23:53.337Z",
+      "checkedAt": "2026-10-20T14:23:53.337Z",
+      "gender": "male"
+    },
+    "biswa-kalyan-rath": {
+      "name": "Biswa Kalyan Rath",
+      "category": "comedians",
+      "wikiTitle": "Biswa Kalyan Rath",
+      "status": "uploaded",
+      "source": "wikipedia",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Biswa_Kalyan_Rath",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3c/Biswa_Kalyan_Rath_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "license": "Wikipedia article lead image; verify the individual image license",
+      "licenseUrl": "",
+      "attribution": "Biswa Kalyan Rath — Wikipedia",
+      "licenseVerified": false,
+      "tried": [
+        "wikipedia: found"
+      ],
+      "cloudinary": {
+        "url": "https://res.cloudinary.com/plhpyscn/image/upload/v1792506244/famevote/celebrities/biswa-kalyan-rath.jpg",
+        "publicId": "famevote/celebrities/biswa-kalyan-rath",
+        "cloudName": "plhpyscn"
+      },
+      "uploadedAt": "2026-10-20T14:24:06.192Z",
+      "checkedAt": "2026-10-20T14:24:06.192Z",
+      "gender": "male"
+    },
+    "vir-das": {
+      "name": "Vir Das",
+      "category": "comedians",
+      "wikiTitle": "Vir Das",
+      "status": "uploaded",
+      "source": "wikipedia",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Vir_Das",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/9/9d/Vir_Das_at_the_2024_Edinburgh_Festival_Fringe_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "license": "Wikipedia article lead image; verify the individual image license",
+      "licenseUrl": "",
+      "attribution": "Vir Das — Wikipedia",
+      "licenseVerified": false,
+      "tried": [
+        "wikipedia: found"
+      ],
+      "cloudinary": {
+        "url": "https://res.cloudinary.com/plhpyscn/image/upload/v1792506276/famevote/celebrities/vir-das.jpg",
+        "publicId": "famevote/celebrities/vir-das",
+        "cloudName": "plhpyscn"
+      },
+      "uploadedAt": "2026-10-20T14:24:38.422Z",
+      "checkedAt": "2026-10-20T14:24:38.422Z",
+      "gender": "male"
+    },
+    "anubhav-singh-bassi": {
+      "name": "Anubhav Singh Bassi",
+      "category": "comedians",
+      "wikiTitle": "Anubhav Singh Bassi",
+      "status": "uploaded",
+      "source": "wikipedia",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Anubhav_Singh_Bassi",
+      "originalUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/19/Anubhav_Singh_Bassi_in_Surat_for_Bas_Kar_Bassi_%28cropped%29.jpg/960px-Anubhav_Singh_Bassi_in_Surat_for_Bas_Kar_Bassi_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "license": "Wikipedia article lead image; verify the individual image license",
+      "licenseUrl": "",
+      "attribution": "Anubhav Singh Bassi — Wikipedia",
+      "licenseVerified": false,
+      "tried": [
+        "wikipedia: found"
+      ],
+      "cloudinary": {
+        "url": "https://res.cloudinary.com/plhpyscn/image/upload/v1792506285/famevote/celebrities/anubhav-singh-bassi.jpg",
+        "publicId": "famevote/celebrities/anubhav-singh-bassi",
+        "cloudName": "plhpyscn"
+      },
+      "uploadedAt": "2026-10-20T14:24:46.334Z",
+      "checkedAt": "2026-10-20T14:24:46.334Z",
+      "gender": "male"
+    },
+    "abhishek-upmanyu": {
+      "name": "Abhishek Upmanyu",
+      "category": "comedians",
+      "wikiTitle": "Abhishek Upmanyu",
+      "status": "placeholder",
+      "tried": [
+        "wikipedia: no suitable lead image",
+        "wikimedia-commons: no suitable reusable match"
+      ],
+      "checkedAt": "2026-10-27T10:25:35.074Z",
+      "gender": "male"
+    },
+    "aishwarya-rai-bachchan": {
+      "name": "Aishwarya Rai Bachchan",
+      "category": "models",
+      "wikiTitle": "Aishwarya Rai",
+      "status": "uploaded",
+      "source": "wikipedia",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Aishwarya_Rai",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Aishwarya_Rai_Cannes_2017.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "license": "Wikipedia article lead image; verify the individual image license",
+      "licenseUrl": "",
+      "attribution": "Aishwarya Rai — Wikipedia",
+      "licenseVerified": false,
+      "tried": [
+        "wikipedia: found"
+      ],
+      "cloudinary": {
+        "url": "https://res.cloudinary.com/plhpyscn/image/upload/v1792506290/famevote/celebrities/aishwarya-rai-bachchan.jpg",
+        "publicId": "famevote/celebrities/aishwarya-rai-bachchan",
+        "cloudName": "plhpyscn"
+      },
+      "uploadedAt": "2026-10-20T14:24:51.043Z",
+      "checkedAt": "2026-10-20T14:24:51.043Z",
+      "gender": "female"
+    },
+    "sushmita-sen": {
+      "name": "Sushmita Sen",
+      "category": "models",
+      "wikiTitle": "Sushmita Sen",
+      "status": "uploaded",
+      "source": "wikipedia",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Sushmita_Sen",
+      "originalUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3b/Sushmita_Sen_at_Miss_Universe_India_2026.jpg/960px-Sushmita_Sen_at_Miss_Universe_India_2026.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "license": "Wikipedia article lead image; verify the individual image license",
+      "licenseUrl": "",
+      "attribution": "Sushmita Sen — Wikipedia",
+      "licenseVerified": false,
+      "tried": [
+        "wikipedia: found"
+      ],
+      "cloudinary": {
+        "url": "https://res.cloudinary.com/plhpyscn/image/upload/v1792506295/famevote/celebrities/sushmita-sen.jpg",
+        "publicId": "famevote/celebrities/sushmita-sen",
+        "cloudName": "plhpyscn"
+      },
+      "uploadedAt": "2026-10-20T14:24:56.841Z",
+      "checkedAt": "2026-10-20T14:24:56.841Z",
+      "gender": "female"
+    },
+    "harnaaz-sandhu": {
+      "name": "Harnaaz Sandhu",
+      "category": "models",
+      "wikiTitle": "Harnaaz Sandhu",
+      "status": "uploaded",
+      "source": "wikipedia",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Harnaaz_Sandhu",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/a/ab/Harnaaz_Sandhu_snapped_promoting_Baaghi_4_on_the_sets_of_Bigg_Boss_19_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "license": "Wikipedia article lead image; verify the individual image license",
+      "licenseUrl": "",
+      "attribution": "Harnaaz Sandhu — Wikipedia",
+      "licenseVerified": false,
+      "tried": [
+        "wikipedia: found"
+      ],
+      "cloudinary": {
+        "url": "https://res.cloudinary.com/plhpyscn/image/upload/v1792506299/famevote/celebrities/harnaaz-sandhu.jpg",
+        "publicId": "famevote/celebrities/harnaaz-sandhu",
+        "cloudName": "plhpyscn"
+      },
+      "uploadedAt": "2026-10-20T14:25:00.540Z",
+      "checkedAt": "2026-10-20T14:25:00.540Z",
+      "gender": "female"
+    },
+    "manushi-chhillar": {
+      "name": "Manushi Chhillar",
+      "category": "models",
+      "wikiTitle": "Manushi Chhillar",
+      "status": "uploaded",
+      "source": "wikipedia",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Manushi_Chhillar",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d9/Manushi_Chhillar_and_others_grace_Bvlgari_event_in_Mumbai_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "license": "Wikipedia article lead image; verify the individual image license",
+      "licenseUrl": "",
+      "attribution": "Manushi Chhillar — Wikipedia",
+      "licenseVerified": false,
+      "tried": [
+        "wikipedia: found"
+      ],
+      "cloudinary": {
+        "url": "https://res.cloudinary.com/plhpyscn/image/upload/v1792506307/famevote/celebrities/manushi-chhillar.jpg",
+        "publicId": "famevote/celebrities/manushi-chhillar",
+        "cloudName": "plhpyscn"
+      },
+      "uploadedAt": "2026-10-20T14:25:08.817Z",
+      "checkedAt": "2026-10-20T14:25:08.817Z",
+      "gender": "female"
+    },
+    "lara-dutta": {
+      "name": "Lara Dutta",
+      "category": "models",
+      "wikiTitle": "Lara Dutta",
+      "status": "uploaded",
+      "source": "wikipedia",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Lara_Dutta",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/2/24/Lara_Dutta_snapped_promoting_Ranneeti_%282%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "license": "Wikipedia article lead image; verify the individual image license",
+      "licenseUrl": "",
+      "attribution": "Lara Dutta — Wikipedia",
+      "licenseVerified": false,
+      "tried": [
+        "wikipedia: found"
+      ],
+      "cloudinary": {
+        "url": "https://res.cloudinary.com/plhpyscn/image/upload/v1792506320/famevote/celebrities/lara-dutta.jpg",
+        "publicId": "famevote/celebrities/lara-dutta",
+        "cloudName": "plhpyscn"
+      },
+      "uploadedAt": "2026-10-20T14:25:22.242Z",
+      "checkedAt": "2026-10-20T14:25:22.242Z",
+      "gender": "female"
+    },
+    "milind-soman": {
+      "name": "Milind Soman",
+      "category": "models",
+      "wikiTitle": "Milind Soman",
+      "status": "uploaded",
+      "source": "wikipedia",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Milind_Soman",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/f/fc/Milind_Soman_at_the_NDTV_Marks_for_Sports_event_12.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "license": "Wikipedia article lead image; verify the individual image license",
+      "licenseUrl": "",
+      "attribution": "Milind Soman — Wikipedia",
+      "licenseVerified": false,
+      "tried": [
+        "wikipedia: found"
+      ],
+      "cloudinary": {
+        "url": "https://res.cloudinary.com/plhpyscn/image/upload/v1792506335/famevote/celebrities/milind-soman.jpg",
+        "publicId": "famevote/celebrities/milind-soman",
+        "cloudName": "plhpyscn"
+      },
+      "uploadedAt": "2026-10-20T14:25:36.361Z",
+      "checkedAt": "2026-10-20T14:25:36.361Z",
+      "gender": "male"
+    },
+    "sudha-murty": {
+      "name": "Sudha Murty",
+      "category": "other",
+      "wikiTitle": "Sudha Murty",
+      "status": "uploaded",
+      "source": "wikipedia",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Sudha_Murty",
+      "originalUrl": "",
+      "license": "Wikipedia article lead image; verify the individual image license",
+      "licenseUrl": "",
+      "attribution": "Sudha Murty — Wikipedia",
+      "licenseVerified": false,
+      "tried": [
+        "wikipedia: found",
+        "cloudinary: uploaded"
+      ],
+      "cloudinary": {
+        "url": "https://res.cloudinary.com/plhpyscn/image/upload/famevote/celebrities/sudha-murty.jpg",
+        "publicId": "famevote/celebrities/sudha-murty",
+        "cloudName": "plhpyscn"
+      },
+      "uploadedAt": "2026-10-20T14:48:00.000Z",
+      "checkedAt": "2026-10-20T14:48:00.000Z",
+      "gender": "female"
+    },
+    "sadhguru": {
+      "name": "Sadhguru",
+      "category": "other",
+      "wikiTitle": "Sadhguru",
+      "status": "uploaded",
+      "source": "wikipedia",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Sadhguru",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/2/21/Sadhguru-Jaggi-Vasudev.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "license": "Wikipedia article lead image; verify the individual image license",
+      "licenseUrl": "",
+      "attribution": "Sadhguru — Wikipedia",
+      "licenseVerified": false,
+      "tried": [
+        "wikipedia: found"
+      ],
+      "cloudinary": {
+        "url": "https://res.cloudinary.com/plhpyscn/image/upload/v1792506564/famevote/celebrities/sadhguru.jpg",
+        "publicId": "famevote/celebrities/sadhguru",
+        "cloudName": "plhpyscn"
+      },
+      "uploadedAt": "2026-10-20T14:29:25.722Z",
+      "checkedAt": "2026-10-20T14:29:25.722Z",
+      "gender": "male"
+    },
+    "sonam-wangchuk": {
+      "name": "Sonam Wangchuk",
+      "category": "other",
+      "wikiTitle": "Sonam Wangchuk",
+      "status": "uploaded",
+      "source": "wikipedia",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Sonam_Wangchuk",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f2/Sonam_Wangchuk%2C_2017_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "license": "Wikipedia article lead image; verify the individual image license",
+      "licenseUrl": "",
+      "attribution": "Sonam Wangchuk — Wikipedia",
+      "licenseVerified": false,
+      "tried": [
+        "wikipedia: found"
+      ],
+      "cloudinary": {
+        "url": "https://res.cloudinary.com/plhpyscn/image/upload/v1792506578/famevote/celebrities/sonam-wangchuk.jpg",
+        "publicId": "famevote/celebrities/sonam-wangchuk",
+        "cloudName": "plhpyscn"
+      },
+      "uploadedAt": "2026-10-20T14:29:39.946Z",
+      "checkedAt": "2026-10-20T14:29:39.946Z",
+      "gender": "male"
+    },
+    "sundar-pichai": {
+      "name": "Sundar Pichai",
+      "category": "other",
+      "wikiTitle": "Sundar Pichai",
+      "status": "uploaded",
+      "source": "wikipedia",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Sundar_Pichai",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Sundar_Pichai_-_2023_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "license": "Wikipedia article lead image; verify the individual image license",
+      "licenseUrl": "",
+      "attribution": "Sundar Pichai — Wikipedia",
+      "licenseVerified": false,
+      "tried": [
+        "wikipedia: found"
+      ],
+      "cloudinary": {
+        "url": "https://res.cloudinary.com/plhpyscn/image/upload/v1792506592/famevote/celebrities/sundar-pichai.jpg",
+        "publicId": "famevote/celebrities/sundar-pichai",
+        "cloudName": "plhpyscn"
+      },
+      "uploadedAt": "2026-10-20T14:29:55.328Z",
+      "checkedAt": "2026-10-20T14:29:55.328Z",
+      "gender": "male"
+    },
+    "anand-mahindra": {
+      "name": "Anand Mahindra",
+      "category": "other",
+      "wikiTitle": "Anand Mahindra",
+      "status": "uploaded",
+      "source": "wikipedia",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Anand_Mahindra",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Anand_Mahindra_%281%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "license": "Wikipedia article lead image; verify the individual image license",
+      "licenseUrl": "",
+      "attribution": "Anand Mahindra — Wikipedia",
+      "licenseVerified": false,
+      "tried": [
+        "wikipedia: found"
+      ],
+      "cloudinary": {
+        "url": "https://res.cloudinary.com/plhpyscn/image/upload/v1792506632/famevote/celebrities/anand-mahindra.jpg",
+        "publicId": "famevote/celebrities/anand-mahindra",
+        "cloudName": "plhpyscn"
+      },
+      "uploadedAt": "2026-10-20T14:30:33.984Z",
+      "checkedAt": "2026-10-20T14:30:33.984Z",
+      "gender": "male"
+    },
+    "ranveer-brar": {
+      "name": "Ranveer Brar",
+      "category": "other",
+      "wikiTitle": "Ranveer Brar",
+      "status": "uploaded",
+      "source": "wikipedia",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Ranveer_Brar",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/5/56/RanveerBrar.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "license": "Wikipedia article lead image; verify the individual image license",
+      "licenseUrl": "",
+      "attribution": "Ranveer Brar — Wikipedia",
+      "licenseVerified": false,
+      "tried": [
+        "wikipedia: found"
+      ],
+      "cloudinary": {
+        "url": "https://res.cloudinary.com/plhpyscn/image/upload/v1792506639/famevote/celebrities/ranveer-brar.jpg",
+        "publicId": "famevote/celebrities/ranveer-brar",
+        "cloudName": "plhpyscn"
+      },
+      "uploadedAt": "2026-10-20T14:30:40.171Z",
+      "checkedAt": "2026-10-20T14:30:40.171Z",
+      "gender": "male"
+    },
+    "priyanka-chopra-jonas": {
+      "name": "Priyanka Chopra Jonas",
+      "category": "actors",
+      "gender": "female",
+      "wikiTitle": "Priyanka Chopra",
+      "status": "uploaded",
+      "source": "wikipedia",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Priyanka_Chopra",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/4/45/Priyanka_Chopra_at_Bulgary_launch%2C_2024_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "license": "Wikipedia article lead image; verify the individual image license",
+      "licenseUrl": "",
+      "attribution": "Priyanka Chopra — Wikipedia",
+      "licenseVerified": false,
+      "tried": [
+        "wikipedia: found"
+      ],
+      "cloudinary": {
+        "url": "https://res.cloudinary.com/plhpyscn/image/upload/v1792763360/famevote/celebrities/priyanka-chopra-jonas.jpg",
+        "publicId": "famevote/celebrities/priyanka-chopra-jonas",
+        "cloudName": "plhpyscn"
+      },
+      "uploadedAt": "2026-10-25T19:23:58.357Z",
+      "checkedAt": "2026-10-25T19:23:58.357Z"
+    },
+    "samantha-ruth-prabhu": {
+      "name": "Samantha Ruth Prabhu",
+      "category": "actors",
+      "gender": "female",
+      "wikiTitle": "Samantha Ruth Prabhu",
+      "status": "uploaded",
+      "error": "Request Timeout",
+      "checkedAt": "2026-10-27T10:23:25.341Z",
+      "source": "wikipedia",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Samantha_Ruth_Prabhu",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/9/9a/Samantha_at_Kushi_Musical_concert_%282%29_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "license": "Wikipedia article lead image; verify the individual image license",
+      "licenseUrl": "",
+      "attribution": "Samantha Ruth Prabhu — Wikipedia",
+      "licenseVerified": false,
+      "tried": [
+        "wikipedia: found"
+      ],
+      "cloudinary": {
+        "url": "https://res.cloudinary.com/plhpyscn/image/upload/v1792763441/famevote/celebrities/samantha-ruth-prabhu.jpg",
+        "publicId": "famevote/celebrities/samantha-ruth-prabhu",
+        "cloudName": "plhpyscn"
+      },
+      "uploadedAt": "2026-10-27T10:23:25.341Z"
+    },
+    "living-smile-vidya": {
+      "name": "Living Smile Vidya",
+      "category": "actors",
+      "gender": "other",
+      "wikiTitle": "Living Smile Vidya",
+      "status": "uploaded",
+      "error": "Request Timeout",
+      "checkedAt": "2026-10-27T10:23:52.563Z",
+      "source": "wikipedia",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Living_Smile_Vidya",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/2/24/Living_smile_Vidya_Profile.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "license": "Wikipedia article lead image; verify the individual image license",
+      "licenseUrl": "",
+      "attribution": "Living Smile Vidya — Wikipedia",
+      "licenseVerified": false,
+      "tried": [
+        "wikipedia: found"
+      ],
+      "cloudinary": {
+        "url": "https://res.cloudinary.com/plhpyscn/image/upload/v1792763465/famevote/celebrities/living-smile-vidya.jpg",
+        "publicId": "famevote/celebrities/living-smile-vidya",
+        "cloudName": "plhpyscn"
+      },
+      "uploadedAt": "2026-10-27T10:23:52.563Z"
+    },
+    "kalki-subramaniam": {
+      "name": "Kalki Subramaniam",
+      "category": "actors",
+      "gender": "other",
+      "wikiTitle": "Kalki Subramaniam",
+      "status": "uploaded",
+      "source": "wikipedia",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Kalki_Subramaniam",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f5/Kalki_Subramaniam_2025.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "license": "Wikipedia article lead image; verify the individual image license",
+      "licenseUrl": "",
+      "attribution": "Kalki Subramaniam — Wikipedia",
+      "licenseVerified": false,
+      "tried": [
+        "wikipedia: found"
+      ],
+      "cloudinary": {
+        "url": "https://res.cloudinary.com/plhpyscn/image/upload/v1792763496/famevote/celebrities/kalki-subramaniam.jpg",
+        "publicId": "famevote/celebrities/kalki-subramaniam",
+        "cloudName": "plhpyscn"
+      },
+      "uploadedAt": "2026-10-27T10:24:11.214Z",
+      "checkedAt": "2026-10-27T10:24:11.214Z"
+    },
+    "alka-yagnik": {
+      "name": "Alka Yagnik",
+      "category": "singers-musicians",
+      "gender": "female",
+      "wikiTitle": "Alka Yagnik",
+      "status": "uploaded",
+      "source": "wikipedia",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Alka_Yagnik",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/9/99/Alka_Yagnik_in_2023_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "license": "Wikipedia article lead image; verify the individual image license",
+      "licenseUrl": "",
+      "attribution": "Alka Yagnik — Wikipedia",
+      "licenseVerified": false,
+      "tried": [
+        "wikipedia: found"
+      ],
+      "cloudinary": {
+        "url": "https://res.cloudinary.com/plhpyscn/image/upload/v1792763501/famevote/celebrities/alka-yagnik.jpg",
+        "publicId": "famevote/celebrities/alka-yagnik",
+        "cloudName": "plhpyscn"
+      },
+      "uploadedAt": "2026-10-27T10:24:24.471Z",
+      "checkedAt": "2026-10-27T10:24:24.471Z"
+    },
+    "6-pack-band": {
+      "name": "6 Pack Band",
+      "category": "singers-musicians",
+      "gender": "other",
+      "wikiTitle": "6 Pack Band",
+      "status": "placeholder",
+      "tried": [
+        "wikipedia: no suitable lead image",
+        "wikimedia-commons: no suitable reusable match"
+      ],
+      "checkedAt": "2026-10-27T10:24:27.019Z"
+    },
+    "sunidhi-chauhan": {
+      "name": "Sunidhi Chauhan",
+      "category": "singers-musicians",
+      "gender": "female",
+      "wikiTitle": "Sunidhi Chauhan",
+      "status": "uploaded",
+      "source": "wikipedia",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Sunidhi_Chauhan",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/c/cb/Sunidhi_Chauhan_performing_in_Delhi.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "license": "Wikipedia article lead image; verify the individual image license",
+      "licenseUrl": "",
+      "attribution": "Sunidhi Chauhan — Wikipedia",
+      "licenseVerified": false,
+      "tried": [
+        "wikipedia: found"
+      ],
+      "cloudinary": {
+        "url": "https://res.cloudinary.com/plhpyscn/image/upload/v1792763509/famevote/celebrities/sunidhi-chauhan.jpg",
+        "publicId": "famevote/celebrities/sunidhi-chauhan",
+        "cloudName": "plhpyscn"
+      },
+      "uploadedAt": "2026-10-27T10:24:35.831Z",
+      "checkedAt": "2026-10-27T10:24:35.831Z"
+    },
+    "komal-pandey": {
+      "name": "Komal Pandey",
+      "category": "influencers-content-creators",
+      "gender": "female",
+      "wikiTitle": "Komal Pandey",
+      "status": "placeholder",
+      "tried": [
+        "wikipedia: no suitable lead image",
+        "wikimedia-commons: no suitable reusable match"
+      ],
+      "checkedAt": "2026-10-27T10:24:38.916Z"
+    },
+    "dolly-singh": {
+      "name": "Dolly Singh",
+      "category": "influencers-content-creators",
+      "gender": "female",
+      "wikiTitle": "Dolly Singh",
+      "status": "uploaded",
+      "source": "wikimedia-commons",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Dolly_Singh.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Dolly_Singh.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "attribution": "Meformyself",
+      "licenseVerified": true,
+      "tried": [
+        "wikipedia: no suitable lead image",
+        "wikimedia-commons: found"
+      ],
+      "cloudinary": {
+        "url": "https://res.cloudinary.com/plhpyscn/image/upload/v1792763518/famevote/celebrities/dolly-singh.jpg",
+        "publicId": "famevote/celebrities/dolly-singh",
+        "cloudName": "plhpyscn"
+      },
+      "uploadedAt": "2026-10-27T10:24:47.158Z",
+      "checkedAt": "2026-10-27T10:24:47.158Z"
+    },
+    "mirabai-chanu": {
+      "name": "Mirabai Chanu",
+      "category": "athletes-sports-personalities",
+      "gender": "female",
+      "wikiTitle": "Mirabai Chanu",
+      "status": "uploaded",
+      "source": "wikipedia",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Mirabai_Chanu",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b9/Saikhom_Mirabai_Chanu.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "license": "Wikipedia article lead image; verify the individual image license",
+      "licenseUrl": "",
+      "attribution": "Mirabai Chanu — Wikipedia",
+      "licenseVerified": false,
+      "tried": [
+        "wikipedia: found"
+      ],
+      "cloudinary": {
+        "url": "https://res.cloudinary.com/plhpyscn/image/upload/v1792763528/famevote/celebrities/mirabai-chanu.jpg",
+        "publicId": "famevote/celebrities/mirabai-chanu",
+        "cloudName": "plhpyscn"
+      },
+      "uploadedAt": "2026-10-27T10:24:57.266Z",
+      "checkedAt": "2026-10-27T10:24:57.266Z"
+    },
+    "saina-nehwal": {
+      "name": "Saina Nehwal",
+      "category": "athletes-sports-personalities",
+      "gender": "female",
+      "wikiTitle": "Saina Nehwal",
+      "status": "uploaded",
+      "source": "wikipedia",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Saina_Nehwal",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d8/Ms._Saina_Nehwal%2C_Badminton_player_shares_her_inspirational_journey_with_the_audience_under_the_series_-_Her_Story_-_My_Story_at_Rashtrapati_Bhavan%2C_in_New_Delhi_on_July_11%2C_2024_%282%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "license": "Wikipedia article lead image; verify the individual image license",
+      "licenseUrl": "",
+      "attribution": "Saina Nehwal — Wikipedia",
+      "licenseVerified": false,
+      "tried": [
+        "wikipedia: found"
+      ],
+      "cloudinary": {
+        "url": "https://res.cloudinary.com/plhpyscn/image/upload/v1792763535/famevote/celebrities/saina-nehwal.jpg",
+        "publicId": "famevote/celebrities/saina-nehwal",
+        "cloudName": "plhpyscn"
+      },
+      "uploadedAt": "2026-10-27T10:25:07.533Z",
+      "checkedAt": "2026-10-27T10:25:07.533Z"
+    },
+    "harmanpreet-kaur": {
+      "name": "Harmanpreet Kaur",
+      "category": "athletes-sports-personalities",
+      "gender": "female",
+      "wikiTitle": "Harmanpreet Kaur",
+      "status": "uploaded",
+      "source": "wikipedia",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Harmanpreet_Kaur",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/3/38/Harmanpreet_Kaur_with_2025_Women%27s_Cricket_World_Cup_trophy.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "license": "Wikipedia article lead image; verify the individual image license",
+      "licenseUrl": "",
+      "attribution": "Harmanpreet Kaur — Wikipedia",
+      "licenseVerified": false,
+      "tried": [
+        "wikipedia: found"
+      ],
+      "cloudinary": {
+        "url": "https://res.cloudinary.com/plhpyscn/image/upload/v1792763540/famevote/celebrities/harmanpreet-kaur.jpg",
+        "publicId": "famevote/celebrities/harmanpreet-kaur",
+        "cloudName": "plhpyscn"
+      },
+      "uploadedAt": "2026-10-27T10:25:13.878Z",
+      "checkedAt": "2026-10-27T10:25:13.878Z"
+    },
+    "maniesh-paul": {
+      "name": "Maniesh Paul",
+      "category": "tv-personalities",
+      "gender": "male",
+      "wikiTitle": "Maniesh Paul",
+      "status": "uploaded",
+      "source": "wikipedia",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Maniesh_Paul",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b5/Manish_Paul_at_ITA_2012.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "license": "Wikipedia article lead image; verify the individual image license",
+      "licenseUrl": "",
+      "attribution": "Maniesh Paul — Wikipedia",
+      "licenseVerified": false,
+      "tried": [
+        "wikipedia: found"
+      ],
+      "cloudinary": {
+        "url": "https://res.cloudinary.com/plhpyscn/image/upload/v1792763544/famevote/celebrities/maniesh-paul.jpg",
+        "publicId": "famevote/celebrities/maniesh-paul",
+        "cloudName": "plhpyscn"
+      },
+      "uploadedAt": "2026-10-27T10:25:19.249Z",
+      "checkedAt": "2026-10-27T10:25:19.249Z"
+    },
+    "ravi-dubey": {
+      "name": "Ravi Dubey",
+      "category": "tv-personalities",
+      "gender": "male",
+      "wikiTitle": "Ravi Dubey",
+      "status": "uploaded",
+      "source": "wikipedia",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Ravi_Dubey",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a1/Ravi_Dubey_at_the_screening_of_film_Article_15_in_2019_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "license": "Wikipedia article lead image; verify the individual image license",
+      "licenseUrl": "",
+      "attribution": "Ravi Dubey — Wikipedia",
+      "licenseVerified": false,
+      "tried": [
+        "wikipedia: found"
+      ],
+      "cloudinary": {
+        "url": "https://res.cloudinary.com/plhpyscn/image/upload/v1792763547/famevote/celebrities/ravi-dubey.jpg",
+        "publicId": "famevote/celebrities/ravi-dubey",
+        "cloudName": "plhpyscn"
+      },
+      "uploadedAt": "2026-10-27T10:25:23.152Z",
+      "checkedAt": "2026-10-27T10:25:23.152Z"
+    },
+    "rose-venkatesan": {
+      "name": "Rose Venkatesan",
+      "category": "tv-personalities",
+      "gender": "other",
+      "wikiTitle": "Rose Venkatesan",
+      "status": "uploaded",
+      "source": "wikipedia",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Rose_Venkatesan",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/6/67/Rose_V_on_pinksixtynews.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "license": "Wikipedia article lead image; verify the individual image license",
+      "licenseUrl": "",
+      "attribution": "Rose Venkatesan — Wikipedia",
+      "licenseVerified": false,
+      "tried": [
+        "wikipedia: found"
+      ],
+      "cloudinary": {
+        "url": "https://res.cloudinary.com/plhpyscn/image/upload/v1792763554/famevote/celebrities/rose-venkatesan.jpg",
+        "publicId": "famevote/celebrities/rose-venkatesan",
+        "cloudName": "plhpyscn"
+      },
+      "uploadedAt": "2026-10-27T10:25:31.532Z",
+      "checkedAt": "2026-10-27T10:25:31.532Z"
+    },
+    "padmini-prakash": {
+      "name": "Padmini Prakash",
+      "category": "tv-personalities",
+      "gender": "other",
+      "wikiTitle": "Padmini Prakash",
+      "status": "placeholder",
+      "tried": [
+        "wikipedia: no suitable lead image",
+        "wikimedia-commons: no suitable reusable match"
+      ],
+      "checkedAt": "2026-10-27T10:25:33.716Z"
+    },
+    "sumukhi-suresh": {
+      "name": "Sumukhi Suresh",
+      "category": "comedians",
+      "gender": "female",
+      "wikiTitle": "Sumukhi Suresh",
+      "status": "uploaded",
+      "source": "wikipedia",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Sumukhi_Suresh",
+      "originalUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/Sumukhi-4_%281%29_%281%29.jpg/960px-Sumukhi-4_%281%29_%281%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "license": "Wikipedia article lead image; verify the individual image license",
+      "licenseUrl": "",
+      "attribution": "Sumukhi Suresh — Wikipedia",
+      "licenseVerified": false,
+      "tried": [
+        "wikipedia: found"
+      ],
+      "cloudinary": {
+        "url": "https://res.cloudinary.com/plhpyscn/image/upload/v1792763565/famevote/celebrities/sumukhi-suresh.jpg",
+        "publicId": "famevote/celebrities/sumukhi-suresh",
+        "cloudName": "plhpyscn"
+      },
+      "uploadedAt": "2026-10-27T10:25:42.351Z",
+      "checkedAt": "2026-10-27T10:25:42.351Z"
+    },
+    "aditi-mittal": {
+      "name": "Aditi Mittal",
+      "category": "comedians",
+      "gender": "female",
+      "wikiTitle": "Aditi Mittal",
+      "status": "uploaded",
+      "source": "wikimedia-commons",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Aditi_Mittal.png",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b0/Aditi_Mittal.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "attribution": "EthicalComics",
+      "licenseVerified": true,
+      "tried": [
+        "wikipedia: no suitable lead image",
+        "wikimedia-commons: found"
+      ],
+      "cloudinary": {
+        "url": "https://res.cloudinary.com/plhpyscn/image/upload/v1792763720/famevote/celebrities/aditi-mittal.jpg",
+        "publicId": "famevote/celebrities/aditi-mittal",
+        "cloudName": "plhpyscn"
+      },
+      "uploadedAt": "2026-10-27T10:26:38.845Z",
+      "checkedAt": "2026-10-27T10:26:38.845Z"
+    },
+    "kaneez-surka": {
+      "name": "Kaneez Surka",
+      "category": "comedians",
+      "gender": "female",
+      "wikiTitle": "Kaneez Surka",
+      "status": "uploaded",
+      "source": "wikipedia",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Kaneez_Surka",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/a/ac/XdtlSbNj.jpg_large.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "license": "Wikipedia article lead image; verify the individual image license",
+      "licenseUrl": "",
+      "attribution": "Kaneez Surka — Wikipedia",
+      "licenseVerified": false,
+      "tried": [
+        "wikipedia: found"
+      ],
+      "cloudinary": {
+        "url": "https://res.cloudinary.com/plhpyscn/image/upload/v1792763725/famevote/celebrities/kaneez-surka.jpg",
+        "publicId": "famevote/celebrities/kaneez-surka",
+        "cloudName": "plhpyscn"
+      },
+      "uploadedAt": "2026-10-27T10:26:42.439Z",
+      "checkedAt": "2026-10-27T10:26:42.439Z"
+    },
+    "dino-morea": {
+      "name": "Dino Morea",
+      "category": "models",
+      "gender": "male",
+      "wikiTitle": "Dino Morea",
+      "status": "uploaded",
+      "source": "wikipedia",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Dino_Morea",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Dino_Morea_at_the_pink_carpet_of_Bollywood_Hungama_OTT_India_Fest_2023_award_ceremony_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "license": "Wikipedia article lead image; verify the individual image license",
+      "licenseUrl": "",
+      "attribution": "Dino Morea — Wikipedia",
+      "licenseVerified": false,
+      "tried": [
+        "wikipedia: found"
+      ],
+      "cloudinary": {
+        "url": "https://res.cloudinary.com/plhpyscn/image/upload/v1792763731/famevote/celebrities/dino-morea.jpg",
+        "publicId": "famevote/celebrities/dino-morea",
+        "cloudName": "plhpyscn"
+      },
+      "uploadedAt": "2026-10-27T10:26:44.569Z",
+      "checkedAt": "2026-10-27T10:26:44.569Z"
+    },
+    "trinetra-haldar-gummaraju": {
+      "name": "Trinetra Haldar Gummaraju",
+      "category": "models",
+      "gender": "other",
+      "wikiTitle": "Trinetra Haldar Gummaraju",
+      "status": "uploaded",
+      "source": "wikipedia",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Trinetra_Haldar_Gummaraju",
+      "originalUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/01/Trinetra_Haldar_In_Bangalore.jpg/960px-Trinetra_Haldar_In_Bangalore.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "license": "Wikipedia article lead image; verify the individual image license",
+      "licenseUrl": "",
+      "attribution": "Trinetra Haldar Gummaraju — Wikipedia",
+      "licenseVerified": false,
+      "tried": [
+        "wikipedia: found"
+      ],
+      "cloudinary": {
+        "url": "https://res.cloudinary.com/plhpyscn/image/upload/v1792763744/famevote/celebrities/trinetra-haldar-gummaraju.jpg",
+        "publicId": "famevote/celebrities/trinetra-haldar-gummaraju",
+        "cloudName": "plhpyscn"
+      },
+      "uploadedAt": "2026-10-27T10:26:48.898Z",
+      "checkedAt": "2026-10-27T10:26:48.898Z"
+    },
+    "arjun-rampal": {
+      "name": "Arjun Rampal",
+      "category": "models",
+      "gender": "male",
+      "wikiTitle": "Arjun Rampal",
+      "status": "uploaded",
+      "source": "wikipedia",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Arjun_Rampal",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6a/Arjun_Rampal_is_the_new_Gillette_brand_ambassador.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "license": "Wikipedia article lead image; verify the individual image license",
+      "licenseUrl": "",
+      "attribution": "Arjun Rampal — Wikipedia",
+      "licenseVerified": false,
+      "tried": [
+        "wikipedia: found"
+      ],
+      "cloudinary": {
+        "url": "https://res.cloudinary.com/plhpyscn/image/upload/v1792763750/famevote/celebrities/arjun-rampal.jpg",
+        "publicId": "famevote/celebrities/arjun-rampal",
+        "cloudName": "plhpyscn"
+      },
+      "uploadedAt": "2026-10-27T10:26:52.064Z",
+      "checkedAt": "2026-10-27T10:26:52.064Z"
+    },
+    "laxmi-narayan-tripathi": {
+      "name": "Laxmi Narayan Tripathi",
+      "category": "other",
+      "gender": "other",
+      "wikiTitle": "Laxmi Narayan Tripathi",
+      "status": "uploaded",
+      "source": "wikipedia",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Laxmi_Narayan_Tripathi",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/b/bd/Laxmi_Narayan_Tripathi_at_JLF_Melbourne_presented_by_Melbourne_Writers_Festival%2C_Federation_Square%2C_Melbourne_2017.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "license": "Wikipedia article lead image; verify the individual image license",
+      "licenseUrl": "",
+      "attribution": "Laxmi Narayan Tripathi — Wikipedia",
+      "licenseVerified": false,
+      "tried": [
+        "wikipedia: found"
+      ],
+      "cloudinary": {
+        "url": "https://res.cloudinary.com/plhpyscn/image/upload/v1792763785/famevote/celebrities/laxmi-narayan-tripathi.jpg",
+        "publicId": "famevote/celebrities/laxmi-narayan-tripathi",
+        "cloudName": "plhpyscn"
+      },
+      "uploadedAt": "2026-10-27T10:27:25.625Z",
+      "checkedAt": "2026-10-27T10:27:25.625Z"
+    },
+    "gauri-sawant": {
+      "name": "Gauri Sawant",
+      "category": "other",
+      "gender": "other",
+      "wikiTitle": "Gauri Sawant",
+      "status": "placeholder",
+      "tried": [
+        "wikipedia: no suitable lead image",
+        "wikimedia-commons: no suitable reusable match"
+      ],
+      "checkedAt": "2026-10-27T10:27:29.843Z"
+    },
+    "akkai-padmashali": {
+      "name": "Akkai Padmashali",
+      "category": "other",
+      "gender": "other",
+      "wikiTitle": "Akkai Padmashali",
+      "status": "placeholder",
+      "tried": [
+        "wikipedia: no suitable lead image",
+        "wikimedia-commons: no suitable reusable match"
+      ],
+      "checkedAt": "2026-10-27T10:27:30.942Z"
+    },
+    "kiran-bedi": {
+      "name": "Kiran Bedi",
+      "category": "other",
+      "gender": "female",
+      "wikiTitle": "Kiran Bedi",
+      "status": "uploaded",
+      "source": "wikipedia",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Kiran_Bedi",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/4/4f/Dr._Kiran_Bedi_in_2017_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "license": "Wikipedia article lead image; verify the individual image license",
+      "licenseUrl": "",
+      "attribution": "Kiran Bedi — Wikipedia",
+      "licenseVerified": false,
+      "tried": [
+        "wikipedia: found"
+      ],
+      "cloudinary": {
+        "url": "https://res.cloudinary.com/plhpyscn/image/upload/v1792763819/famevote/celebrities/kiran-bedi.jpg",
+        "publicId": "famevote/celebrities/kiran-bedi",
+        "cloudName": "plhpyscn"
+      },
+      "uploadedAt": "2026-10-27T10:28:05.493Z",
+      "checkedAt": "2026-10-27T10:28:05.493Z"
+    }
+  }
+}

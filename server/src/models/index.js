@@ -1,0 +1,17 @@
+module.exports = {
+  User: require('./User'),
+  Category: require('./Category'),
+  Celebrity: require('./Celebrity'),
+  Campaign: require('./Campaign'),
+  Vote: require('./Vote'),
+  Payment: require('./Payment'),
+  Receipt: require('./Receipt'),
+  RankingSnapshot: require('./RankingSnapshot'),
+  Favorite: require('./Favorite'),
+  Nomination: require('./Nomination'),
+  Notification: require('./Notification'),
+  AuditLog: require('./AuditLog'),
+  Settings: require('./Settings'),
+  WebhookEvent: require('./WebhookEvent'),
+  PhoneOtp: require('./PhoneOtp'),
+};

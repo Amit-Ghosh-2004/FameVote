@@ -1,0 +1,212 @@
+@import '@fontsource-variable/sora/index.css';
+@import '@fontsource-variable/geist/wght.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* Dark stage by default; `.light-band` flips a section to cream. Values are space-separated RGB for Tailwind alpha. */
+  :root {
+    --ink: 243 239 232; --paper: 12 11 16; --surface: 22 20 29; --sand: 32 29 42; --line: 44 40 55; --on: 24 10 5;
+    --brand: 255 106 61; --brand-dark: 255 134 92; --brand-soft: 48 24 19;
+    --mint: 76 224 156; --mint-soft: 16 40 31;
+    color-scheme: dark;
+  }
+  /* Light theme: set on <html data-theme="light"> by the toggle / no-flash script; `.light-band` flips one section on a dark page. */
+  :root[data-theme='light'], .light-band {
+    --ink: 24 20 30; --paper: 250 247 242; --surface: 255 255 255; --sand: 238 232 222; --line: 226 219 207; --on: 255 255 255;
+    --brand: 201 55 16; --brand-dark: 170 42 8; --brand-soft: 255 232 221; --mint: 22 105 70; --mint-soft: 220 238 228;
+    color-scheme: light;
+  }
+  .light-band { color: rgb(var(--ink)); background: rgb(var(--paper)); }
+  html { -webkit-text-size-adjust: 100%; -webkit-tap-highlight-color: transparent; scroll-behavior: smooth; background: rgb(var(--paper)); }
+  body { @apply bg-paper font-body text-[16px] leading-[1.5] text-ink antialiased; overscroll-behavior-y: none; }
+  h1, h2, h3, h4, .font-heading { letter-spacing: -0.03em; }
+  button, a, select, summary { touch-action: manipulation; }
+  :focus-visible { outline: 2px solid rgb(var(--brand)); outline-offset: 2px; border-radius: 8px; }
+  input, select, textarea { font-size: 16px; } /* 16px stops iOS zooming into fields */
+  select option, select optgroup { background-color: rgb(var(--surface)); color: rgb(var(--ink)); }
+  select:disabled { cursor: not-allowed; opacity: .6; }
+  ::selection { background: rgb(var(--brand)); color: rgb(var(--on)); }
+}
+
+@layer components {
+  .btn { @apply inline-flex min-h-[48px] select-none items-center justify-center gap-2 rounded-xl px-5 py-2.5 text-[15px] font-semibold transition duration-150 active:scale-[.985] disabled:cursor-not-allowed disabled:opacity-45 disabled:active:scale-100; }
+  .btn-primary { @apply btn bg-ink text-paper hover:bg-ink/85; }
+  .btn-pop { @apply btn bg-brand text-on shadow-glow hover:bg-brand-dark; }
+  .btn-ghost { @apply btn border border-ink/20 bg-ink/[.04] text-ink hover:border-ink/50 hover:bg-ink/[.08]; }
+  .btn-danger { @apply btn bg-red-700 text-white hover:bg-red-800; }
+  .btn-dark { @apply btn bg-ink text-paper hover:bg-ink/85; }
+
+  .card { @apply rounded-2xl border border-line bg-surface; }
+  .input { @apply min-h-[48px] w-full rounded-xl border border-ink/15 bg-surface px-4 py-2.5 text-ink outline-none transition placeholder:text-ink/40 focus:border-brand focus:ring-1 focus:ring-brand; }
+  .label { @apply mb-1.5 block text-[13px] font-semibold text-ink/65; }
+  .badge { @apply inline-flex items-center gap-1.5 rounded-md bg-ink/10 px-2 py-1 text-xs font-semibold text-ink/80; }
+  .container-x { @apply mx-auto w-full max-w-5xl px-5 sm:px-6; }
+
+  /* Underline tabs: the primary way to switch between categories and views. */
+  .rail { @apply hide-scroll -mx-5 flex gap-6 overflow-x-auto border-b border-line px-5 sm:mx-0 sm:px-0; }
+  .tab { @apply relative inline-flex min-h-[48px] shrink-0 items-center gap-1.5 whitespace-nowrap text-[15px] font-semibold text-ink/50 transition-colors; }
+  .tab::after { content: ''; @apply absolute inset-x-0 -bottom-px h-[3px] origin-left scale-x-0 rounded-full bg-brand transition-transform duration-200; }
+  .tab[aria-selected='true'], .tab.active { @apply text-ink; }
+  .tab[aria-selected='true']::after, .tab.active::after { @apply scale-x-100; }
+
+  /* Small boxed option, for choosing among a few things in a form. */
+  .chip { @apply inline-flex min-h-[40px] shrink-0 items-center gap-2 rounded-lg border border-ink/15 bg-surface px-3.5 text-sm font-semibold text-ink/80 transition active:scale-[.97]; }
+  .chip[aria-selected='true'], .chip[aria-pressed='true'], .chip[aria-checked='true'] { @apply border-brand bg-brand text-on; }
+
+  .snap-row { @apply -mx-5 flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-1 sm:-mx-6 sm:px-6; scroll-padding-inline: 1.25rem; scrollbar-width: none; }
+  .snap-row::-webkit-scrollbar { display: none; }
+  .snap-row > * { @apply snap-start; }
+  .hide-scroll { scrollbar-width: none; }
+  .hide-scroll::-webkit-scrollbar { display: none; }
+
+  /* Ticket perforation (receipts): circles are cut-outs in the page colour */
+  .perf { @apply relative my-0 h-6; }
+  .perf::before { content: ''; @apply absolute inset-x-5 top-1/2 border-t-2 border-dashed border-ink/20; }
+  .perf i { @apply absolute top-0 block h-6 w-6 rounded-full bg-paper; }
+  .perf i:first-child { left: -12px; }
+  .perf i:last-child { right: -12px; }
+
+  /* Rubber-stamp mark used for "counted" / "confirmed" */
+  .stamp { @apply inline-flex -rotate-[7deg] items-center gap-1.5 rounded-md border-[3px] border-brand px-3 py-1 font-heading text-[15px] font-extrabold text-brand; letter-spacing: .02em; }
+}
+
+.skeleton { background: linear-gradient(90deg, rgb(var(--sand)) 25%, rgb(var(--line)) 37%, rgb(var(--sand)) 63%); background-size: 400% 100%; animation: shimmer 1.4s ease infinite; border-radius: 12px; }
+@keyframes shimmer { 0% { background-position: 100% 50%; } 100% { background-position: 0 50%; } }
+
+.pb-safe { padding-bottom: calc(env(safe-area-inset-bottom) + 0.75rem); }
+.pt-safe { padding-top: env(safe-area-inset-top); }
+.tnum { font-variant-numeric: tabular-nums; }
+
+@media print {
+  :root, :root[data-theme='dark'] { --ink: 22 19 28; --paper: 255 255 255; --surface: 255 255 255; --sand: 240 237 230; --line: 221 214 201; --brand: 214 62 22; color-scheme: light; }
+  body { background: #fff; }
+  .no-print { display: none !important; }
+  .print-area { box-shadow: none !important; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
+}
+
+/* Light theme tuning for the effects and shadows that are tuned for a dark stage */
+:root[data-theme='light'] .stage::before { opacity: .55; }
+:root[data-theme='light'] .shadow-lift { box-shadow: 0 18px 40px -22px rgba(60,30,10,.35); }
+:root[data-theme='light'] .shadow-sheet { box-shadow: 0 -18px 50px -20px rgba(60,30,10,.35); }
+:root[data-theme='light'] .shadow-glow { box-shadow: 0 10px 30px -12px rgba(201,55,16,.5); }
+:root[data-theme='light'] .text-glow { background-image: linear-gradient(100deg, rgb(var(--brand)) 10%, #E58A1F 90%); }
+:root[data-theme='light'] .blob { opacity: .5; }
+
+/* Startup-stage effects */
+.stage { position: relative; isolation: isolate; overflow: hidden; }
+.stage::before { content: ''; position: absolute; inset: -25% -35% auto -35%; height: 100%; z-index: -1; pointer-events: none; will-change: transform; animation: drift 14s ease-in-out infinite;
+  background: radial-gradient(42% 52% at 78% 20%, rgba(255,106,61,.40), transparent 70%), radial-gradient(38% 48% at 14% 42%, rgba(150,40,70,.34), transparent 70%); }
+.stage::after { content: ''; position: absolute; inset: 0; z-index: -1; pointer-events: none; opacity: .5;
+  background-image: radial-gradient(rgb(var(--ink) / .09) 1px, transparent 1px); background-size: 22px 22px; mask-image: linear-gradient(#000 20%, transparent 75%); -webkit-mask-image: linear-gradient(#000 20%, transparent 75%); }
+.marquee { overflow: hidden; mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
+.marquee-track { display: flex; width: max-content; }
+.text-glow { background: linear-gradient(100deg, rgb(var(--brand)) 10%, #FFB84D 90%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.card-lit { background: linear-gradient(180deg, rgb(var(--sand)) 0%, rgb(var(--surface)) 60%); }
+
+/* Orchestrated hero entrance: children rise in sequence once on load */
+.hero-in > * { animation: rise .7s cubic-bezier(.2,.8,.2,1) both; }
+.hero-in > *:nth-child(2) { animation-delay: .08s; } .hero-in > *:nth-child(3) { animation-delay: .16s; }
+.hero-in > *:nth-child(4) { animation-delay: .24s; } .hero-in > *:nth-child(5) { animation-delay: .32s; }
+.blob { background: radial-gradient(closest-side, rgba(255,184,77,.75), transparent); }
+.cv-auto { content-visibility: auto; contain-intrinsic-size: auto 600px; }
+@media (prefers-reduced-motion: reduce) { .stage::before { animation: none; } .marquee-track { animation: none !important; } }
+
+
+/* Contrast floor for secondary text (WCAG AA): faint opacities are lifted per theme so captions stay readable. */
+:root[data-theme='light'] :is(.text-ink\/40, .text-ink\/45, .text-ink\/50, .text-ink\/55) { color: rgb(var(--ink) / .7); }
+:root[data-theme='light'] .text-ink\/60 { color: rgb(var(--ink) / .72); }
+:root[data-theme='dark'] :is(.text-ink\/40, .text-ink\/45) { color: rgb(var(--ink) / .62); }
+.input::placeholder { color: rgb(var(--ink) / .6); }
+
+/* Authentication pages use the viewport deliberately: no bottom navigation/footer competing
+   with the form. Register is compact by default and expands naturally on short/zoomed screens. */
+.auth-page {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  min-height: calc(100svh - 3.5rem);
+  padding: 1.25rem 1.25rem 1.5rem;
+}
+.auth-card {
+  box-sizing: border-box;
+  padding: 0;
+}
+.auth-card-compact {
+  padding: .1rem 0;
+}
+.auth-register-stack { display: flex; flex-direction: column; gap: .65rem; }
+.auth-register-stack .label { margin-bottom: .25rem; font-size: 12px; }
+.auth-register-stack .input { min-height: 42px; padding-top: .45rem; padding-bottom: .45rem; }
+.auth-register-stack .btn { min-height: 44px; }
+.auth-register-stack .text-center { margin-top: -.15rem; }
+.auth-name-email-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: .65rem; }
+.auth-page-register .auth-card > div > .my-5 { margin-top: .65rem; margin-bottom: .65rem; }
+.auth-page-register .auth-card > div > .flex.min-h-\[44px\] { min-height: 36px; }
+.auth-page-register .auth-card > div > .space-y-4 { gap: .65rem; }
+.auth-page-register .auth-card .input { border-radius: .75rem; }
+.auth-header { flex: 0 0 auto; }
+.auth-main { display: flex; flex-direction: column; min-height: 0; padding-bottom: 0; }
+@media (min-width: 640px) {
+  .auth-page { align-items: center; min-height: calc(100svh - 4rem); padding: 1rem 1.5rem; }
+  .auth-card { border: 1px solid rgb(var(--line)); border-radius: 1.25rem; background: rgb(var(--surface)); padding: 1.5rem; }
+  .auth-card-compact { padding: 1.25rem 1.5rem; }
+  .auth-name-email-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .75rem; }
+}
+@media (max-height: 760px) {
+  .auth-page-register { padding-top: .5rem; padding-bottom: .5rem; }
+  .auth-card-compact { padding-top: .75rem; padding-bottom: .75rem; }
+  .auth-page-register .auth-card > div { margin-top: .65rem; }
+  .auth-page-register .auth-card > div > .my-5 { margin-top: .4rem; margin-bottom: .4rem; }
+  .auth-register-stack { gap: .45rem; }
+  .auth-register-stack .input { min-height: 38px; }
+  .auth-register-stack .btn { min-height: 40px; }
+  .auth-page-register .auth-card > div > .flex.min-h-\[44px\] { min-height: 32px; }
+}
+@media (max-height: 620px) {
+  .auth-page-register { align-items: flex-start; padding-top: .25rem; }
+  .auth-card-compact { padding-top: .25rem; padding-bottom: .25rem; }
+  .auth-page-register h1 { font-size: 26px; }
+  .auth-page-register .auth-card > div { margin-top: .4rem; }
+  .auth-register-stack { gap: .35rem; }
+  .auth-register-stack .input { min-height: 36px; }
+}
+@media (max-width: 360px) {
+  .auth-page { padding-left: .875rem; padding-right: .875rem; }
+  .auth-page-register h1 { font-size: 27px; }
+}
+
+.auth-page-register .auth-register-stack p[class*='mt-1.5'] { margin-top: .25rem; font-size: 11px; line-height: 1.25; }
+
+
+/* Focused, responsive phone-first authentication styling. */
+.auth-card-phone-first { position: relative; overflow: hidden; }
+.auth-brand-mark { display: grid; place-items: center; width: 38px; height: 38px; margin-bottom: .85rem; border-radius: 13px; color: rgb(var(--paper)); background: rgb(var(--ink)); font-family: var(--font-heading, inherit); font-weight: 900; font-size: 1.15rem; box-shadow: 0 5px 16px rgb(0 0 0 / .12); }
+.auth-kicker { margin: 0 0 .6rem; color: rgb(var(--brand)); font-size: .66rem; font-weight: 800; letter-spacing: .15em; }
+.auth-kicker span { padding: 0 .25rem; opacity: .55; }
+.auth-subtitle { max-width: 34ch; line-height: 1.55; }
+.auth-phone-first-panel { margin-top: 1.25rem; padding: 1rem; border: 1px solid rgb(var(--brand) / .25); border-radius: 1.15rem; background: linear-gradient(145deg, rgb(var(--brand) / .07), rgb(var(--surface)) 70%); }
+.auth-phone-heading { display: flex; align-items: center; gap: .7rem; margin-bottom: 1rem; }
+.auth-phone-heading strong { display: block; font-size: .96rem; font-weight: 800; }
+.auth-phone-heading p { margin-top: .2rem; color: rgb(var(--ink) / .68); font-size: .8rem; line-height: 1.4; }
+.auth-phone-icon { display: grid; flex: 0 0 38px; height: 38px; place-items: center; border-radius: 12px; color: rgb(var(--brand)); background: rgb(var(--brand) / .12); }
+.auth-phone-first-panel .input { background: rgb(var(--surface)); }
+.auth-phone-first-panel .btn-primary { box-shadow: 0 7px 18px rgb(var(--brand) / .16); }
+.auth-secondary-divider { display: flex; align-items: center; gap: .75rem; margin: 1.15rem 0; color: rgb(var(--ink) / .55); font-size: .65rem; font-weight: 800; letter-spacing: .1em; }
+.auth-secondary-divider::before, .auth-secondary-divider::after { content: ''; height: 1px; flex: 1; background: rgb(var(--line)); }
+.auth-email-alternative { margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgb(var(--line)); }
+@media (max-width: 639px) {
+  .auth-page { padding-top: 1rem; padding-bottom: max(1rem, env(safe-area-inset-bottom)); }
+  .auth-card-phone-first { max-width: 28rem; }
+  .auth-phone-first-panel { padding: .85rem; }
+  .auth-card-phone-first .auth-content { margin-top: 1.15rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .auth-brand-mark, .auth-phone-first-panel, .auth-phone-first-panel * { transition: none !important; animation: none !important; }
+}

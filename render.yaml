@@ -1,0 +1,41 @@
+services:
+  - type: web
+    name: famevote-api
+    runtime: node
+    rootDir: server
+    plan: starter            # the free plan sleeps, which pauses the scheduler; use a paid plan in production
+    buildCommand: npm ci
+    startCommand: npm start
+    healthCheckPath: /health
+    autoDeploy: true
+    envVars:
+      - { key: NODE_ENV, value: production }
+      - { key: CAMPAIGN_TIMEZONE, value: Asia/Kolkata }
+      - { key: CAMPAIGN_CUTOFF_TIME, value: "23:59:59" }
+      - { key: ENABLE_SCHEDULER, value: "true" }
+      - { key: AUTO_REFUND, value: "true" }
+      - { key: CLIENT_URL, sync: false }        # https://your-app.vercel.app
+      - { key: SERVER_URL, sync: false }
+      - { key: MONGODB_URI, sync: false }
+      - { key: JWT_SECRET, generateValue: true }
+      - { key: ADMIN_JWT_SECRET, generateValue: true }
+      - { key: RECEIPT_HMAC_SECRET, generateValue: true }
+      - { key: CLOUDINARY_CLOUD_NAME, sync: false }
+      - { key: CLOUDINARY_API_KEY, sync: false }
+      - { key: CLOUDINARY_API_SECRET, sync: false }
+      - { key: RAZORPAY_KEY_ID, sync: false }
+      - { key: RAZORPAY_KEY_SECRET, sync: false }
+      - { key: RAZORPAY_WEBHOOK_SECRET, sync: false }
+      - { key: GEMINI_API_KEY, sync: false }
+      - { key: GEMINI_MODEL, value: gemini-2.5-flash }
+      - { key: BREVO_API_KEY, sync: false }
+      - { key: EMAIL_FROM_EMAIL, sync: false }
+      - { key: EMAIL_FROM_NAME, value: FameVote }
+      - { key: GOOGLE_CLIENT_ID, sync: false }
+      - { key: SMS_PROVIDER, value: none }      # none | twilio | msg91 (set the matching keys below to turn phone sign-in on)
+      - { key: TWILIO_ACCOUNT_SID, sync: false }
+      - { key: TWILIO_AUTH_TOKEN, sync: false }
+      - { key: TWILIO_FROM, sync: false }
+      - { key: MSG91_AUTH_KEY, sync: false }
+      - { key: MSG91_TEMPLATE_ID, sync: false }
+      - { key: TMDB_API_KEY, sync: false }      # optional: only used by the portrait scripts
