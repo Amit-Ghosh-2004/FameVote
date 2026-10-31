@@ -59,8 +59,10 @@ export default function SeoManager() {
     setMeta('meta[property="og:url"]', 'property', canonical);
     setMeta('meta[property="og:title"]', 'property', title);
     setMeta('meta[property="og:description"]', 'property', description);
+    setMeta('meta[property="og:image"]', 'property', `${SITE}/og-image-green.png`);
     setMeta('meta[name="twitter:title"]', 'name', title);
     setMeta('meta[name="twitter:description"]', 'name', description);
+    setMeta('meta[name="twitter:image"]', 'name', `${SITE}/og-image-green.png`);
     setLink('canonical', canonical);
 
     const old = document.getElementById('famevote-page-schema');
