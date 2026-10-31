@@ -1,9 +1,29 @@
 import { useEffect } from 'react';
 
 const BASE = 'FameVote';
-/** Sets the browser tab / history title. Pass nothing for the default brand title. */
+/** Sets route-specific browser and social metadata once dynamic profile data is available. */
 export function useDocTitle(title) {
-  useEffect(() => { document.title = title ? `${title} · ${BASE}` : `${BASE} - Your Vote. Their Fame.`; }, [title]);
+  useEffect(() => {
+    if (!title) return;
+    const value = `${title} – Celebrity Profile & Fan Rankings · ${BASE}`;
+    const description = `Explore ${title}'s profile, fan ranking and monthly community voting on FameVote, an independent fan-voting platform.`;
+    document.title = value;
+    const update = (selector, attr, content) => {
+      let el = document.head.querySelector(selector);
+      if (!el) {
+        el = document.createElement('meta');
+        const match = selector.match(/\[(name|property)="([^"]+)"\]/);
+        el.setAttribute(match[1], match[2]);
+        document.head.appendChild(el);
+      }
+      el.setAttribute('content', content);
+    };
+    update('meta[name="description"]', 'name', description);
+    update('meta[property="og:title"]', 'property', value);
+    update('meta[property="og:description"]', 'property', description);
+    update('meta[name="twitter:title"]', 'name', value);
+    update('meta[name="twitter:description"]', 'name', description);
+  }, [title]);
 }
 
 const ROUTES = [

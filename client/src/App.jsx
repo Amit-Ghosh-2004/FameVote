@@ -23,6 +23,13 @@ const Auth = {
   Forgot: lazy(() => import('./pages/Auth').then((m) => ({ default: m.Forgot }))),
   Reset: lazy(() => import('./pages/Auth').then((m) => ({ default: m.Reset }))),
 };
+const Trust = {
+  About: lazy(() => import('./pages/Trust').then((m) => ({ default: m.About }))),
+  Contact: lazy(() => import('./pages/Trust').then((m) => ({ default: m.Contact }))),
+  Privacy: lazy(() => import('./pages/Trust').then((m) => ({ default: m.Privacy }))),
+  Terms: lazy(() => import('./pages/Trust').then((m) => ({ default: m.Terms }))),
+  VotingRules: lazy(() => import('./pages/Trust').then((m) => ({ default: m.VotingRules }))),
+};
 const AdminShell = lazy(() => import('./admin/AdminShell'));
 const AdminLogin = lazy(() => import('./admin/AdminLogin'));
 const A = Object.fromEntries(['Overview', 'Categories', 'Celebrities', 'Campaigns', 'Payments', 'Users', 'Nominations', 'Settings', 'Audit'].map((n) => [n, lazy(() => import('./admin/pages').then((m) => ({ default: m[n] })))]));
@@ -47,6 +54,11 @@ export default function App() {
           <Route path="celebrity/:slug" element={<Celebrity />} />
           <Route path="winners" element={<Winners />} />
           <Route path="how-it-works" element={<HowItWorks />} />
+          <Route path="about" element={<Trust.About />} />
+          <Route path="contact" element={<Trust.Contact />} />
+          <Route path="privacy" element={<Trust.Privacy />} />
+          <Route path="terms" element={<Trust.Terms />} />
+          <Route path="voting-rules" element={<Trust.VotingRules />} />
           <Route path="voting-integrity" element={<Integrity />} />
           <Route path="verify-receipt" element={<VerifyReceipt />} />
           <Route path="nominate" element={<RequireUser><Nominate /></RequireUser>} />

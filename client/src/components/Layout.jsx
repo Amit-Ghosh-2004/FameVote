@@ -3,7 +3,7 @@ import { Link, NavLink, Outlet, useLocation, useNavigate } from 'react-router-do
 import { Check, Home, Medal, Trophy, User } from 'lucide-react';
 import { useAuth } from '../lib/AuthContext';
 import { useCountdown } from '../lib/hooks';
-import { titleForPath } from '../lib/title';
+import SeoManager from '../lib/SeoManager';
 import { ThemeToggle } from '../lib/theme';
 
 const links = [['/', 'Home'], ['/vote', 'Vote'], ['/rankings', 'Rankings'], ['/winners', 'Winners']];
@@ -37,10 +37,10 @@ function HeaderStatus({ camp, serverTime }) {
 }
 
 const TabItem = ({ to, Icon, label }) => (
-  <NavLink to={to} end={to === '/'} className={({ isActive }) => `relative flex min-h-[46px] flex-col items-center justify-center gap-0 rounded-2xl text-[10.5px] font-medium transition-colors ${isActive ? 'text-ink' : 'text-ink/55'}`}>
+  <NavLink to={to} end={to === '/'} className={({ isActive }) => `relative flex min-h-[54px] flex-col items-center justify-center gap-0.5 rounded-2xl text-[11px] font-medium transition-colors ${isActive ? 'text-ink' : 'text-ink/55'}`}>
     {({ isActive }) => (<>
       {isActive && <span className="absolute inset-x-1.5 inset-y-1 -z-10 rounded-2xl bg-ink/[.08]" aria-hidden="true" />}
-      <Icon className="h-[19px] w-[19px]" strokeWidth={isActive ? 2.3 : 1.8} aria-hidden="true" />
+      <Icon className="h-[21px] w-[21px]" strokeWidth={isActive ? 2.3 : 1.8} aria-hidden="true" />
       <span>{label}</span>
     </>)}
   </NavLink>
@@ -53,10 +53,11 @@ export default function Layout() {
   const camp = meta?.campaign;
   const authPage = ['/login', '/register', '/forgot-password', '/reset-password'].includes(loc.pathname);
   useEffect(() => { window.scrollTo(0, 0); }, [loc.pathname]);
-  useEffect(() => { const t = titleForPath(loc.pathname); if (t !== undefined) document.title = t ? `${t} · FameVote` : 'FameVote: vote for your favourite stars'; }, [loc.pathname]);
+
 
   return (
     <div className="flex min-h-[100dvh] flex-col">
+      <SeoManager />
       <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:left-2 focus:top-2 focus:z-[200] focus:rounded-lg focus:bg-ink focus:px-4 focus:py-2 focus:text-paper">Skip to content</a>
       {meta?.announcements?.[0] && <div className="bg-brand px-4 py-2 text-center text-[13px] font-medium text-on">{meta.announcements[0].message}</div>}
 
@@ -93,20 +94,20 @@ export default function Layout() {
         <div className="container-x grid gap-8 py-8 sm:py-10 md:grid-cols-[1.4fr_1fr] lg:py-12">
           <div className="max-w-sm"><Logo /><p className="mt-3 text-sm leading-6 text-ink/65">One vote per category, every month. You get a receipt for each vote.</p>{meta?.sampleData && <p className="mt-3 text-xs text-ink/55">Preview: some accounts, votes and results are sample data.</p>}</div>
           <div className="grid grid-cols-2 gap-x-8 gap-y-1 text-sm font-semibold text-ink/70">
-            {[['/how-it-works', 'How it works'], ['/voting-integrity', 'Fair voting'], ['/verify-receipt', 'Check a receipt'], ['/nominate', 'Nominate someone'], ['/rankings', 'Rankings'], ['/winners', 'Winners']].map(([to, l]) => <Link key={to} to={to} className="flex min-h-[40px] items-center hover:text-ink">{l}</Link>)}
+            {[['/how-it-works', 'How it works'], ['/voting-rules', 'Voting rules'], ['/voting-integrity', 'Fair voting'], ['/verify-receipt', 'Check a receipt'], ['/nominate', 'Nominate someone'], ['/rankings', 'Rankings'], ['/winners', 'Winners'], ['/about', 'About'], ['/contact', 'Contact'], ['/privacy', 'Privacy'], ['/terms', 'Terms']].map(([to, l]) => <Link key={to} to={to} className="flex min-h-[40px] items-center hover:text-ink">{l}</Link>)}
           </div>
         </div>
-        <p className="border-t border-line px-4 py-4 text-center text-xs text-ink/55 max-lg:pb-[calc(5.5rem+env(safe-area-inset-bottom))]">© {new Date().getFullYear()} FameVote</p>
+        <p className="border-t border-line px-4 py-4 text-center text-xs text-ink/55 max-lg:pb-[calc(6.5rem+env(safe-area-inset-bottom))]">© {new Date().getFullYear()} FameVote · Independent fan-voting platform</p>
       </footer>
 
-      <nav className={`pointer-events-none fixed inset-x-0 bottom-0 z-50 px-3 pb-[calc(8px+env(safe-area-inset-bottom))] lg:hidden ${authPage ? 'hidden' : ''}`} aria-label="Primary">
-        <ul className="glass pointer-events-auto relative mx-auto grid max-w-md grid-cols-5 items-center rounded-[24px] px-1.5 py-0.5 shadow-glass">
+      <nav className={`pointer-events-none fixed inset-x-0 bottom-0 z-50 px-3 pb-[calc(10px+env(safe-area-inset-bottom))] lg:hidden ${authPage ? 'hidden' : ''}`} aria-label="Primary">
+        <ul className="glass pointer-events-auto relative mx-auto grid max-w-md grid-cols-5 items-center rounded-[28px] px-1.5 py-1 shadow-glass">
           <li><TabItem to="/" Icon={Home} label="Home" /></li>
           <li><TabItem to="/rankings" Icon={Medal} label="Ranks" /></li>
           <li className="flex justify-center">
-            <NavLink to="/vote" aria-label="Vote" className="-mt-5 flex flex-col items-center">
-              <span className="grid h-[44px] w-[44px] place-items-center rounded-full bg-brand text-on shadow-glow ring-[3px] ring-paper transition active:scale-90"><Check className="h-6 w-6" strokeWidth={3} aria-hidden="true" /></span>
-              <span className="text-[10.5px] font-semibold">Vote</span>
+            <NavLink to="/vote" aria-label="Vote" className="-mt-7 flex flex-col items-center">
+              <span className="grid h-[56px] w-[56px] place-items-center rounded-full bg-brand text-on shadow-glow ring-4 ring-paper transition active:scale-90"><Check className="h-7 w-7" strokeWidth={3} aria-hidden="true" /></span>
+              <span className="mt-0.5 text-[11px] font-semibold">Vote</span>
             </NavLink>
           </li>
           <li><TabItem to="/winners" Icon={Trophy} label="Winners" /></li>

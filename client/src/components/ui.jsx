@@ -602,15 +602,15 @@ export function CategoryPicker({ items, active, onSelect, loading = false, class
   if (loading || !items?.length) return <div className={`skeleton h-[52px] !rounded-full ${className}`} aria-hidden="true" />;
 
   const nudge = (dir) => rail.current?.scrollBy({ left: dir * Math.max(140, rail.current.clientWidth * 0.55), behavior: 'smooth' });
-  const arrow = 'grid h-7 w-7 shrink-0 place-items-center rounded-full bg-surface text-ink shadow-sm ring-1 ring-line sm:h-9 sm:w-9 transition active:scale-90';
+  const arrow = 'grid h-9 w-9 shrink-0 place-items-center rounded-full bg-surface text-ink shadow-sm ring-1 ring-line transition active:scale-90';
 
   return (
-    <div className={`dock max-sm:!gap-0.5 max-sm:!p-0.5 ${className}`}>
+    <div className={`dock ${className}`}>
       {edge.l && <button type="button" tabIndex={-1} aria-label="Scroll categories left" onClick={() => nudge(-1)} className={arrow}><ChevronLeft className="h-4 w-4" aria-hidden="true" /></button>}
       <div ref={rail} onScroll={measure} role="tablist" aria-label="Categories" className="hide-scroll flex min-w-0 flex-1 gap-1 overflow-x-auto overscroll-x-contain" style={{ touchAction: 'pan-x pan-y', WebkitOverflowScrolling: 'touch' }}>
         {items.map((c) => (
-          <button key={c.slug} type="button" role="tab" aria-selected={c.slug === active} onClick={() => onSelect(c.slug)} className="dock-btn !min-h-[32px] !px-3 !text-[13px] sm:!min-h-[40px] sm:!px-3.5 sm:!text-[14px]">
-            {c.icon && <CategoryIcon name={c.icon} className="h-[15px] w-[15px] shrink-0 sm:h-4 sm:w-4" />}
+          <button key={c.slug} type="button" role="tab" aria-selected={c.slug === active} onClick={() => onSelect(c.slug)} className="dock-btn">
+            {c.icon && <CategoryIcon name={c.icon} className="h-4 w-4 shrink-0" />}
             <span>{c.name}</span>
             {c.done && <Check className="h-3.5 w-3.5 shrink-0" strokeWidth={3.5} aria-label="voted" />}
           </button>

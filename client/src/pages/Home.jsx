@@ -41,7 +41,7 @@ const LANES = [
 
 /* Category bento: where each tile sits (index = display order). */
 const TILE_SPAN = {
-  0: 'col-span-2 max-lg:!min-h-[128px] lg:row-span-2',
+  0: 'col-span-2 min-h-[210px] lg:row-span-2',
   3: 'lg:col-span-2',
   7: 'col-span-2 lg:col-span-1',
 };
@@ -330,13 +330,13 @@ export default function Home() {
       {/* =====================================================
           HERO (always dark; all the motion lives here)
       ===================================================== */}
-      <section className="dark-scope relative isolate flex min-h-[calc(100svh-4rem-5.5rem+1.75rem-env(safe-area-inset-bottom))] flex-col overflow-hidden sm:min-h-[calc(100svh-4.5rem-5.5rem-env(safe-area-inset-bottom))] lg:h-[100svh] lg:min-h-[600px]" aria-label="Vote for your favourite stars">
+      <section className="dark-scope relative isolate flex min-h-[calc(100svh-4rem-5.5rem-env(safe-area-inset-bottom))] flex-col overflow-hidden sm:min-h-[calc(100svh-4.5rem-5.5rem-env(safe-area-inset-bottom))] lg:h-[100svh] lg:min-h-[600px]" aria-label="Vote for your favourite stars">
         <div className="hm-grid pointer-events-none absolute inset-0 z-0" aria-hidden="true" />
         <div className="pointer-events-none absolute -left-24 top-0 z-0 h-80 w-80 animate-drift rounded-full bg-brand/20 blur-3xl" aria-hidden="true" />
         <div className="pointer-events-none absolute -right-24 bottom-0 z-0 h-96 w-96 animate-drift rounded-full bg-gold/10 blur-3xl [animation-direction:reverse] [animation-duration:18s]" aria-hidden="true" />
 
         {/* Phones and tablets: a tilted wall of cards that keeps scrolling behind the text */}
-        <div className="hm-vfade-b pointer-events-none absolute inset-x-0 top-0 z-0 h-[calc(64%-1.1rem)] overflow-hidden sm:h-[64%] lg:hidden" aria-hidden="true">
+        <div className="hm-vfade-b pointer-events-none absolute inset-x-0 top-0 z-0 h-[64%] overflow-hidden lg:hidden" aria-hidden="true">
           <div className="absolute -left-[14%] -top-[8%] grid h-[124%] w-[128%] -rotate-[8deg] grid-cols-4 grid-rows-[minmax(0,1fr)] gap-3 sm:gap-5">
             {cols.map((col, ci) => (
               <div key={ci} className="min-h-0 overflow-hidden">
@@ -370,7 +370,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className={`${box} relative z-10 mt-auto grid min-h-0 w-full flex-1 items-end gap-5 pb-4 pt-[calc(22svh+1.75rem)] sm:gap-8 sm:pt-[26svh] lg:mt-0 lg:grid-cols-[.85fr_1.15fr] lg:items-center lg:py-4 lg:pt-24`}>
+        <div className={`${box} relative z-10 mt-auto grid min-h-0 w-full flex-1 items-end gap-5 pb-4 pt-[22svh] sm:gap-8 sm:pt-[26svh] lg:mt-0 lg:grid-cols-[.85fr_1.15fr] lg:items-center lg:py-4 lg:pt-24`}>
           {/* ---- phone / tablet copy ---- */}
           <div className="hm-in min-w-0 pt-4 lg:pt-0 lg:hidden">
             <StatusPill camp={camp} next={meta?.nextCampaign} serverTime={meta?.serverTime} />
@@ -383,15 +383,12 @@ export default function Home() {
               One vote per category, every month. Watch the rankings move live and keep a receipt for every vote.
             </p>
             <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-1 sm:mt-8 sm:gap-x-6 sm:gap-y-3">
-              <Link to={startHref} className="btn-pop !min-h-10 px-5 text-sm !shadow-[0_8px_18px_-8px_rgb(var(--brand)/.65)] sm:!min-h-12 sm:px-7 sm:text-base">{startText}<ArrowRight className="h-4 w-4" aria-hidden="true" /></Link>
-              {open && (
-                <Link to="/rankings" className="group inline-flex min-h-10 items-center gap-2 text-sm font-bold text-ink sm:min-h-12">
-                  <span className="border-b border-ink/30 pb-0.5 group-hover:border-brand">View rankings</span>
-                  <ArrowRight className="h-4 w-4 text-brand transition-transform group-hover:translate-x-1" aria-hidden="true" />
-                </Link>
-              )}
+              <Link to={startHref} className="btn-pop !min-h-10 px-5 text-sm sm:!min-h-12 sm:px-7 sm:text-base">{startText}<ArrowRight className="h-4 w-4" aria-hidden="true" /></Link>
+              <Link to="/rankings" className="group inline-flex min-h-10 items-center gap-2 text-sm font-bold text-ink sm:min-h-12">
+                <span className="border-b border-ink/30 pb-0.5 group-hover:border-brand">View rankings</span>
+                <ArrowRight className="h-4 w-4 text-brand transition-transform group-hover:translate-x-1" aria-hidden="true" />
+              </Link>
             </div>
-            <div className="h-12 sm:hidden" aria-hidden="true" />
           </div>
 
           {/* ---- desktop copy ---- */}
@@ -404,7 +401,7 @@ export default function Home() {
             <p className="mt-5 max-w-md text-lg leading-7 text-ink/75">Vote for the people you love, follow the live rankings and see who takes the crown each month.</p>
             <div className="mt-7 flex flex-wrap items-center gap-3">
               <Link to={startHref} className="btn-pop !min-h-12 !rounded-full px-7">{open && !user ? 'Join and vote' : startText}<ArrowRight className="h-4 w-4" aria-hidden="true" /></Link>
-              {open && <Link to="/rankings" className="btn-ghost !min-h-12 !rounded-full px-7">See the rankings</Link>}
+              <Link to="/rankings" className="btn-ghost !min-h-12 !rounded-full px-7">See the rankings</Link>
             </div>
             <p className="mt-6 flex items-center gap-5 text-[13.5px] text-ink/65">
               <span className="inline-flex items-center gap-2"><span className="h-2 w-2 rounded-full bg-mint" aria-hidden="true" />Live monthly rankings</span>
@@ -418,10 +415,10 @@ export default function Home() {
       {/* =====================================================
           MARQUEE (drifts on its own, speeds up / reverses with page scroll)
       ===================================================== */}
-      <div className="-mt-3 -rotate-[1.2deg] overflow-hidden bg-brand py-1 text-on sm:py-3.5 lg:-mt-4" aria-hidden="true">
+      <div className="-mt-3 -rotate-[1.2deg] overflow-hidden bg-brand py-2.5 text-on sm:py-3.5 lg:-mt-4" aria-hidden="true">
         <ScrollLoop speed={40}>
           {[...SLOGANS, ...SLOGANS, ...SLOGANS, ...SLOGANS].map((t, i) => (
-            <span key={i} className="font-heading mx-4 flex items-center gap-6 whitespace-nowrap text-[17px] font-extrabold leading-tight tracking-[-0.03em] sm:text-[28px] sm:leading-normal sm:mx-6 sm:gap-12">{t}<span className="text-[.8em]">✳</span></span>
+            <span key={i} className="font-heading mx-4 flex items-center gap-6 whitespace-nowrap text-[20px] font-extrabold tracking-[-0.03em] sm:mx-6 sm:gap-12 sm:text-[28px]">{t}<span className="text-[.8em]">✳</span></span>
           ))}
         </ScrollLoop>
       </div>
@@ -460,7 +457,7 @@ export default function Home() {
         <div className="mt-4 sm:mt-8">
           {home.loading ? <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">{Array.from({ length: 8 }, (_, i) => <Skeleton key={i} className="h-[150px] !rounded-3xl" />)}</div>
             : home.error ? <p role="alert" className="py-8 text-[15px]">Could not load categories. <button className="font-semibold underline" onClick={home.reload}>Try again</button></p>
-            : <div className="grid grid-cols-2 gap-2.5 sm:gap-4 max-lg:auto-rows-[minmax(108px,auto)] lg:auto-rows-[150px] lg:grid-cols-4">{previews.map((p, i) => <CategoryTile key={p.category.slug} p={p} big={i === 0} voted={isVoted(p.category.slug)} className={TILE_SPAN[i] || ''} />)}</div>}
+            : <div className="grid grid-cols-2 gap-2.5 sm:gap-4 max-lg:auto-rows-[108px] lg:auto-rows-[150px] lg:grid-cols-4">{previews.map((p, i) => <CategoryTile key={p.category.slug} p={p} big={i === 0} voted={isVoted(p.category.slug)} className={TILE_SPAN[i] || ''} />)}</div>}
         </div>
       </section>
 

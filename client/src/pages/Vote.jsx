@@ -38,13 +38,13 @@ export default function Vote() {
   return (
     <>
       {/* In swipe mode on a phone the page is exactly one screen: filters on top, card in the middle, buttons at the bottom. */}
-      <div className={`container-x flex flex-col pt-2 ${swipe ? 'h-[calc(100dvh-64px-78px-env(safe-area-inset-bottom))] min-h-[470px] sm:h-[calc(100dvh-72px-78px-env(safe-area-inset-bottom))] sm:min-h-[480px] lg:h-[calc(100dvh-84px)] lg:min-h-[560px] lg:pb-4' : ''}`}>
+      <div className={`container-x flex flex-col pt-2 ${swipe ? 'h-[calc(100dvh-64px-92px-env(safe-area-inset-bottom))] min-h-[440px] sm:h-[calc(100dvh-72px-92px-env(safe-area-inset-bottom))] lg:h-[calc(100dvh-84px)] lg:min-h-[560px] lg:pb-4' : ''}`}>
         <h1 className={`mb-1 hidden text-4xl font-bold leading-none lg:mb-3 lg:mt-3 ${swipe ? '' : 'lg:block'}`}>Vote</h1>
         <h1 className={`sr-only ${swipe ? '' : 'lg:hidden'}`}>Vote</h1>
         <CategoryPicker className="mt-1" loading={!cats.data} active={slug} onSelect={(v) => { if (v === slug) return; setSp({ category: v }, { replace: true }); reset(); }}
           items={cats.data?.categories?.map((c) => ({ slug: c.slug, name: c.name, icon: c.icon, count: c.celebrityCount, done: votedSlugs.has(c.slug) }))} />
 
-        <div className="mt-1.5 flex items-center gap-2 sm:mt-2 sm:gap-3">
+        <div className="mt-2 flex items-center gap-3">
           <div className="min-w-0 flex-1"><GenderTabs className="!mx-0 !px-0" label="Show" value={gender} counts={category?.genderCounts} onChange={(g) => { setGender(g); setPage(1); }} /></div>
           <div role="radiogroup" aria-label="Browse style" className="dock !w-auto shrink-0">
             {[['swipe', Layers, 'Swipe'], ['grid', LayoutGrid, 'Grid']].map(([v, I, l]) => (
@@ -67,10 +67,10 @@ export default function Vote() {
           </>
         )}
 
-        {votedHere && <div className="mt-1.5 flex items-center gap-2 rounded-lg bg-ink/[.06] px-2.5 py-1.5 text-[12px] sm:mt-3 sm:rounded-2xl sm:px-4 sm:py-3 sm:text-[14.5px]" role="status"><span className="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-brand text-on"><Check className="h-4 w-4" strokeWidth={3} /></span><p>You voted for <strong>{votedHere.celebrity?.name}</strong> here. Votes can't be changed.</p></div>}
-        {closed && <div className="mt-1.5 rounded-lg bg-ink/[.06] px-2.5 py-1.5 text-[12px] leading-4 text-ink sm:mt-3 sm:rounded-2xl sm:px-4 sm:py-3 sm:text-[14.5px] sm:leading-normal" role="status">{camp.status === 'upcoming' ? 'Voting opens soon. You can look around now.' : <><span className="sm:hidden">Voting is closed. A new round opens on the 1st.</span><span className="hidden sm:inline">Voting is closed. Results come on the last day of the month. A new round opens on the 1st.</span></>}</div>}
+        {votedHere && <div className="mt-3 flex items-center gap-3 rounded-2xl bg-ink/[.06] px-4 py-3 text-[14.5px]" role="status"><span className="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-brand text-on"><Check className="h-4 w-4" strokeWidth={3} /></span><p>You voted for <strong>{votedHere.celebrity?.name}</strong> here. Votes can't be changed.</p></div>}
+        {closed && <div className="mt-3 rounded-2xl bg-ink/[.06] px-4 py-3 text-[14.5px] text-ink" role="status">{camp.status === 'upcoming' ? 'Voting opens soon. You can look around now.' : 'Voting is closed. Results come on the last day of the month. A new round opens on the 1st.'}</div>}
 
-        <div className={`${swipe ? 'mt-2 flex min-h-0 flex-1 flex-col sm:mt-3' : 'mt-4'}`}>
+        <div className={`${swipe ? 'mt-3 flex min-h-0 flex-1 flex-col' : 'mt-4'}`}>
           {list.loading || (list.data && list.data.forSlug !== slug) ? (swipe ? <div className="skeleton min-h-[300px] flex-1 !rounded-2xl" aria-busy="true" /> : <SkeletonGrid n={8} />) : list.error ? <ErrorState message="Could not load celebrities." onRetry={list.reload} />
             : !list.data?.items?.length ? <EmptyState title="No one matches" text={q || state || gender ? 'Clear the search or filters to see everyone.' : 'No one is listed here yet.'} action={(q || state || gender) ? <button className="btn-ghost mt-2" onClick={() => { setQ(''); setState(''); setGender(''); }}>Clear filters</button> : <Link to="/nominate" className="btn-ghost mt-2">Nominate someone</Link>} />
               : swipe

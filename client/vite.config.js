@@ -1,13 +1,13 @@
 import { defineConfig, loadEnv } from 'vite';
 import react from '@vitejs/plugin-react';
 
-/** Social previews need absolute URLs. Set VITE_SITE_URL (your public site) at build time; without it the tags fall back to relative paths and the canonical/og:url tags are dropped. */
+/** Social previews and canonical tags use absolute URLs. VITE_SITE_URL may override the default apex domain at build time. */
 const siteUrl = (mode) => (loadEnv(mode, process.cwd(), 'VITE_').VITE_SITE_URL || '').replace(/\/$/, '');
 const siteUrlPlugin = () => ({
   name: 'famevote-site-url',
   transformIndexHtml: { order: 'pre', handler(html, ctx) {
     const url = siteUrl(ctx.server?.config.mode || process.env.NODE_ENV || 'production');
-    return (url ? html : html.replace(/^.*data-site-url.*\n/gm, '')).replace(/__SITE_URL__/g, url);
+    return html.replace(/__SITE_URL__/g, url || 'https://www.famevote.online');
   } },
 });
 

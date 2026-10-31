@@ -1,7 +1,13 @@
 User-agent: *
+Allow: /
 Disallow: /admin
 Disallow: /dashboard
 Disallow: /login
 Disallow: /register
+Disallow: /forgot-password
 Disallow: /reset-password
-Disallow: /verify-email
+Disallow: /nominate
+Disallow: /vote
+Disallow: /verify-receipt
+
+Sitemap: https://www.famevote.online/sitemap.xml
