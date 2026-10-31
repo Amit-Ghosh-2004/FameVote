@@ -6,10 +6,11 @@ import { useAuth } from '../lib/AuthContext';
 import { useAsync } from '../lib/hooks';
 import { PageTitle, Field } from '../components/ui';
 
-const Section = ({ title, icon: Icon, step, children }) => (
-  <section className="flex gap-4 rounded-2xl bg-surface p-5 border border-line">
-    <span className="relative grid h-11 w-11 shrink-0 place-items-center rounded-lg bg-brand-soft text-brand"><Icon className="h-5 w-5" aria-hidden="true" />{step && <span className="absolute -right-1.5 -top-1.5 grid h-5 w-5 place-items-center rounded-md bg-ink text-[11px] font-extrabold text-paper">{step}</span>}</span>
-    <div className="min-w-0"><h2 className="font-heading text-lg font-extrabold leading-tight">{title}</h2><div className="mt-1.5 space-y-2 text-[15px] leading-relaxed text-ink/75">{children}</div></div>
+/** A ruled section. Numbered only where the content really is a sequence (how voting works). */
+const Section = ({ title, step, children }) => (
+  <section className={`grid gap-x-4 border-t border-line py-5 ${step ? 'grid-cols-[1.75rem_minmax(0,1fr)]' : ''}`}>
+    {step && <span className="text-[15px] font-semibold text-ink/50 tnum">{step}</span>}
+    <div className="min-w-0"><h2 className="text-[18px] font-semibold leading-tight">{title}</h2><div className="mt-1.5 space-y-2 text-[15px] leading-relaxed text-ink/75">{children}</div></div>
   </section>
 );
 
@@ -19,7 +20,7 @@ export function HowItWorks() {
   return (
     <div className="container-x max-w-3xl pt-6">
       <PageTitle title="How it works" sub="Everything you need to know about voting on FameVote." />
-      <div className="space-y-3">
+      <div>
         <Section title="Create an account" icon={UserPlus} step={1}><p>Create an account, choose your state or union territory, and start voting when a campaign is open. No verification email is required.</p></Section>
         <Section title="Pick a category" icon={ListChecks} step={2}><p>{cats.data?.categories?.length ? `There are ${cats.data.categories.length} categories: ${cats.data.categories.map((c) => c.name).join(', ')}.` : 'Every category has its own rankings and winners.'} Each has its own rankings and winners.</p></Section>
         <Section title="Vote once per category" icon={VoteIcon} step={3}><p>You may vote in every category, but only <strong>one celebrity per category each month</strong>. A confirmed vote cannot be changed.</p></Section>
@@ -37,7 +38,7 @@ export function Integrity() {
   return (
     <div className="container-x max-w-3xl pt-6">
       <PageTitle title="Voting integrity" sub="How FameVote keeps every result fair and checkable." />
-      <div className="space-y-3">
+      <div>
         <Section title="No duplicate votes" icon={Lock}><p>The database itself allows only one confirmed vote per user, per category, per campaign. Refreshing, opening several tabs, switching devices or replaying requests cannot create a second vote.</p></Section>
         <Section title="What counts as a valid vote" icon={BadgeCheck}><p>Only confirmed votes from signed-in accounts inside the campaign window are counted. Failed, cancelled, pending and duplicate attempts are never counted.</p></Section>
         <Section title="Payment verification" icon={CreditCard}><p>A payment screen showing "success" is not enough. The server verifies the payment signature and confirms the payment directly with the payment gateway before recording a vote. Amounts are set by the server, never the browser.</p></Section>
@@ -66,9 +67,9 @@ export function VerifyReceipt() {
         <Field label="Verification reference" id="rr"><input id="rr" className="input" value={ref} onChange={(e) => setRef(e.target.value)} required /></Field>
         <button className="btn-primary w-full !min-h-[54px] text-base" disabled={busy}>{busy ? 'Checking…' : 'Verify receipt'}</button>
       </form>
-      {res && <div className="mt-4 space-y-1 rounded-2xl bg-mint-soft p-5 text-[15px] text-mint" role="status"><p className="flex items-center gap-2 font-heading text-lg font-extrabold text-mint"><CheckCircle2 className="h-6 w-6" />Genuine receipt</p>
+      {res && <div className="mt-4 space-y-1 rounded-2xl bg-mint-soft p-5 text-[15px] text-mint" role="status"><p className="flex items-center gap-2 text-lg font-bold text-mint"><CheckCircle2 className="h-6 w-6" />Genuine receipt</p>
         <p>Vote for <strong>{res.celebrityName}</strong> in {res.categoryName} ({res.campaign})</p><p>Amount {inr(res.amountInr)} · Issued {fmtIST(res.issuedAt)}</p>{res.sample && <p className="pt-1 text-[13px] opacity-80">This is a sample record created for the FameVote preview.</p>}</div>}
-      {err && <div className="mt-4 flex items-center gap-2 rounded-2xl bg-brand-soft p-5 text-[15px] text-brand-dark" role="alert"><XCircle className="h-5 w-5" />{err}</div>}
+      {err && <div className="mt-4 flex items-center gap-2 rounded-xl bg-danger/10 p-5 text-[15px] text-danger" role="alert"><XCircle className="h-5 w-5" />{err}</div>}
     </div>
   );
 }

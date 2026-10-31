@@ -40,8 +40,6 @@ export default function GoogleButton({ state, requireState = false, onDone, onEr
     return () => { live = false; };
   }, [text, serverOff]);
 
-  if (!GOOGLE_CLIENT_ID) return <p className="text-center text-[13px] text-ink/55">Google sign-in is not configured yet. Add VITE_GOOGLE_CLIENT_ID to client/.env and GOOGLE_CLIENT_ID to server/.env.</p>;
-  if (serverOff) return <p className="text-center text-[13px] text-ink/55">Google sign-in is not available right now. Use your email instead.</p>;
-  if (failed) return <p className="text-center text-[13px] text-ink/55">Google sign-in is blocked by your browser or network. Use your email instead.</p>;
+  if (!GOOGLE_CLIENT_ID || serverOff || failed) return null; // nothing to show: email and phone still work
   return <div className="flex min-h-[44px] justify-center"><div ref={box} /></div>;
 }

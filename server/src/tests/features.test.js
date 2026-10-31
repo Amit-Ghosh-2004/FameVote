@@ -18,7 +18,8 @@ const { STATE_CODES } = require('../utils/states');
 const { slugify } = require('../validators/common');
 const { GENDERS } = require('../utils/gender');
 
-const app = createApp();
+// Unit tests run without a database; the readiness gate itself is covered in readiness.test.js.
+const app = createApp({ getReadiness: () => ({ db: true, indexes: true }) });
 const oid = () => new (require('mongoose').Types.ObjectId)();
 
 test.describe('phone numbers', () => {

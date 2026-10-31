@@ -15,5 +15,21 @@ export default defineConfig({
   plugins: [react(), siteUrlPlugin()],
   // same-origin-allow-popups lets the Google sign-in popup talk back to this page (a stricter COOP blocks postMessage).
   server: { port: 5173, headers: { 'Cross-Origin-Opener-Policy': 'same-origin-allow-popups' }, proxy: { '/api': { target: 'http://localhost:5000', changeOrigin: true } } },
-  build: { sourcemap: false, chunkSizeWarningLimit: 700 },
+  build: {
+    sourcemap: false,
+    chunkSizeWarningLimit: 700,
+    rollupOptions: {
+      output: {
+        // Stable vendor chunks: they change rarely, so returning visitors keep them cached across deploys.
+        manualChunks(id) {
+          if (!id.includes('node_modules')) return undefined;
+          if (/node_modules\/(react|react-dom|scheduler)\//.test(id)) return 'vendor-react';
+          if (/node_modules\/(react-router|react-router-dom|@remix-run)/.test(id)) return 'vendor-router';
+          if (/node_modules\/(motion|framer-motion|motion-dom|motion-utils)/.test(id)) return 'vendor-motion';
+          if (/node_modules\/(axios|follow-redirects|form-data)/.test(id)) return 'vendor-axios';
+          return undefined;
+        },
+      },
+    },
+  },
 });

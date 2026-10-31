@@ -8,6 +8,7 @@ const { STATES } = require('../utils/states');
 const { getCurrentCampaign, publicCampaign, ensureCampaigns } = require('../services/campaignService');
 const ranking = require('../services/rankingService');
 const { genderOf } = require('../utils/gender');
+const { cache: memo, TAGS } = require('../services/publicCache');
 
 const publicCategory = (c) => ({ id: c._id, name: c.name, slug: c.slug, description: c.description, icon: c.icon, image: c.image?.url || null, displayOrder: c.displayOrder });
 const publicCelebrity = (c) => ({
@@ -36,7 +37,9 @@ async function hasSampleData() {
 }
 
 exports.meta = asyncHandler(async (_req, res) => {
-  const [settings, campaigns, sample] = await Promise.all([Settings.get(), ensureCampaigns(), hasSampleData()]);
+  // Settings + campaigns change rarely: memoised 15 s (admin writes invalidate it). serverTime is always fresh.
+  const [parts, sample] = await Promise.all([memo.get('meta:parts', 15_000, async () => { const [settings, campaigns] = await Promise.all([Settings.get(), ensureCampaigns()]); return { settings, campaigns }; }, { tags: [TAGS.meta] }), hasSampleData()]);
+  const { settings, campaigns } = parts;
   const now = new Date();
   res.json({
     success: true,
@@ -52,7 +55,12 @@ exports.meta = asyncHandler(async (_req, res) => {
 });
 
 exports.categories = asyncHandler(async (_req, res) => {
-  const cats = await Category.find({ status: 'active' }).sort({ displayOrder: 1, name: 1 });
+  const body = await memo.get('categories', 30_000, buildCategories, { tags: [TAGS.catalog] });
+  res.json(body);
+});
+
+async function buildCategories() {
+  const cats = await Category.find({ status: 'active' }).sort({ displayOrder: 1, name: 1 }).lean();
   const counts = await Celebrity.aggregate([{ $match: { status: 'active', categoryId: { $in: cats.map((c) => c._id) } } }, { $group: { _id: { c: '$categoryId', g: { $ifNull: ['$gender', 'other'] } }, n: { $sum: 1 } } }]);
   const byId = new Map(); const byGender = new Map();
   for (const r of counts) {
@@ -60,8 +68,8 @@ exports.categories = asyncHandler(async (_req, res) => {
     byId.set(k, (byId.get(k) || 0) + r.n);
     byGender.set(k, { ...(byGender.get(k) || { male: 0, female: 0, other: 0 }), [r._id.g]: r.n });
   }
-  res.json({ success: true, data: { categories: cats.map((c) => ({ ...publicCategory(c), celebrityCount: byId.get(String(c._id)) || 0, genderCounts: byGender.get(String(c._id)) || { male: 0, female: 0, other: 0 } })) } });
-});
+  return { success: true, data: { categories: cats.map((c) => ({ ...publicCategory(c), celebrityCount: byId.get(String(c._id)) || 0, genderCounts: byGender.get(String(c._id)) || { male: 0, female: 0, other: 0 } })) } };
+}
 
 exports.celebrities = asyncHandler(async (req, res) => {
   const { page, limit, category, state, q, sort, gender } = req.query;
@@ -76,7 +84,7 @@ exports.celebrities = asyncHandler(async (req, res) => {
   if (gender) filter.gender = gender === 'other' ? { $in: ['other', null] } : gender; // records from before subcategories read as 'other'
   if (q) filter.name = new RegExp(escapeRegex(q), 'i');
   const [items, total] = await Promise.all([
-    Celebrity.find(filter).sort(sort === 'newest' ? { createdAt: -1 } : { name: 1 }).skip((page - 1) * limit).limit(limit).populate('categoryId', 'name slug'),
+    Celebrity.find(filter).select('code name slug bio image.url image.credit gender state region categoryId').sort(sort === 'newest' ? { createdAt: -1 } : { name: 1 }).skip((page - 1) * limit).limit(limit).populate({ path: 'categoryId', select: 'name slug' }).lean(),
     Celebrity.countDocuments(filter),
   ]);
   res.json({ success: true, data: { items: items.map(publicCelebrity), page, limit, total, pages: Math.ceil(total / limit) } });
@@ -133,15 +141,19 @@ exports.rankings = asyncHandler(async (req, res) => {
 
 /** Home page: trending + per-category national previews, all derived live from valid votes. */
 exports.homeRankings = asyncHandler(async (req, res) => {
-  const campaign = await getCurrentCampaign();
-  const cats = await Category.find({ status: 'active', 'rules.showOnHome': { $ne: false } }).sort({ displayOrder: 1 });
-  const previews = await Promise.all(cats.map(async (cat) => {
-    const r = await ranking.getRanking({ campaign, categoryId: cat._id, scope: 'national' });
-    return { category: publicCategory(cat), entries: r.entries.slice(0, 5), provisional: r.provisional, totalValidVotes: r.totalValidVotes || 0 };
-  }));
-  const trending = previews.flatMap((p) => p.entries.filter((e) => e.votes > 0).map((e) => ({ ...e, categoryName: p.category.name })))
-    .sort((a, b) => b.votes - a.votes).slice(0, 8);
-  res.json({ success: true, data: { campaign: publicCampaign(campaign), trending, previews } });
+  // Same 10 s freshness as the ranking boards it is built from; one build is shared by every visitor.
+  const body = await memo.get('home', 10_000, async () => {
+    const campaign = await getCurrentCampaign();
+    const cats = await Category.find({ status: 'active', 'rules.showOnHome': { $ne: false } }).sort({ displayOrder: 1 }).lean();
+    const previews = await Promise.all(cats.map(async (cat) => {
+      const r = await ranking.getRanking({ campaign, categoryId: cat._id, scope: 'national' });
+      return { category: publicCategory(cat), entries: r.entries.slice(0, 5), provisional: r.provisional, totalValidVotes: r.totalValidVotes || 0 };
+    }));
+    const trending = previews.flatMap((p) => p.entries.filter((e) => e.votes > 0).map((e) => ({ ...e, categoryName: p.category.name })))
+      .sort((a, b) => b.votes - a.votes).slice(0, 8);
+    return { success: true, data: { campaign: publicCampaign(campaign), trending, previews } };
+  }, { tags: [TAGS.rankings, TAGS.catalog, TAGS.meta] });
+  res.json(body);
 });
 
 exports.winners = asyncHandler(async (req, res) => {

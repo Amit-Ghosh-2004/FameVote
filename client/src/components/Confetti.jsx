@@ -1,9 +1,9 @@
 import { useMemo } from 'react';
 import { motion, useReducedMotion } from 'motion/react';
 
-const COLORS = ['#FF6B3D', '#FFB547', '#1F9D6B', '#FFFFFF', '#D63E16'];
+const COLORS = ['#B0CA58', '#F4BE54', '#F5F1E0', '#426e0e', '#D5E6A0'];
 /** One-shot confetti burst for the moment a vote is counted. Decorative, silent, and skipped for reduced motion. */
-export default function Confetti({ count = 28, seed = 1 }) {
+export default function Confetti({ count = 24, seed = 1 }) {
   const reduce = useReducedMotion();
   const bits = useMemo(() => Array.from({ length: count }, (_, i) => {
     const r = (n) => { const x = Math.sin((i + 1) * 12.9898 + n * 78.233 + seed) * 43758.5453; return x - Math.floor(x); };

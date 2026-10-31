@@ -23,7 +23,12 @@ export const fmtNum = (n) => new Intl.NumberFormat('en-IN').format(n ?? 0);
 const isCld = (url) => typeof url === 'string' && url.includes('res.cloudinary.com') && url.includes('/upload/');
 export function img(url, w = 400, extra = '') {
   if (!url) return null;
-  return isCld(url) ? url.replace('/upload/', `/upload/f_auto,q_auto,c_fill,g_auto,ar_4:5,w_${w}${extra ? `,${extra}` : ''}/`) : url;
+  return isCld(url) ? url.replace('/upload/', `/upload/f_auto,q_auto,c_fill,g_face:auto,ar_4:5,w_${w}${extra ? `,${extra}` : ''}/`) : url;
+}
+/** Full photo, never cropped (keeps the original aspect ratio, only limits the width). */
+export function imgFit(url, w = 720) {
+  if (!url) return null;
+  return isCld(url) ? url.replace('/upload/', `/upload/f_auto,q_auto,c_limit,w_${w}/`) : url;
 }
 /** srcset of the same crop at several widths, so phones download ~12 KB instead of one 480px file for every avatar. */
 export const imgSet = (url, widths = [160, 240, 360, 480, 720]) => (isCld(url) ? widths.map((w) => `${img(url, w)} ${w}w`).join(', ') : undefined);

@@ -30,7 +30,7 @@ const A = Object.fromEntries(['Overview', 'Categories', 'Celebrities', 'Campaign
 const Fallback = () => <div className="container-x py-10"><Skeleton className="h-48" /></div>;
 const NotFound = () => (
   <div className="container-x py-20 text-center">
-    <h1 className="font-heading text-4xl font-extrabold">404</h1>
+    <h1 className="text-4xl font-bold">404</h1>
     <p className="mt-2 text-ink/70">That page does not exist.</p>
     <Link to="/" className="btn-primary mt-5">Back to home</Link>
   </div>

@@ -35,15 +35,22 @@ function rankRows(rows) {
   });
 }
 
-const cache = new Map();
+const cache = new Map(); // key -> { val, exp } | { promise }
 const TTL_MS = 10_000;
+/** 10 s memo with single-flight: concurrent misses for one key share one aggregation instead of stampeding MongoDB. */
 async function cached(key, fn, bypass = false) {
   const hit = cache.get(key);
-  if (!bypass && hit && hit.exp > Date.now()) return hit.val;
-  const val = await fn();
-  cache.set(key, { val, exp: Date.now() + TTL_MS });
+  if (!bypass && hit) {
+    if (hit.promise) return hit.promise;
+    if (hit.exp > Date.now()) return hit.val;
+  }
+  const promise = fn().then((val) => {
+    if (cache.get(key)?.promise === promise) cache.set(key, { val, exp: Date.now() + TTL_MS });
+    return val;
+  }, (e) => { if (cache.get(key)?.promise === promise) cache.delete(key); throw e; });
+  cache.set(key, { promise });
   if (cache.size > 500) cache.clear();
-  return val;
+  return promise;
 }
 
 const toRow = (c, votes) => ({

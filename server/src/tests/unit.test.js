@@ -15,7 +15,7 @@ const Vote = require('../models/Vote');
 const Payment = require('../models/Payment');
 const { STATE_CODES } = require('../utils/states');
 
-const app = createApp();
+const app = createApp({ getReadiness: () => ({ db: true, indexes: true }) }); // no DB in unit tests
 
 test.describe('campaign schedule (IST)', () => {
   test('opens 00:00 IST on day 1 and closes 23:59:59.999 IST on the second-last day', () => {

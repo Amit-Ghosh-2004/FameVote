@@ -7,18 +7,18 @@ import { useToast } from '../lib/Toast';
 import { Field, StateSelect, Segmented } from '../components/ui';
 import GoogleButton, { GOOGLE_CLIENT_ID } from '../components/GoogleButton';
 
-/** Plain, calm form page: heading on the paper, form below. On larger screens the form sits in a bordered card. */
-const Shell = ({ title, sub, children, compact = false }) => (
-  <section className={`auth-page ${compact ? 'auth-page-register' : ''}`}>
-    <div className={`auth-card mx-auto w-full max-w-md ${compact ? 'auth-card-compact' : ''}`}>
-      <h1 className={`font-heading font-extrabold leading-[1.02] ${compact ? 'text-[30px] sm:text-[34px]' : 'text-[36px] sm:text-[34px]'}`}>{title}</h1>
-      {sub && <p className={`text-ink/65 ${compact ? 'mt-1 text-[13px] sm:text-[15px]' : 'mt-2.5 text-[16px]'}`}>{sub}</p>}
-      <div className={compact ? 'mt-3 sm:mt-4' : 'mt-7'}>{children}</div>
+/** One calm column: a short heading, then the form. */
+const Shell = ({ title, sub, children }) => (
+  <section className="container-x flex min-h-[calc(100svh-52px)] max-w-md flex-col justify-center py-6 lg:min-h-[calc(100svh-64px)]">
+    <div className="mx-auto w-full">
+      <h1 className="text-[clamp(30px,9vw,38px)] font-bold leading-[1.02]">{title}</h1>
+      {sub && <p className="mt-2 text-[16px] text-ink/70">{sub}</p>}
+      <div className="mt-6">{children}</div>
     </div>
   </section>
 );
 
-const Err = ({ msg }) => (msg ? <p role="alert" className="rounded-2xl bg-brand-soft p-3.5 text-[14px] text-brand-dark">{msg}</p> : null);
+const Err = ({ msg }) => (msg ? <p role="alert" className="rounded-2xl bg-danger/10 p-3.5 text-[14px] font-semibold text-danger">{msg}</p> : null);
 
 function Password({ id, value, onChange, autoComplete, minLength, meter }) {
   const [show, setShow] = useState(false);
@@ -27,7 +27,7 @@ function Password({ id, value, onChange, autoComplete, minLength, meter }) {
     <>
       <div className="relative">
         <input id={id} type={show ? 'text' : 'password'} autoComplete={autoComplete} className="input !pr-12" value={value} onChange={(e) => onChange(e.target.value)} minLength={minLength} required />
-        <button type="button" onClick={() => setShow((s) => !s)} aria-label={show ? 'Hide password' : 'Show password'} aria-pressed={show} className="absolute right-1 top-1/2 grid h-11 w-11 -translate-y-1/2 place-items-center rounded-full text-ink/55">{show ? <EyeOff className="h-5 w-5" /> : <Eye className="h-5 w-5" />}</button>
+        <button type="button" onClick={() => setShow((s) => !s)} aria-label={show ? 'Hide password' : 'Show password'} aria-pressed={show} className="absolute right-1 top-1/2 grid h-11 w-11 -translate-y-1/2 place-items-center rounded-lg text-ink/55">{show ? <EyeOff className="h-5 w-5" /> : <Eye className="h-5 w-5" />}</button>
       </div>
       {meter && value && (
         <div className="mt-2 flex items-center gap-2" aria-live="polite">
@@ -39,7 +39,7 @@ function Password({ id, value, onChange, autoComplete, minLength, meter }) {
   );
 }
 
-const Or = () => (GOOGLE_CLIENT_ID ? <div className="my-5 flex items-center gap-3 text-xs font-semibold text-ink/45"><span className="h-px flex-1 bg-ink/10" />or use your email<span className="h-px flex-1 bg-ink/10" /></div> : null);
+const Or = () => (GOOGLE_CLIENT_ID ? <div className="my-5 flex items-center gap-3 text-[13px] font-semibold text-ink/55"><span className="h-px flex-1 bg-line" />or<span className="h-px flex-1 bg-line" /></div> : null);
 
 
 /** Phone sign-in: number, then the 6-digit code we text. Works for new and returning users (no separate sign-up step). */
@@ -63,9 +63,9 @@ function PhoneForm({ onDone, withProfile = false, state = '' }) {
     return (
       <form onSubmit={send} className="space-y-4">
         <Err msg={err} />
-        {withProfile && <Field label="Full name" id="pn"><input id="pn" autoComplete="name" className="input" value={name} onChange={(e) => setName(e.target.value)} minLength={2} maxLength={80} required /></Field>}
-        <Field label="Mobile number" id="pp" hint="We will text you a 6-digit code. Indian numbers need no country code."><input id="pp" type="tel" inputMode="tel" autoComplete="tel" className="input" placeholder="98765 43210" value={phone} onChange={(e) => setPhone(e.target.value)} required /></Field>
-        <button className="btn-primary w-full !min-h-[54px] text-base" disabled={busy}>{busy ? 'Sending…' : 'Send code'}</button>
+        {withProfile && <Field label="Your name" id="pn"><input id="pn" autoComplete="name" className="input" value={name} onChange={(e) => setName(e.target.value)} minLength={2} maxLength={80} required /></Field>}
+        <Field label="Mobile number" id="pp" hint="We text you a 6-digit code."><input id="pp" type="tel" inputMode="tel" autoComplete="tel" className="input" placeholder="98765 43210" value={phone} onChange={(e) => setPhone(e.target.value)} required /></Field>
+        <button className="btn-pop w-full !min-h-[56px] text-[16px]" disabled={busy}>{busy ? 'Sending…' : 'Text me a code'}</button>
       </form>
     );
   }
@@ -73,7 +73,7 @@ function PhoneForm({ onDone, withProfile = false, state = '' }) {
     <form onSubmit={verify} className="space-y-4">
       <Err msg={err} />
       <Field label={`Code sent to ${phone}`} id="pc"><input id="pc" inputMode="numeric" autoComplete="one-time-code" pattern="\d{6}" maxLength={6} className="input text-center text-2xl tracking-[.4em]" value={code} onChange={(e) => setCode(e.target.value.replace(/\D/g, ''))} autoFocus required /></Field>
-      <button className="btn-primary w-full !min-h-[54px] text-base" disabled={busy || code.length !== 6}>{busy ? 'Checking…' : 'Verify and continue'}</button>
+      <button className="btn-pop w-full !min-h-[56px] text-[16px]" disabled={busy || code.length !== 6}>{busy ? 'Checking…' : 'Continue'}</button>
       <div className="flex justify-between text-sm font-semibold">
         <button type="button" className="min-h-[44px] text-brand" onClick={() => { setSent(false); setCode(''); setErr(''); }}>Change number</button>
         <button type="button" className="min-h-[44px] text-brand disabled:text-ink/40" disabled={wait > 0 || busy} onClick={send}>{wait > 0 ? `Resend in ${wait}s` : 'Resend code'}</button>
@@ -103,16 +103,16 @@ export function Login() {
   const [f, setF] = useState({ email: '', password: '' }); const [err, setErr] = useState(''); const [busy, setBusy] = useState(false);
   const submit = async (e) => { e.preventDefault(); setBusy(true); setErr(''); try { after(await login(f)); } catch (x) { setErr(errMsg(x, 'Could not log in.')); } finally { setBusy(false); } };
   return (
-    <Shell title="Welcome back" sub="Log in to vote and see your receipts.">
+    <Shell title="Log in" sub="Vote and keep your receipts.">
       <GoogleButton onDone={after} onError={setErr} />
       <Or />
       {phoneOn && <Method value={method} onChange={setMethod} />}
-      {method === 'phone' ? <><PhoneForm onDone={after} /><p className="mt-4 text-center text-sm"><Link to="/register" state={loc.state} className="font-semibold text-brand">Create account</Link></p></> : (
+      {method === 'phone' ? <><PhoneForm onDone={after} /><p className="mt-4 text-center text-[15px]"><Link to="/register" state={loc.state} className="font-bold text-brand">New here? Create an account</Link></p></> : (
       <form onSubmit={submit} className="space-y-4">
         <Err msg={err} />
         <Field label="Email" id="le"><input id="le" type="email" inputMode="email" autoComplete="email" className="input" value={f.email} onChange={(e) => setF({ ...f, email: e.target.value })} required /></Field>
         <Field label="Password" id="lp"><Password id="lp" autoComplete="current-password" value={f.password} onChange={(v) => setF({ ...f, password: v })} /></Field>
-        <button className="btn-primary w-full !min-h-[54px] text-base" disabled={busy}>{busy ? 'Logging in…' : 'Log in'}</button>
+        <button className="btn-pop w-full !min-h-[56px] text-[16px]" disabled={busy}>{busy ? 'Logging in…' : 'Log in'}</button>
         <div className="flex justify-between text-sm font-semibold"><Link to="/forgot-password" className="flex min-h-[44px] items-center text-brand">Forgot password?</Link><Link to="/register" state={loc.state} className="flex min-h-[44px] items-center text-brand">Create account</Link></div>
       </form>)}
     </Shell>
@@ -120,38 +120,39 @@ export function Login() {
 }
 
 export function Register() {
-  const { register, meta } = useAuth(); const after = useAfterAuth(); const toast = useToast();
-  const [showAlternatives, setShowAlternatives] = useState(false);
+  const { register, meta } = useAuth(); const after = useAfterAuth(); const toast = useToast(); const loc = useLocation();
+  const phoneOn = Boolean(meta?.phoneSignIn);
+  const [more, setMore] = useState(false);
   const [f, setF] = useState({ name: '', email: '', password: '', state: '' }); const [err, setErr] = useState(''); const [busy, setBusy] = useState(false);
   const submit = async (e) => {
     e.preventDefault(); setErr('');
-    if (!f.state) { setErr('Please choose your state or union territory before creating your account.'); return; }
+    if (!f.state) { setErr('Choose your state first.'); return; }
     setBusy(true);
-    try { const u = await register({ ...f, state: f.state }); toast('Account created successfully.', 'success'); after(u); } catch (x) { setErr(x?.response?.data?.error?.details?.map((d) => d.message).join(' ') || errMsg(x)); } finally { setBusy(false); }
+    try { const u = await register({ ...f, state: f.state }); toast('Account created.', 'success'); after(u); } catch (x) { setErr(x?.response?.data?.error?.details?.map((d) => d.message).join(' ') || errMsg(x)); } finally { setBusy(false); }
   };
+  const emailBlock = (
+    <>
+      <Field label="Your state" id="gs"><StateSelect id="gs" states={meta?.states} value={f.state} onChange={(v) => setF((s) => ({ ...s, state: v }))} required /></Field>
+      <div className="mt-4"><GoogleButton state={f.state} requireState onDone={after} onError={setErr} text="signup_with" /></div>
+      <form onSubmit={submit} className="mt-4 space-y-4">
+        <Field label="Your name" id="rn"><input id="rn" autoComplete="name" className="input" value={f.name} onChange={(e) => setF({ ...f, name: e.target.value })} minLength={2} required /></Field>
+        <Field label="Email" id="re"><input id="re" type="email" inputMode="email" autoComplete="email" className="input" value={f.email} onChange={(e) => setF({ ...f, email: e.target.value })} required /></Field>
+        <Field label="Password" id="rp" hint="8 or more characters with a letter and a number."><Password id="rp" meter autoComplete="new-password" minLength={8} value={f.password} onChange={(v) => setF({ ...f, password: v })} /></Field>
+        <button className="btn-pop w-full !min-h-[56px] text-[16px]" disabled={busy}>{busy ? 'Creating…' : 'Create account'}</button>
+      </form>
+    </>
+  );
   return (
-    <Shell title="Create your account" sub="Get started with your mobile number.">
+    <Shell title="Join FameVote" sub="Free. It takes under a minute.">
       <Err msg={err} />
-      <PhoneForm onDone={(u) => { toast('Account ready.', 'success'); after(u); }} />
-      <p className="mt-4 text-center text-sm">Already have an account? <Link to="/login" className="font-semibold text-brand">Log in</Link></p>
-
-      <button type="button" className="mt-3 min-h-[44px] w-full text-sm font-semibold text-ink/65 underline-offset-4 hover:underline" aria-expanded={showAlternatives} onClick={() => setShowAlternatives((v) => !v)}>
-        {showAlternatives ? 'Hide other sign-up options' : 'Prefer email or Google?'}
-      </button>
-
-      {showAlternatives && <div className="auth-email-alternative">
-        <Field label="State / union territory" id="gs" hint="Choose your state to personalize rankings.">
-          <StateSelect id="gs" states={meta?.states} value={f.state} onChange={(v) => setF((s) => ({ ...s, state: v }))} required />
-        </Field>
-        <GoogleButton state={f.state} requireState onDone={after} onError={setErr} text="signup_with" />
-        <div className="auth-secondary-divider"><span>OR SIGN UP WITH EMAIL</span></div>
-        <form onSubmit={submit} className="auth-register-stack">
-          <Field label="Full name" id="rn"><input id="rn" autoComplete="name" className="input" value={f.name} onChange={(e) => setF({ ...f, name: e.target.value })} minLength={2} required /></Field>
-          <Field label="Email" id="re"><input id="re" type="email" inputMode="email" autoComplete="email" className="input" value={f.email} onChange={(e) => setF({ ...f, email: e.target.value })} required /></Field>
-          <Field label="Password" id="rp" hint="At least 8 characters, including a letter and a number."><Password id="rp" meter autoComplete="new-password" minLength={8} value={f.password} onChange={(v) => setF({ ...f, password: v })} /></Field>
-          <button className="btn-primary w-full !min-h-[50px] text-base" disabled={busy}>{busy ? 'Creating…' : 'Create account with email'}</button>
-        </form>
-      </div>}
+      {phoneOn ? (
+        <>
+          <PhoneForm onDone={(u) => { toast('Welcome!', 'success'); after(u); }} />
+          <button type="button" className="mt-3 min-h-[48px] w-full text-[15px] font-bold text-ink/70" aria-expanded={more} onClick={() => setMore((v) => !v)}>{more ? 'Hide email options' : 'Use email or Google instead'}</button>
+          {more && <div className="mt-2 border-t border-line pt-4">{emailBlock}</div>}
+        </>
+      ) : emailBlock}
+      <p className="mt-5 text-center text-[15px]">Already have an account? <Link to="/login" state={loc.state} className="font-bold text-brand">Log in</Link></p>
     </Shell>
   );
 }
@@ -160,10 +161,10 @@ export function Forgot() {
   const [email, setEmail] = useState(''); const [done, setDone] = useState(false); const [busy, setBusy] = useState(false); const [err, setErr] = useState('');
   const submit = async (e) => { e.preventDefault(); setBusy(true); setErr(''); try { await api.post('/auth/forgot-password', { email }); setDone(true); } catch (x) { setErr(errMsg(x)); } finally { setBusy(false); } };
   return (
-    <Shell title="Forgot your password?" sub="Enter your email and we will send a reset link.">
+    <Shell title="Reset password" sub="Enter your email. We will send you a link.">
       {done ? <p className="rounded-2xl bg-mint-soft p-4 text-[15px] text-mint" role="status">If an account exists for that email, a reset link is on its way. If you signed up with Google, use the Google button on the login page instead.</p> : (
         <form onSubmit={submit} className="space-y-4"><Err msg={err} /><Field label="Email" id="fe"><input id="fe" type="email" inputMode="email" className="input" value={email} onChange={(e) => setEmail(e.target.value)} required /></Field>
-          <button className="btn-primary w-full !min-h-[54px] text-base" disabled={busy}>{busy ? 'Sending…' : 'Send reset link'}</button></form>)}
+          <button className="btn-pop w-full !min-h-[56px] text-[16px]" disabled={busy}>{busy ? 'Sending…' : 'Send reset link'}</button></form>)}
     </Shell>
   );
 }
@@ -176,7 +177,7 @@ export function Reset() {
     <Shell title="Choose a new password">
       <form onSubmit={submit} className="space-y-4"><Err msg={err} />
         <Field label="New password" id="np" hint="8+ characters with a letter and a number."><Password id="np" meter autoComplete="new-password" minLength={8} value={password} onChange={setPassword} /></Field>
-        <button className="btn-primary w-full !min-h-[54px] text-base" disabled={busy}>{busy ? 'Saving…' : 'Update password'}</button></form>
+        <button className="btn-pop w-full !min-h-[56px] text-[16px]" disabled={busy}>{busy ? 'Saving…' : 'Update password'}</button></form>
     </Shell>
   );
 }

@@ -56,6 +56,23 @@ const schema = z.object({
   AUTO_REFUND: bool(true),
   ENABLE_SCHEDULER: bool(true),
 
+  // MongoDB driver tuning (defaults suit one small Render instance talking to Atlas)
+  MONGO_MAX_POOL_SIZE: z.coerce.number().int().min(1).max(200).default(20),
+  MONGO_MIN_POOL_SIZE: z.coerce.number().int().min(0).max(50).default(2),
+  MONGO_SERVER_SELECTION_TIMEOUT_MS: z.coerce.number().int().min(1000).default(10_000),
+  MONGO_SOCKET_TIMEOUT_MS: z.coerce.number().int().min(5000).default(45_000),
+  MONGO_COMPRESSORS: z.string().optional(), // e.g. "zlib" (opt-in; off by default)
+
+  // Boot-time bootstrap (runs after the server is already listening; see services/bootstrapService)
+  BOOTSTRAP_ENABLED: bool(true),
+  BOOTSTRAP_CELEBRITIES: bool(true), // also insert missing seed celebrities; false = settings/categories/campaigns/gender only
+
+  // Outbound call timeouts (ms)
+  RAZORPAY_TIMEOUT_MS: z.coerce.number().int().min(1000).default(10_000),
+  CLOUDINARY_TIMEOUT_MS: z.coerce.number().int().min(1000).default(20_000),
+  GOOGLE_TIMEOUT_MS: z.coerce.number().int().min(1000).default(8_000),
+  SHUTDOWN_TIMEOUT_MS: z.coerce.number().int().min(1000).default(10_000),
+
   SUPERADMIN_EMAIL: z.string().optional(),
   SUPERADMIN_PASSWORD: z.string().optional(),
 });

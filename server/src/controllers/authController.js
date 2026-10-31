@@ -13,7 +13,9 @@ const { placeholderEmail } = require('../utils/phone');
 const MAX_FAILED = 5;
 const LOCK_MS = 15 * 60 * 1000;
 // Constant-time-ish dummy hash so unknown emails cost the same as wrong passwords.
-const DUMMY_HASH = bcrypt.hashSync('not-a-real-password', 12);
+// A precomputed cost-12 bcrypt hash of a throwaway string (not a secret). It used to be computed with bcrypt.hashSync at
+// require time, which blocked start-up for ~360 ms on every boot.
+const DUMMY_HASH = '$2a$12$pNCReNtJsGuP4VZliJaOleqtaMKXpruhNCww8B7RFlg0NtozgDJZy';
 
 exports.register = asyncHandler(async (req, res) => {
   const { name, email, password, state } = req.body;

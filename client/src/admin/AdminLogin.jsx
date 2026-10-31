@@ -15,8 +15,8 @@ export default function AdminLogin() {
   return (
     <main className="flex min-h-screen items-center justify-center bg-paper p-4">
       <form onSubmit={submit} className="card w-full max-w-sm space-y-4 p-6">
-        <div className="flex items-center justify-between gap-2"><div className="flex items-center gap-2"><ShieldCheck className="h-6 w-6 text-brand" /><h1 className="font-heading text-xl font-extrabold">FameVote Admin</h1></div><ThemeToggle /></div>
-        {err && <p role="alert" className="rounded-xl bg-brand-soft p-3 text-sm text-brand-dark">{err}</p>}
+        <div className="flex items-center justify-between gap-2"><div className="flex items-center gap-2"><ShieldCheck className="h-6 w-6 text-brand" /><h1 className="text-xl font-bold">FameVote Admin</h1></div><ThemeToggle /></div>
+        {err && <p role="alert" className="rounded-xl bg-danger/10 p-3 text-sm text-danger">{err}</p>}
         <Field label="Email" id="ae"><input id="ae" type="email" autoComplete="username" className="input" value={f.email} onChange={(e) => setF({ ...f, email: e.target.value })} required /></Field>
         <Field label="Password" id="ap"><input id="ap" type="password" autoComplete="current-password" className="input" value={f.password} onChange={(e) => setF({ ...f, password: e.target.value })} required /></Field>
         <button className="btn-primary w-full" disabled={busy}>{busy ? 'Signing in…' : 'Sign in'}</button>

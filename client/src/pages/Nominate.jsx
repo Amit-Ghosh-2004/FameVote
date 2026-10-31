@@ -6,7 +6,7 @@ import { useAuth } from '../lib/AuthContext';
 import { useToast } from '../lib/Toast';
 import { CategoryIcon, PageTitle, Field, EmptyState, GENDER_LABEL } from '../components/ui';
 
-const TONE = { pending: ['bg-sand text-ink', Clock], approved: ['bg-mint-soft text-mint', Check], rejected: ['bg-brand-soft text-brand-dark', X], duplicate: ['bg-ink/[.07] text-ink/70', X] };
+const TONE = { pending: ['bg-sand text-ink', Clock], approved: ['bg-mint-soft text-mint', Check], rejected: ['bg-danger/10 text-danger', X], duplicate: ['bg-ink/[.07] text-ink/70', X] };
 
 export default function Nominate() {
   const toast = useToast();
@@ -45,11 +45,11 @@ export default function Nominate() {
             </div>
           </div>
           <Field label="Why them? (optional)" id="nr"><input id="nr" className="input" value={f.reason} onChange={set('reason')} maxLength={300} placeholder="One line is plenty" /></Field>
-          <button className="btn-pop w-full !min-h-[54px] text-base" disabled={busy}>{busy ? 'Sending…' : 'Submit nomination'}</button>
+          <button className="btn-pop w-full !min-h-[56px] text-[16px]" disabled={busy}>{busy ? 'Sending…' : 'Send nomination'}</button>
         </form>
       </div>
       <div>
-        <h2 className="mb-3 font-heading text-xl font-extrabold">Your nominations</h2>
+        <h2 className="mb-3 text-xl font-bold">Your nominations</h2>
         {mine.data?.nominations?.length
           ? <ul className="divide-y divide-line rounded-2xl bg-surface px-4 border border-line">{mine.data.nominations.map((n) => { const [cls, I] = TONE[n.status] || TONE.pending; return <li key={n.id} className="flex min-h-[64px] items-center justify-between gap-3 py-3"><div className="min-w-0"><p className="truncate font-semibold">{n.name}</p><p className="text-xs text-ink/55">{n.category}</p></div><span className={`badge ${cls}`}><I className="h-3 w-3" aria-hidden="true" />{n.status}</span></li>; })}</ul>
           : <EmptyState title="Nothing yet" text="Nominations you send will show up here with their status." />}

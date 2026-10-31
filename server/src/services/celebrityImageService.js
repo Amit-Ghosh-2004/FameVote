@@ -1,6 +1,5 @@
 
-const { v2: cloudinary } = require('cloudinary');
-const { isConfigured } = require('./cloudinaryService');
+const { isConfigured, getCloudinary } = require('./cloudinaryService');
 
 const UA =
   'FameVoteSeed/1.0 (Celebrity image importer; contact: site admin)';
@@ -466,9 +465,10 @@ function uploadPortrait(buffer, slug) {
   }
 
   return new Promise((resolve, reject) => {
-    cloudinary.uploader
+    getCloudinary().uploader
       .upload_stream(
         {
+          timeout: 30000,
           folder: 'famevote/celebrities',
           public_id: slug,
           overwrite: true,

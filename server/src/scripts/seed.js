@@ -20,16 +20,7 @@ const { randomToken } = require('../utils/crypto');
 const M = require('../services/imageManifest');
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
-const CATEGORIES = [
-  ['Actors', 'actors', 'clapperboard', 'Film, TV and stage actors.'],
-  ['Singers & Musicians', 'singers-musicians', 'mic', 'Playback singers, bands and instrumentalists.'],
-  ['Influencers & Content Creators', 'influencers-content-creators', 'sparkles', 'Creators and digital personalities.'],
-  ['Athletes & Sports Personalities', 'athletes-sports-personalities', 'trophy', 'Players and sports icons.'],
-  ['TV Personalities', 'tv-personalities', 'tv', 'Anchors, hosts and television faces.'],
-  ['Comedians', 'comedians', 'laugh', 'Stand-up and comedy performers.'],
-  ['Models', 'models', 'camera', 'Fashion and commercial models.'],
-  ['Other', 'other', 'star', 'Public figures who do not fit another category.'],
-];
+const CATEGORIES = require('../data/categories');
 
 async function makeUniqueCode() {
   for (let attempt = 0; attempt < 10; attempt += 1) {

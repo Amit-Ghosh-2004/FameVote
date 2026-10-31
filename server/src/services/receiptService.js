@@ -1,4 +1,3 @@
-const PDFDocument = require('pdfkit');
 const { Receipt, User, Celebrity, Category, Campaign } = require('../models');
 const { randomToken, receiptVerificationRef, maskEmail, safeEqual } = require('../utils/crypto');
 const { contactOf } = require('../utils/phone');
@@ -71,7 +70,7 @@ async function verifyReceipt(receiptNo, ref) {
 }
 
 /* ------------------------------ fan-style PDF receipt ------------------------------ */
-const C = { coral: '#FF6B3D', deep: '#D63E16', amber: '#FFB547', cream: '#FFF7EF', ink: '#18141E', mint: '#1F9D6B', gray: '#6B6470' };
+const C = { coral: '#1B1A4B', deep: '#6366F1', amber: '#FBBF24', cream: '#F6F7FC', ink: '#12132B', mint: '#059669', gray: '#5B5F7A' };
 const { fanLine, firstName, initials } = require('../data/fanCopy');
 const env = require('../config/env');
 
@@ -93,6 +92,7 @@ async function streamReceiptPdf(r, res) {
   const catSlug = (await Category.findById(s.categoryId).select('slug').lean().catch(() => null))?.slug;
   const verifyUrl = `${env.clientOrigins[0]}/verify-receipt?receiptNo=${encodeURIComponent(r.receiptNo)}&ref=${r.verificationRef}`;
   const qr = await qrBuffer(verifyUrl);
+  const PDFDocument = require('pdfkit'); // lazy: keeps pdfkit off the start-up path
   const doc = new PDFDocument({ size: 'A5', margin: 0, info: { Title: `FameVote Receipt ${r.receiptNo}`, Author: 'FameVote', Subject: `Vote for ${s.celebrityName}` } });
   res.setHeader('Content-Type', 'application/pdf');
   res.setHeader('Content-Disposition', `attachment; filename="${r.receiptNo}.pdf"`);
@@ -103,7 +103,7 @@ async function streamReceiptPdf(r, res) {
   // Banner with a curved bottom edge
   doc.moveTo(0, 0).lineTo(W, 0).lineTo(W, 236).quadraticCurveTo(W / 2, 290, 0, 236).closePath().fill(C.coral);
   // Confetti (deterministic per receipt number, kept clear of the name block)
-  const shades = ['#FFFFFF', C.amber, C.cream, C.deep, '#FFD28A'];
+  const shades = ['#FFFFFF', C.amber, C.cream, C.deep, '#A5B4FC'];
   for (let i = 0; i < 46; i += 1) {
     const x = rand() * W; const y = 8 + rand() * 120; const col = shades[Math.floor(rand() * shades.length)]; const sz = 3 + rand() * 6; const rot = rand() * Math.PI;
     if ((Math.abs(x - W / 2) < 52 && y > 58) || (x < 150 && y < 62)) continue;

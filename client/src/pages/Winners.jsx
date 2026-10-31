@@ -1,10 +1,11 @@
 import { useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { ChevronDown, Crown } from 'lucide-react';
+import { ChevronDown } from 'lucide-react';
 import { api, unwrap, fmtNum } from '../lib/api';
 import { useAsync } from '../lib/hooks';
 import { useAuth } from '../lib/AuthContext';
-import { PageTitle, Podium, RankingList, Skeleton, ErrorState, EmptyState, Portrait, StateSelect, Segmented, CategoryPicker, GENDER_LABEL } from '../components/ui';
+import { RankingList } from '../components/Overlay';
+import { PageTitle, Podium, Skeleton, ErrorState, EmptyState, Portrait, StateSelect, Segmented, CategoryPicker, GENDER_LABEL } from '../components/ui';
 
 export default function Winners() {
   const { meta, user } = useAuth();
@@ -35,19 +36,18 @@ export default function Winners() {
         : d && (
           <div className="space-y-7">
             <section aria-label="Champions">
-              <h2 className="mb-3 font-heading text-xl font-extrabold">Champions of {d.campaign.title.replace(' Campaign', '')}</h2>
+              <h2 className="mb-3 text-xl font-bold">Champions of {d.campaign.title.replace(' Campaign', '')}</h2>
               <div className="snap-row">
                 {d.national.map((n) => {
                   const w = n.winners?.[0];
                   return (
                     <button key={n.category?.slug} onClick={() => { setCat(n.category?.slug); setScope('national'); }} className="w-[44vw] max-w-[190px] shrink-0 text-left transition active:scale-[.97] sm:w-44">
                       <div className="relative aspect-[3/4] overflow-hidden rounded-xl bg-sand">
-                        {w ? <Portrait src={w.image} name={w.name} /> : <div className="grid h-full place-items-center text-sm text-white/60">No votes</div>}
-                        <div className="absolute inset-x-0 bottom-0 h-3/5 bg-gradient-to-t from-black via-black/50 to-transparent" />
-                        <span className="absolute left-0 top-0 grid h-8 w-8 place-items-center rounded-br-lg bg-brand text-on"><Crown className="h-4 w-4" aria-hidden="true" /></span>
-                        <div className="absolute inset-x-0 bottom-0 p-3 text-white"><p className="font-heading text-[15px] font-bold leading-tight">{w?.name || '—'}</p>{w && <p className="mt-0.5 text-xs text-white/70">{fmtNum(w.votes)} votes</p>}</div>
+                        {w ? <Portrait src={w.image} name={w.name} /> : <div className="grid h-full place-items-center text-sm text-ink/60">No votes</div>}
                       </div>
-                      <p className="mt-2 truncate text-[13px] font-semibold text-ink/70">{n.category?.name}</p>
+                      <p className="mt-2 truncate text-[13px] text-ink/65">{n.category?.name}</p>
+                      <p className="truncate text-[15px] font-semibold leading-tight">{w?.name || '—'}</p>
+                      {w && <p className="text-xs text-ink/60 tnum">{fmtNum(w.votes)} votes</p>}
                     </button>);
                 })}
               </div>
@@ -61,12 +61,12 @@ export default function Winners() {
               <div className="mb-3 max-w-sm"><Segmented label="Scope" value={scope} onChange={setScope} options={[['national', 'India Top 15'], ['state', 'State Top 10']]} /></div>
               {scope === 'state' && <div className="mb-3 max-w-sm"><StateSelect id="ws" states={meta?.states} value={state} onChange={setState} allLabel="Choose a state" /></div>}
               {scope === 'national' && current?.top?.length > 0 && (
-                <div className="mb-5"><Podium entries={current.top} /></div>)}
+                <div className="stage mb-5 rounded-2xl px-3 pb-3 pt-4 sm:px-5 sm:pb-5"><Podium entries={current.top} /></div>)}
               {scope === 'national' && ['male', 'female', 'other'].some((g) => current?.byGender?.[g]?.length) && (
                 <ul className="mb-4 grid gap-2 sm:grid-cols-3" aria-label="Winner in each group">
-                  {['male', 'female', 'other'].map((g) => { const w = current.byGender[g]?.[0]; return w ? <li key={g} className="flex items-center gap-3 rounded-xl border border-line bg-surface p-2.5"><span className="h-11 w-11 shrink-0 overflow-hidden rounded-lg bg-sand"><Portrait src={w.image} name={w.name} sizes="48px" /></span><span className="min-w-0"><span className="block text-xs text-ink/55">{GENDER_LABEL[g]} winner</span><span className="block truncate font-semibold">{w.name}</span></span></li> : null; })}
+                  {['male', 'female', 'other'].map((g) => { const w = current.byGender[g]?.[0]; return w ? <li key={g} className="flex items-center gap-3 rounded-2xl border border-line bg-surface p-2.5"><span className="h-14 w-11 shrink-0 overflow-hidden rounded-xl bg-sand"><Portrait src={w.image} name={w.name} sizes="48px" /></span><span className="min-w-0"><span className="block text-xs text-ink/55">{GENDER_LABEL[g]} winner</span><span className="block truncate font-semibold">{w.name}</span></span></li> : null; })}
                 </ul>)}
-              <div className="rounded-xl border border-line bg-surface px-4 py-1">
+              <div className="border-y border-line">
                 {scope === 'state' && !state ? <p className="py-8 text-center text-[15px] text-ink/60">Choose a state to see its Top 10.</p>
                   : rows?.length ? <RankingList entries={rows} limit={scope === 'national' ? 15 : 10} />
                   : <p className="py-8 text-center text-[15px] text-ink/60">No valid votes here in this campaign.</p>}

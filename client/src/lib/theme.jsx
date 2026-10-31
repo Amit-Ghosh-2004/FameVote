@@ -2,7 +2,7 @@ import { useCallback, useEffect, useState } from 'react';
 import { Moon, Sun } from 'lucide-react';
 
 const KEY = 'fv-theme';
-const COLORS = { dark: '#0C0B10', light: '#FAF7F2' };
+const COLORS = { dark: '#0f0f0c', light: '#F8F7EE' };
 // Kept at module level: a MediaQueryList that nothing references can be garbage-collected and stop firing.
 const MQ = typeof window !== 'undefined' && window.matchMedia ? window.matchMedia('(prefers-color-scheme: light)') : null;
 const mq = () => MQ;
@@ -40,7 +40,7 @@ export function ThemeToggle({ className = '' }) {
   const toLight = theme === 'dark';
   return (
     <button type="button" onClick={toggle} aria-label={toLight ? 'Switch to light theme' : 'Switch to dark theme'} title={toLight ? 'Light theme' : 'Dark theme'}
-      className={`grid h-10 w-10 shrink-0 place-items-center rounded-full border border-line text-ink/80 transition hover:bg-ink/10 ${className}`}>
+      className={`grid h-10 w-10 shrink-0 place-items-center rounded-full text-ink/75 transition hover:bg-ink/[.09] ${className}`}>
       {toLight ? <Sun className="h-[18px] w-[18px]" aria-hidden="true" /> : <Moon className="h-[18px] w-[18px]" aria-hidden="true" />}
     </button>
   );

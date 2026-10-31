@@ -1,5 +1,3 @@
-const { v2: cloudinary } = require('cloudinary');
-const multer = require('multer');
 const env = require('../config/env');
 const ApiError = require('../utils/ApiError');
 
@@ -8,16 +6,35 @@ const ALLOWED = { 'image/jpeg': 'jpg', 'image/png': 'png', 'image/webp': 'webp' 
 const FOLDERS = { celebrity: 'famevote/celebrities', category: 'famevote/categories', avatar: 'famevote/avatars', banner: 'famevote/banners', campaign: 'famevote/campaigns' };
 
 const isConfigured = () => Boolean(env.CLOUDINARY_CLOUD_NAME && env.CLOUDINARY_API_KEY && env.CLOUDINARY_API_SECRET);
-if (isConfigured()) {
-  cloudinary.config({ cloud_name: env.CLOUDINARY_CLOUD_NAME, api_key: env.CLOUDINARY_API_KEY, api_secret: env.CLOUDINARY_API_SECRET, secure: true });
+
+// cloudinary (~46 modules) and multer are only needed when an image is uploaded/removed, so they load on first use,
+// not at boot. The SDK has its own timeout option; every call below passes CLOUDINARY_TIMEOUT_MS explicitly.
+let cloudinaryClient = null;
+function getCloudinary() {
+  if (!cloudinaryClient) {
+    cloudinaryClient = require('cloudinary').v2;
+    if (isConfigured()) cloudinaryClient.config({ cloud_name: env.CLOUDINARY_CLOUD_NAME, api_key: env.CLOUDINARY_API_KEY, api_secret: env.CLOUDINARY_API_SECRET, secure: true });
+  }
+  return cloudinaryClient;
 }
 
 /** Multer keeps the file in memory (<=5MB); nothing touches disk and the API secret never leaves the server. */
-const upload = multer({
-  storage: multer.memoryStorage(),
-  limits: { fileSize: MAX_BYTES, files: 1 },
-  fileFilter: (_req, file, cb) => (ALLOWED[file.mimetype] ? cb(null, true) : cb(ApiError.badRequest('Only JPEG, PNG or WebP images are allowed', 'BAD_FILE_TYPE'))),
-});
+let multerInstance = null;
+const getMulter = () => (multerInstance ||= (() => {
+  const multer = require('multer');
+  return multer({
+    storage: multer.memoryStorage(),
+    limits: { fileSize: MAX_BYTES, files: 1 },
+    fileFilter: (_req, file, cb) => (ALLOWED[file.mimetype] ? cb(null, true) : cb(ApiError.badRequest('Only JPEG, PNG or WebP images are allowed', 'BAD_FILE_TYPE'))),
+  });
+})());
+/** Same surface as a multer instance for what the routes use (`upload.single('image')`), but multer loads on first upload. */
+const upload = {
+  single(field) {
+    let mw = null;
+    return (req, res, next) => { try { (mw ||= getMulter().single(field))(req, res, next); } catch (e) { next(e); } };
+  },
+};
 
 /** The declared MIME type is client-controlled, so also check the real file signature (magic bytes). */
 function sniff(buf) {
@@ -32,8 +49,8 @@ async function uploadImage(file, kind) {
   if (sniff(file.buffer) !== file.mimetype) throw ApiError.badRequest('File content does not match its type', 'BAD_FILE_TYPE');
   if (!isConfigured()) throw ApiError.unavailable('Image storage is not configured', 'STORAGE_UNAVAILABLE');
   return new Promise((resolve, reject) => {
-    cloudinary.uploader.upload_stream(
-      { folder: FOLDERS[kind], resource_type: 'image', overwrite: false, unique_filename: true, allowed_formats: ['jpg', 'png', 'webp'], transformation: [{ width: 1600, height: 1600, crop: 'limit' }] },
+    getCloudinary().uploader.upload_stream(
+      { timeout: env.CLOUDINARY_TIMEOUT_MS, folder: FOLDERS[kind], resource_type: 'image', overwrite: false, unique_filename: true, allowed_formats: ['jpg', 'png', 'webp'], transformation: [{ width: 1600, height: 1600, crop: 'limit' }] },
       (err, res) => (err ? reject(ApiError.unavailable('Image upload failed', 'UPLOAD_FAILED')) : resolve({ url: res.secure_url, publicId: res.public_id }))
     ).end(file.buffer);
   });
@@ -41,7 +58,7 @@ async function uploadImage(file, kind) {
 
 async function destroyImage(publicId) {
   if (!publicId || !isConfigured()) return;
-  try { await cloudinary.uploader.destroy(publicId, { invalidate: true }); } catch (e) { console.error('[cloudinary] destroy failed', publicId, e.message); }
+  try { await getCloudinary().uploader.destroy(publicId, { invalidate: true, timeout: env.CLOUDINARY_TIMEOUT_MS }); } catch (e) { console.error('[cloudinary] destroy failed', publicId, e.message); }
 }
 
 /** Upload the new image first; only delete the old one once the new one is safely stored on the document. */
@@ -54,4 +71,4 @@ async function replaceImage(doc, field, file, kind) {
   return fresh;
 }
 
-module.exports = { upload, uploadImage, destroyImage, replaceImage, isConfigured, MAX_BYTES };
+module.exports = { upload, uploadImage, destroyImage, replaceImage, isConfigured, getCloudinary, MAX_BYTES };

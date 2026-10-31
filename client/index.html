@@ -3,24 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <meta name="theme-color" content="#0C0B10" />
+    <meta name="theme-color" content="#0f0f0c" />
     <meta name="color-scheme" content="dark light" />
-    <meta name="description" content="FameVote - Your Vote. Their Fame. Monthly celebrity voting and rankings for India." />
+    <meta name="description" content="FameVote: vote for your favourite stars. One vote per category, every month, with a receipt for each vote." />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/manifest.webmanifest" />
     <link rel="preconnect" href="https://res.cloudinary.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Fraunces:ital,opsz,wght@1,9..144,500;1,9..144,600&family=DM+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <link rel="canonical" href="__SITE_URL__/" data-site-url />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="__SITE_URL__/" data-site-url />
     <meta property="og:site_name" content="FameVote" />
-    <meta property="og:title" content="FameVote - Your Vote. Their Fame." />
-    <meta property="og:description" content="Vote once per category, watch the live leaderboard and keep a receipt for every vote." />
+    <meta property="og:title" content="FameVote: vote for your favourite stars" />
+    <meta property="og:description" content="One vote per category, live rankings, and a receipt for every vote." />
     <meta property="og:image" content="__SITE_URL__/og-image.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="FameVote - Your Vote. Their Fame." />
+    <meta name="twitter:title" content="FameVote: vote for your favourite stars" />
     <meta name="twitter:description" content="Monthly celebrity voting and live rankings for India." />
     <meta name="twitter:image" content="__SITE_URL__/og-image.png" />
     <script>
@@ -29,11 +32,11 @@
           var t = localStorage.getItem('fv-theme');
           if (t !== 'light' && t !== 'dark') t = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
           var r = document.documentElement; r.dataset.theme = t; r.style.colorScheme = t;
-          var m = document.querySelector('meta[name="theme-color"]'); if (m) m.setAttribute('content', t === 'light' ? '#FAF7F2' : '#0C0B10');
+          var m = document.querySelector('meta[name="theme-color"]'); if (m) m.setAttribute('content', t === 'light' ? '#F8F7EE' : '#0f0f0c');
         } catch (e) { document.documentElement.dataset.theme = 'dark'; }
       })();
     </script>
-    <title>FameVote - Your Vote. Their Fame.</title>
+    <title>FameVote: vote for your favourite stars</title>
   </head>
   <body>
     <div id="root"></div>

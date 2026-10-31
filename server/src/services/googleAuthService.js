@@ -1,5 +1,4 @@
 
-const { OAuth2Client } = require('google-auth-library');
 const env = require('../config/env');
 const ApiError = require('../utils/ApiError');
 
@@ -33,6 +32,7 @@ async function verifyGoogleCredential(credential, verifier) {
 
   try {
     if (!client) {
+      const { OAuth2Client } = require('google-auth-library'); // lazy: only loaded when Google sign-in is used
       client = new OAuth2Client(env.GOOGLE_CLIENT_ID);
 
       // Use Node.js's built-in fetch instead of Gaxios's failing

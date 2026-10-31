@@ -37,7 +37,7 @@ export function useVoteFlow() {
       await new Promise((resolve) => {
         const rz = new window.Razorpay({
           key: order.keyId, order_id: order.orderId, amount: order.amount, currency: order.currency,
-          name: 'FameVote', description: `Vote for ${order.celebrityName}`, prefill: order.prefill, theme: { color: '#D63E16' },
+          name: 'FameVote', description: `Vote for ${order.celebrityName}`, prefill: order.prefill, theme: { color: '#566F12' },
           modal: {
             ondismiss: async () => { await api.post(`/payments/${order.paymentId}/cancel`).catch(() => {}); setState({ step: 'cancelled', error: null, receipt: null }); resolve(); },
           },

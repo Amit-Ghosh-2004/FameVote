@@ -1,5 +1,4 @@
 const { isPlaceholderEmail } = require('../utils/phone');
-const Razorpay = require('razorpay');
 const env = require('../config/env');
 const { Payment, Vote, Campaign, Category, Celebrity, User, Settings, WebhookEvent, Notification } = require('../models');
 const { resolveAmountInr } = require('./amountService');
@@ -20,7 +19,12 @@ const setGateway = (g) => { injectedGateway = g; };
 function gateway() {
   if (injectedGateway) return injectedGateway;
   if (!env.RAZORPAY_KEY_ID || !env.RAZORPAY_KEY_SECRET) throw ApiError.unavailable('Payments are not configured', 'PAYMENTS_UNAVAILABLE');
-  cachedGateway ||= new Razorpay({ key_id: env.RAZORPAY_KEY_ID, key_secret: env.RAZORPAY_KEY_SECRET });
+  if (!cachedGateway) {
+    const Razorpay = require('razorpay'); // loaded on the first payment call, not at boot (pulls in axios + ~5 modules)
+    cachedGateway = new Razorpay({ key_id: env.RAZORPAY_KEY_ID, key_secret: env.RAZORPAY_KEY_SECRET });
+    // The SDK sets no timeout of its own: without this a stalled Razorpay call would hold the request (and a pool slot) open.
+    if (cachedGateway.api?.rq?.defaults) cachedGateway.api.rq.defaults.timeout = env.RAZORPAY_TIMEOUT_MS;
+  }
   return cachedGateway;
 }
 

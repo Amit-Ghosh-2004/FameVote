@@ -25,6 +25,8 @@ const settingsSchema = new mongoose.Schema(
         createdAt: { type: Date, default: Date.now },
       },
     ],
+    // Written by services/bootstrapService: which seed lineup has already been synced (so boots skip the work).
+    bootstrap: { seedVersion: String, at: Date },
     updatedBy: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
   },
   { timestamps: true }
