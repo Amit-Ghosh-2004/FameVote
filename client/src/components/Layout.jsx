@@ -3,7 +3,6 @@ import { Link, NavLink, Outlet, useLocation, useNavigate } from 'react-router-do
 import { Check, Home, Medal, Trophy, User } from 'lucide-react';
 import { useAuth } from '../lib/AuthContext';
 import { useCountdown } from '../lib/hooks';
-import { titleForPath } from '../lib/title';
 import { ThemeToggle } from '../lib/theme';
 
 const links = [['/', 'Home'], ['/vote', 'Vote'], ['/rankings', 'Rankings'], ['/winners', 'Winners']];
@@ -53,7 +52,6 @@ export default function Layout() {
   const camp = meta?.campaign;
   const authPage = ['/login', '/register', '/forgot-password', '/reset-password'].includes(loc.pathname);
   useEffect(() => { window.scrollTo(0, 0); }, [loc.pathname]);
-  useEffect(() => { const t = titleForPath(loc.pathname); if (t !== undefined) document.title = t ? `${t} · FameVote` : 'FameVote: vote for your favourite stars'; }, [loc.pathname]);
 
   return (
     <div className="flex min-h-[100dvh] flex-col">
@@ -93,10 +91,22 @@ export default function Layout() {
         <div className="container-x grid gap-8 py-8 sm:py-10 md:grid-cols-[1.4fr_1fr] lg:py-12">
           <div className="max-w-sm"><Logo /><p className="mt-3 text-sm leading-6 text-ink/65">One vote per category, every month. You get a receipt for each vote.</p>{meta?.sampleData && <p className="mt-3 text-xs text-ink/55">Preview: some accounts, votes and results are sample data.</p>}</div>
           <div className="grid grid-cols-2 gap-x-8 gap-y-1 text-sm font-semibold text-ink/70">
-            {[['/how-it-works', 'How it works'], ['/voting-integrity', 'Fair voting'], ['/verify-receipt', 'Check a receipt'], ['/nominate', 'Nominate someone'], ['/rankings', 'Rankings'], ['/winners', 'Winners']].map(([to, l]) => <Link key={to} to={to} className="flex min-h-[40px] items-center hover:text-ink">{l}</Link>)}
+            {[
+              ['/how-it-works', 'How it works'],
+              ['/voting-integrity', 'Fair voting'],
+              ['/voting-rules', 'Voting rules'],
+              ['/verify-receipt', 'Check a receipt'],
+              ['/nominate', 'Nominate someone'],
+              ['/rankings', 'Rankings'],
+              ['/winners', 'Winners'],
+              ['/about', 'About'],
+              ['/contact', 'Contact & support'],
+              ['/privacy', 'Privacy'],
+              ['/terms', 'Terms'],
+            ].map(([to, l]) => <Link key={to} to={to} className="flex min-h-[40px] items-center hover:text-ink">{l}</Link>)}
           </div>
         </div>
-        <p className="border-t border-line px-4 py-4 text-center text-xs text-ink/55 max-lg:pb-[calc(5.5rem+env(safe-area-inset-bottom))]">© {new Date().getFullYear()} FameVote</p>
+        <p className="border-t border-line px-4 py-4 text-center text-xs text-ink/55 max-lg:pb-[calc(5.5rem+env(safe-area-inset-bottom))]">© {new Date().getFullYear()} FameVote · Independent fan-voting platform</p>
       </footer>
 
       <nav className={`pointer-events-none fixed inset-x-0 bottom-0 z-50 px-3 pb-[calc(8px+env(safe-area-inset-bottom))] lg:hidden ${authPage ? 'hidden' : ''}`} aria-label="Primary">

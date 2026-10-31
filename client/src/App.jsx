@@ -3,6 +3,7 @@ import { Route, Routes, Navigate, Link } from 'react-router-dom';
 import Layout from './components/Layout';
 import { RequireUser, RequireAdmin } from './components/Guards';
 import { Skeleton } from './components/ui';
+import SeoManager from './lib/SeoManager';
 
 const Home = lazy(() => import('./pages/Home'));
 const Rankings = lazy(() => import('./pages/Rankings'));
@@ -46,6 +47,7 @@ const NotFound = () => (
 export default function App() {
   return (
     <Suspense fallback={<Fallback />}>
+      <SeoManager />
       <Routes>
         <Route element={<Layout />}>
           <Route index element={<Home />} />

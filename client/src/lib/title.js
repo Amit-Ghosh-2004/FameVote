@@ -21,6 +21,11 @@ export function useDocTitle(title) {
     update('meta[name="description"]', 'name', description);
     update('meta[property="og:title"]', 'property', value);
     update('meta[property="og:description"]', 'property', description);
+    const canonical = `https://www.famevote.online${window.location.pathname}`;
+    let canonicalLink = document.head.querySelector('link[rel="canonical"]');
+    if (!canonicalLink) { canonicalLink = document.createElement('link'); canonicalLink.rel = 'canonical'; document.head.appendChild(canonicalLink); }
+    canonicalLink.href = canonical;
+    update('meta[property="og:url"]', 'property', canonical);
     update('meta[name="twitter:title"]', 'name', value);
     update('meta[name="twitter:description"]', 'name', description);
   }, [title]);

@@ -44,14 +44,17 @@ export default function SeoManager() {
     const isPrivate = PRIVATE.some((re) => re.test(path));
     const isCelebrity = /^\/celebrity\/[^/]+\/?$/.test(path);
     const match = routeMeta.find(([re]) => re.test(path))?.[1];
-    const title = isCelebrity ? 'Celebrity Profile & Fan Rankings – FameVote' : (match?.title || 'FameVote – Indian Celebrity Fan Voting & Rankings');
-    const description = isCelebrity
-      ? 'Explore this celebrity profile, current fan ranking and monthly community voting information on FameVote.'
-      : (match?.description || DEFAULT_DESCRIPTION);
+    const isNotFound = !isPrivate && !isCelebrity && !match;
+    const title = isNotFound ? 'Page Not Found – FameVote' : (isCelebrity ? 'Celebrity Profile & Fan Rankings – FameVote' : (match?.title || 'FameVote – Indian Celebrity Fan Voting & Rankings'));
+    const description = isNotFound
+      ? 'The page you requested could not be found on FameVote.'
+      : (isCelebrity
+        ? 'Explore this celebrity profile, current fan ranking and monthly community voting information on FameVote.'
+        : (match?.description || DEFAULT_DESCRIPTION));
     const canonical = `${SITE}${path === '/' ? '/' : path.replace(/\/+$/, '')}`;
     document.title = title;
     setMeta('meta[name="description"]', 'name', description);
-    setMeta('meta[name="robots"]', 'name', isPrivate ? 'noindex, nofollow' : 'index, follow, max-image-preview:large');
+    setMeta('meta[name="robots"]', 'name', (isPrivate || isNotFound) ? 'noindex, nofollow' : 'index, follow, max-image-preview:large');
     setMeta('meta[property="og:type"]', 'property', isCelebrity ? 'profile' : (match?.type || 'website'));
     setMeta('meta[property="og:url"]', 'property', canonical);
     setMeta('meta[property="og:title"]', 'property', title);
@@ -62,7 +65,7 @@ export default function SeoManager() {
 
     const old = document.getElementById('famevote-page-schema');
     if (old) old.remove();
-    if (!isPrivate) {
+    if (!isPrivate && !isNotFound) {
       const schema = document.createElement('script');
       schema.id = 'famevote-page-schema';
       schema.type = 'application/ld+json';

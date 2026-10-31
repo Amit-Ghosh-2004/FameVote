@@ -1,13 +1,7 @@
 User-agent: *
 Allow: /
-Disallow: /admin
-Disallow: /dashboard
-Disallow: /login
-Disallow: /register
-Disallow: /forgot-password
-Disallow: /reset-password
-Disallow: /nominate
-Disallow: /vote
-Disallow: /verify-receipt
+
+# Private and transactional routes are marked noindex by the application.
+# Do not disallow them here, so search engines can read those directives.
 
 Sitemap: https://www.famevote.online/sitemap.xml
