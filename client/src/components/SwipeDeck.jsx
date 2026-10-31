@@ -31,7 +31,7 @@ function Card({ celeb, top, depth, voted, disabled, onVote, onSkip }) {
     >
       <div className="relative h-full overflow-hidden rounded-[28px] bg-sand shadow-lift ring-1 ring-ink/10">
         {celeb.image ? (
-          <img src={imgFit(celeb.image, 1000)} alt={celeb.name} loading="eager" decoding="async" draggable="false" className="absolute inset-0 block h-full w-full object-cover object-[50%_14%]" />
+          <img src={imgFit(celeb.image, 1000)} alt={celeb.name} loading="eager" decoding="async" draggable="false" className="absolute inset-0 block h-full w-full object-cover object-[50%_18%]" />
         ) : <div role="img" aria-label={celeb.name} className="absolute inset-0 grid place-items-center bg-sand text-4xl font-semibold text-ink/50">{celeb.name?.split(' ').map((w) => w[0]).slice(0, 2).join('')}</div>}
         <span className="pointer-events-none absolute inset-x-0 bottom-0 h-[26%] bg-gradient-to-t from-black/75 via-black/30 to-transparent" aria-hidden="true" />
         {top && <>
@@ -81,10 +81,10 @@ export default function SwipeDeck({ items, votedId, disabled, onVote }) {
 
   return (
     <div className="flex min-h-0 flex-1 flex-col">
-      <p className="mb-1 shrink-0 text-center text-[12px] text-ink/65" aria-live="polite">{i + 1} of {items.length} · swipe right to vote, left to skip</p>
-      <div className="relative mx-auto min-h-0 w-full max-w-[400px] flex-1">
-        <div className="absolute inset-x-0 bottom-3 top-0 flex justify-center">
-          <div className="relative h-full w-full sm:w-auto sm:max-w-full sm:aspect-[3/4]">
+      <p className="mb-0.5 shrink-0 text-center text-[11.5px] text-ink/65" aria-live="polite">{i + 1} of {items.length} · swipe right to vote, left to skip</p>
+      <div className="relative mx-auto min-h-[280px] w-full max-w-[400px] flex-1">
+        <div className="absolute inset-x-0 bottom-2 top-0 flex justify-center">
+          <div className="relative h-full w-auto max-w-full aspect-[4/5] sm:aspect-[3/4]">
           {[2, 1, 0].map((d) => items[i + d] && (
             <Card key={items[i + d].id} celeb={items[i + d]} top={d === 0} depth={d} voted={votedId === items[i + d].id} disabled={disabled} onVote={onVote} onSkip={next} />
           ))}
@@ -92,9 +92,9 @@ export default function SwipeDeck({ items, votedId, disabled, onVote }) {
         </div>
       </div>
       <div className="mx-auto flex shrink-0 items-center justify-center gap-6 pb-0.5 pt-0.5">
-        <button onClick={next} aria-label={`Skip ${cur.name}`} className="grid h-12 w-12 place-items-center rounded-full border border-line bg-surface text-ink/75 shadow-sm transition active:scale-90"><X className="h-7 w-7" strokeWidth={2.4} /></button>
-        <button onClick={() => { haptic(14); onVote(cur); }} disabled={disabled} aria-label={`Vote for ${cur.name}`} className="grid h-[60px] w-[60px] place-items-center rounded-full bg-brand text-on shadow-glow transition active:scale-90 disabled:opacity-40"><Check className="h-9 w-9" strokeWidth={3.4} /></button>
-        <Link to={`/celebrity/${cur.slug || cur.id}`} aria-label={`View ${cur.name}'s profile`} className="grid h-12 w-12 place-items-center rounded-full border border-line bg-surface text-ink/75 shadow-sm transition active:scale-90"><User className="h-6 w-6" /></Link>
+        <button onClick={next} aria-label={`Skip ${cur.name}`} className="grid h-11 w-11 place-items-center rounded-full border border-line bg-surface text-ink/75 shadow-sm transition active:scale-90"><X className="h-7 w-7" strokeWidth={2.4} /></button>
+        <button onClick={() => { haptic(14); onVote(cur); }} disabled={disabled} aria-label={`Vote for ${cur.name}`} className="grid h-[54px] w-[54px] place-items-center rounded-full bg-brand text-on shadow-glow transition active:scale-90 disabled:opacity-40"><Check className="h-9 w-9" strokeWidth={3.4} /></button>
+        <Link to={`/celebrity/${cur.slug || cur.id}`} aria-label={`View ${cur.name}'s profile`} className="grid h-11 w-11 place-items-center rounded-full border border-line bg-surface text-ink/75 shadow-sm transition active:scale-90"><User className="h-6 w-6" /></Link>
       </div>
     </div>
   );
