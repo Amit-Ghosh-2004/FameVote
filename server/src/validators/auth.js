@@ -11,12 +11,14 @@ const password = z
 const { normalizePhone } = require('../utils/phone');
 const emptyToUndef0 = (v) => (v === '' || v === null ? undefined : v);
 const email = z.string().trim().toLowerCase().email().max(254);
+const dateOfBirth = z.string().regex(/^\d{4}-\d{2}-\d{2}$/, 'Enter your date of birth').refine((v) => { const d = new Date(`${v}T00:00:00.000Z`); return Number.isFinite(d.getTime()) && d.toISOString().slice(0, 10) === v && d <= new Date(); }, 'Enter a valid date of birth');
 
 exports.register = z.object({
   name: z.string().trim().min(2).max(80),
   email,
   password,
   state: z.enum(STATE_CODES).optional(),
+  dateOfBirth,
 });
 exports.login = z.object({ email, password: z.string().min(1).max(128) });
 const phone = z.string().trim().min(8).max(20).transform((v, ctx) => {
@@ -30,6 +32,7 @@ exports.phoneVerify = z.object({
   code: z.string().trim().regex(/^\d{6}$/, 'Enter the 6-digit code'),
   name: z.preprocess(emptyToUndef0, z.string().trim().min(2).max(80).optional()),
   state: z.preprocess(emptyToUndef0, z.enum(STATE_CODES).optional()),
+  dateOfBirth: dateOfBirth.optional(),
 });
 exports.token = z.object({ token: z.string().min(20).max(200) });
 exports.forgot = z.object({ email });
@@ -50,5 +53,5 @@ exports.google = z.preprocess(
     o.state = STATE_CODES.includes(st) ? st : undefined;
     return o;
   },
-  z.object({ credential: z.string().trim().min(20, 'Google credential is missing').max(8192), state: z.preprocess(emptyToUndef, z.enum(STATE_CODES).optional()) })
+  z.object({ credential: z.string().trim().min(20, 'Google credential is missing').max(8192), state: z.preprocess(emptyToUndef, z.enum(STATE_CODES).optional()), dateOfBirth: dateOfBirth.optional() })
 );

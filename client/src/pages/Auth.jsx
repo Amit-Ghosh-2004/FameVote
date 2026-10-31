@@ -45,25 +45,26 @@ const Or = () => (GOOGLE_CLIENT_ID ? <div className="my-5 flex items-center gap-
 /** Phone sign-in: number, then the 6-digit code we text. Works for new and returning users (no separate sign-up step). */
 function PhoneForm({ onDone, withProfile = false, state = '' }) {
   const { phoneVerify } = useAuth();
-  const [phone, setPhone] = useState(''); const [name, setName] = useState('');
+  const [phone, setPhone] = useState(''); const [name, setName] = useState(''); const [dateOfBirth, setDateOfBirth] = useState('');
   const [code, setCode] = useState(''); const [sent, setSent] = useState(false);
   const [err, setErr] = useState(''); const [busy, setBusy] = useState(false); const [wait, setWait] = useState(0);
   useEffect(() => { if (wait <= 0) return undefined; const t = setTimeout(() => setWait((w) => w - 1), 1000); return () => clearTimeout(t); }, [wait]);
   const send = async (e) => {
     e?.preventDefault(); setErr('');
     if (withProfile && !state) { setErr('Please choose your state or union territory first.'); return; }
+    if (withProfile && !dateOfBirth) { setErr('Enter your date of birth to continue.'); return; }
     setBusy(true);
     try { const d = await api.post('/auth/phone/send', { phone }); setSent(true); setWait(d.data?.data?.resendInSeconds || 30); } catch (x) { setErr(errMsg(x, 'Could not send the code.')); } finally { setBusy(false); }
   };
   const verify = async (e) => {
     e.preventDefault(); setErr(''); setBusy(true);
-    try { onDone(await phoneVerify({ phone, code, name: name || undefined, state: state || undefined })); } catch (x) { setErr(errMsg(x, 'That code did not work.')); } finally { setBusy(false); }
+    try { onDone(await phoneVerify({ phone, code, name: name || undefined, state: state || undefined, dateOfBirth: dateOfBirth || undefined })); } catch (x) { setErr(errMsg(x, 'That code did not work.')); } finally { setBusy(false); }
   };
   if (!sent) {
     return (
       <form onSubmit={send} className="space-y-4">
         <Err msg={err} />
-        {withProfile && <Field label="Your name" id="pn"><input id="pn" autoComplete="name" className="input" value={name} onChange={(e) => setName(e.target.value)} minLength={2} maxLength={80} required /></Field>}
+        {withProfile && <><Field label="Your name" id="pn"><input id="pn" autoComplete="name" className="input" value={name} onChange={(e) => setName(e.target.value)} minLength={2} maxLength={80} required /></Field><Field label="Date of birth" id="pdob"><input id="pdob" type="date" className="input" value={dateOfBirth} onChange={(e) => setDateOfBirth(e.target.value)} max={new Date().toISOString().slice(0,10)} required /></Field></>}
         <Field label="Mobile number" id="pp" hint="We text you a 6-digit code."><input id="pp" type="tel" inputMode="tel" autoComplete="tel" className="input" placeholder="98765 43210" value={phone} onChange={(e) => setPhone(e.target.value)} required /></Field>
         <button className="btn-pop w-full !min-h-[56px] text-[16px]" disabled={busy}>{busy ? 'Sending…' : 'Text me a code'}</button>
       </form>
@@ -123,19 +124,21 @@ export function Register() {
   const { register, meta } = useAuth(); const after = useAfterAuth(); const toast = useToast(); const loc = useLocation();
   const phoneOn = Boolean(meta?.phoneSignIn);
   const [more, setMore] = useState(false);
-  const [f, setF] = useState({ name: '', email: '', password: '', state: '' }); const [err, setErr] = useState(''); const [busy, setBusy] = useState(false);
+  const [f, setF] = useState({ name: '', email: '', password: '', state: '', dateOfBirth: '' }); const [err, setErr] = useState(''); const [busy, setBusy] = useState(false);
   const submit = async (e) => {
     e.preventDefault(); setErr('');
     if (!f.state) { setErr('Choose your state first.'); return; }
+    if (!f.dateOfBirth) { setErr('Enter your date of birth first.'); return; }
     setBusy(true);
     try { const u = await register({ ...f, state: f.state }); toast('Account created.', 'success'); after(u); } catch (x) { setErr(x?.response?.data?.error?.details?.map((d) => d.message).join(' ') || errMsg(x)); } finally { setBusy(false); }
   };
   const emailBlock = (
     <>
       <Field label="Your state" id="gs"><StateSelect id="gs" states={meta?.states} value={f.state} onChange={(v) => setF((s) => ({ ...s, state: v }))} required /></Field>
-      <div className="mt-4"><GoogleButton state={f.state} requireState onDone={after} onError={setErr} text="signup_with" /></div>
+      <div className="mt-4"><GoogleButton state={f.state} dateOfBirth={f.dateOfBirth} requireState onDone={after} onError={setErr} text="signup_with" /></div>
       <form onSubmit={submit} className="mt-4 space-y-4">
         <Field label="Your name" id="rn"><input id="rn" autoComplete="name" className="input" value={f.name} onChange={(e) => setF({ ...f, name: e.target.value })} minLength={2} required /></Field>
+        <Field label="Date of birth" id="rdob"><input id="rdob" type="date" className="input" value={f.dateOfBirth} onChange={(e) => setF({ ...f, dateOfBirth: e.target.value })} max={new Date().toISOString().slice(0,10)} required /></Field>
         <Field label="Email" id="re"><input id="re" type="email" inputMode="email" autoComplete="email" className="input" value={f.email} onChange={(e) => setF({ ...f, email: e.target.value })} required /></Field>
         <Field label="Password" id="rp" hint="8 or more characters with a letter and a number."><Password id="rp" meter autoComplete="new-password" minLength={8} value={f.password} onChange={(v) => setF({ ...f, password: v })} /></Field>
         <button className="btn-pop w-full !min-h-[56px] text-[16px]" disabled={busy}>{busy ? 'Creating…' : 'Create account'}</button>
@@ -143,11 +146,12 @@ export function Register() {
     </>
   );
   return (
-    <Shell title="Join FameVote" sub="Free. It takes under a minute.">
+    <Shell title="Join FameVote" sub="Free voting for all eligible ages. Paid voting is 18+ only.">
       <Err msg={err} />
       {phoneOn ? (
         <>
-          <PhoneForm onDone={(u) => { toast('Welcome!', 'success'); after(u); }} />
+          <Field label="Your state" id="ps"><StateSelect id="ps" states={meta?.states} value={f.state} onChange={(v) => setF((s) => ({ ...s, state: v }))} required /></Field>
+          <div className="mt-4"><PhoneForm withProfile state={f.state} onDone={(u) => { toast('Welcome!', 'success'); after(u); }} /></div>
           <button type="button" className="mt-3 min-h-[48px] w-full text-[15px] font-bold text-ink/70" aria-expanded={more} onClick={() => setMore((v) => !v)}>{more ? 'Hide email options' : 'Use email or Google instead'}</button>
           {more && <div className="mt-2 border-t border-line pt-4">{emailBlock}</div>}
         </>

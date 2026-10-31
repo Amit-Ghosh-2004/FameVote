@@ -33,7 +33,20 @@ async function getVoteAmountPaise(requestedInr) {
   return resolveAmountInr(await Settings.get(), requestedInr) * 100;
 }
 
+function isAdult(dateOfBirth, now = new Date()) {
+  if (!dateOfBirth) return false;
+  const dob = new Date(dateOfBirth);
+  if (!Number.isFinite(dob.getTime()) || dob > now) return false;
+  let age = now.getFullYear() - dob.getFullYear();
+  const beforeBirthday = now.getMonth() < dob.getMonth() || (now.getMonth() === dob.getMonth() && now.getDate() < dob.getDate());
+  if (beforeBirthday) age -= 1;
+  return age >= 18;
+}
+
 async function createOrder(user, { categoryId, celebrityId, amountInr }, now = new Date()) {
+  if (!isAdult(user.dateOfBirth, now)) {
+    throw ApiError.forbidden('Paid voting is available only to users aged 18 or above. Add and verify your date of birth before making a payment.', 'ADULTS_ONLY_PAYMENT');
+  }
   const amountPaise = await getVoteAmountPaise(amountInr);
   if (amountPaise === 0) throw ApiError.conflict('Voting is currently free. Use the free voting flow.', 'USE_FREE_FLOW');
   if (amountPaise < MIN_GATEWAY_PAISE) throw ApiError.unavailable('Configured amount is below the payment gateway minimum', 'AMOUNT_BELOW_MINIMUM');

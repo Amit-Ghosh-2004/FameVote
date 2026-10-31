@@ -27,6 +27,8 @@ const userSchema = new mongoose.Schema(
     resetTokenExpires: { type: Date, select: false },
     // Voter's region. Snapshotted onto every Vote, so later changes never affect past rankings.
     state: { type: String, enum: [...STATE_CODES, null], default: null },
+    // Required for adult-only paid voting; absent/invalid DOB fails closed at checkout.
+    dateOfBirth: { type: Date, default: null },
     avatar: imageSchema,
     failedLogins: { type: Number, default: 0 },
     lockUntil: { type: Date },

@@ -13,11 +13,11 @@ const loadGsi = () => (scriptPromise ||= new Promise((resolve, reject) => {
 }));
 
 /** Google's own button (required branding), wired to POST /auth/google. Renders nothing if no client ID is configured. */
-export default function GoogleButton({ state, requireState = false, onDone, onError, text = 'continue_with' }) {
+export default function GoogleButton({ state, dateOfBirth, requireState = false, onDone, onError, text = 'continue_with' }) {
   const { googleLogin, meta } = useAuth();
   const serverOff = meta && meta.googleSignIn === false;
   const box = useRef(null);
-  const cb = useRef({}); cb.current = { onDone, onError, state, requireState, googleLogin };
+  const cb = useRef({}); cb.current = { onDone, onError, state, dateOfBirth, requireState, googleLogin };
   const [failed, setFailed] = useState(false);
 
   useEffect(() => {
@@ -31,7 +31,8 @@ export default function GoogleButton({ state, requireState = false, onDone, onEr
           const c = cb.current;
           if (!credential) { c.onError?.('Google did not return a sign-in credential. Check the OAuth client and try again.'); return; }
           if (c.requireState && !c.state) { c.onError?.('Please choose your state or union territory above, then try Google sign-up again.'); return; }
-          try { const u = await c.googleLogin({ credential, state: c.state || undefined }); c.onDone?.(u); } catch (e) { c.onError?.(errMsg(e, 'Google sign-in failed. Check GOOGLE_CLIENT_ID and authorized origins.')); }
+          if (c.requireState && !c.dateOfBirth) { c.onError?.('Enter your date of birth before using Google sign-up.'); return; }
+          try { const u = await c.googleLogin({ credential, state: c.state || undefined, dateOfBirth: c.dateOfBirth || undefined }); c.onDone?.(u); } catch (e) { c.onError?.(errMsg(e, 'Google sign-in failed. Check GOOGLE_CLIENT_ID and authorized origins.')); }
         },
       });
       const width = Math.min(360, box.current.parentElement?.clientWidth || 320);

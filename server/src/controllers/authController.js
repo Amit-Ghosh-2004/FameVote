@@ -17,13 +17,28 @@ const LOCK_MS = 15 * 60 * 1000;
 // require time, which blocked start-up for ~360 ms on every boot.
 const DUMMY_HASH = '$2a$12$pNCReNtJsGuP4VZliJaOleqtaMKXpruhNCww8B7RFlg0NtozgDJZy';
 
+function ageOn(dateOfBirth, now = new Date()) {
+  const dob = new Date(`${dateOfBirth}T00:00:00.000Z`);
+  if (!Number.isFinite(dob.getTime()) || dob > now) return null;
+  let age = now.getUTCFullYear() - dob.getUTCFullYear();
+  if (now.getUTCMonth() < dob.getUTCMonth() || (now.getUTCMonth() === dob.getUTCMonth() && now.getUTCDate() < dob.getUTCDate())) age -= 1;
+  return age;
+}
+
+function requireChildConsentWorkflow(dateOfBirth) {
+  const age = ageOn(dateOfBirth);
+  if (age === null) throw ApiError.badRequest('Enter a valid date of birth.', 'INVALID_DATE_OF_BIRTH');
+  if (age < 13) throw ApiError.forbidden('FameVote is preparing its verifiable parent/guardian consent process. Under-13 account registration is temporarily unavailable; free voting remains available to eligible existing accounts.', 'PARENTAL_CONSENT_REQUIRED');
+}
+
 exports.register = asyncHandler(async (req, res) => {
-  const { name, email, password, state } = req.body;
+  const { name, email, password, state, dateOfBirth } = req.body;
+  requireChildConsentWorkflow(dateOfBirth);
   if (await User.exists({ email })) {
     // Do not reveal whether the email exists beyond what registration inherently needs.
     throw ApiError.conflict('An account with this email already exists', 'EMAIL_TAKEN');
   }
-  const user = await User.create({ name, email, state, emailVerified: true, passwordHash: await bcrypt.hash(password, 12) });
+  const user = await User.create({ name, email, state, dateOfBirth: new Date(`${dateOfBirth}T00:00:00.000Z`), emailVerified: true, passwordHash: await bcrypt.hash(password, 12) });
   issueSession(res, user);
   res.status(201).json({ success: true, data: { user: user.toSafeJSON() }, message: 'Account created successfully.' });
 });
@@ -68,7 +83,9 @@ exports.googleLogin = asyncHandler(async (req, res) => {
   let user = await User.findOne({ $or: [{ googleId: g.sub }, { email: g.email }] }).select('+googleId +passwordHash');
   let created = false; let passwordRemoved = false;
   if (!user) {
-    user = await User.create({ name: g.name, email: g.email, state: req.body.state, emailVerified: true, googleId: g.sub, authProviders: ['google'] });
+    if (req.body.dateOfBirth) requireChildConsentWorkflow(req.body.dateOfBirth);
+    else throw ApiError.badRequest('Date of birth is required to create a new account.', 'DATE_OF_BIRTH_REQUIRED');
+    user = await User.create({ name: g.name, email: g.email, state: req.body.state, dateOfBirth: req.body.dateOfBirth ? new Date(`${req.body.dateOfBirth}T00:00:00.000Z`) : null, emailVerified: true, googleId: g.sub, authProviders: ['google'] });
     created = true;
   } else {
     if (user.status !== 'active') throw ApiError.forbidden('This account is suspended', 'ACCOUNT_SUSPENDED');
@@ -102,13 +119,15 @@ exports.phoneSend = asyncHandler(async (req, res) => {
 
 /** Phone sign-in step 2: a correct code logs the number in, creating the account on first use. */
 exports.phoneVerify = asyncHandler(async (req, res) => {
-  const { phone, code, name, state } = req.body;
+  const { phone, code, name, state, dateOfBirth } = req.body;
   await otp.verifyCode(phone, code);
   let user = await User.findOne({ phone }).select('+phone');
   let created = false;
   if (!user) {
+    if (!dateOfBirth) throw ApiError.badRequest('Date of birth is required to create a new account.', 'DATE_OF_BIRTH_REQUIRED');
+    requireChildConsentWorkflow(dateOfBirth);
     user = await User.create({
-      name: name || `Fan ${phone.slice(-4)}`, email: placeholderEmail(phone), phone, state, emailVerified: true, authProviders: ['phone'],
+      name: name || `Fan ${phone.slice(-4)}`, email: placeholderEmail(phone), phone, state, dateOfBirth: dateOfBirth ? new Date(`${dateOfBirth}T00:00:00.000Z`) : null, emailVerified: true, authProviders: ['phone'],
     });
     created = true;
   } else {
